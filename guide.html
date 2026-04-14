@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Shop Guide — Eurovision Tools 2026</title>
+
+  <meta name="description" content="Exclusive digital drops for Eurovision 2026 fans. Party packs, drinking games, and deep math forecasts." />
+  <meta name="keywords" content="Eurovision 2026 shop, ESC digital downloads, Eurovision party pack, ESC stickers" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourname.github.io/guide.html" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* Guide specific layout tweaks */
+    .hero--shop {
+      min-height: 40vh;
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-xl);
+    }
+    
+    .product-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-md) 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .product-list li {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #aaa;
+      position: relative;
+      padding-left: 1.2rem;
+      line-height: 1.4;
+    }
+    
+    .product-list li::before {
+      content: '⚡';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.7rem;
+    }
+    
+    .price-tag {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: #fff;
+      display: block;
+      margin-top: auto;
+      padding-top: var(--space-md);
+    }
+  </style>
+</head>
+
+<body>
+
+<header role="banner">
+  <div class="header__inner">
+
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Home">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./vote.html">Rate</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Forecast</a></li>
+        <li><a href="./guide.html" aria-current="page" class="active">Shop</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <div class="lang-switcher" role="group" aria-label="Select language">
+        <button data-lang="en" class="active" aria-pressed="true">EN</button>
+        <button data-lang="ru" aria-pressed="false">RU</button>
+        <button data-lang="de" aria-pressed="false">DE</button>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./vote.html">Rate</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Forecast</a></li>
+    <li><a href="./guide.html">Shop</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <section class="hero hero--shop" aria-labelledby="shop-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="particles" aria-hidden="true"></div>
+    
+    <div class="hero__content text-center">
+      <span class="hero__subtitle">★ EXCLUSIVE DIGITAL DROPS ★</span>
+      <h1 id="shop-heading" class="display-title neon-purple">
+        FAN SHOP GUIDE
+      </h1>
+      <p class="mt-md" style="max-width: 50ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.95rem;">
+        Everything you need for the perfect Grand Final. Instant digital delivery straight to your device. Level up your ESC experience.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <section class="section pt-0" aria-labelledby="products-heading">
+    <div class="container">
+      
+      <div class="tools-grid stagger" role="list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+        <div class="tool-card tool-card--pink anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🖨️ Ultimate Party Pack:<br><span class="neon-pink">Print & Party!</span></h3>
+          <ul class="product-list">
+            <li>Instant high-quality PDF downloads.</li>
+            <li>Save 10+ hours on design – we've done the work!</li>
+            <li>Scorecards, flag buntings, and VIP invitations.</li>
+            <li>Perfect for any squad, from 2 to 20+ fans.</li>
+          </ul>
+          <span class="price-tag">$9.99</span>
+          <button class="btn btn--primary btn--full mt-md">Download & Start Party</button>
+        </div>
+
+        <div class="tool-card tool-card--yellow anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🍻 ESC 2026<br><span class="neon-yellow">Drinking Game (18+)</span></h3>
+          <ul class="product-list">
+            <li>Make the final unforgettable (or a bit blurry).</li>
+            <li>Exclusive memes, tropes, and this year’s jokes.</li>
+            <li>Hardcore and Lite modes for every level.</li>
+            <li>Works with any drink (even tea-totallers!).</li>
+          </ul>
+          <span class="price-tag">$4.99</span>
+          <button class="btn btn--yellow btn--full mt-md">Get the Rules</button>
+        </div>
+
+        <div class="tool-card tool-card--cyan anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">📈 Bayesian Forecast:<br><span class="neon-cyan">Crack the ESC</span></h3>
+          <ul class="product-list">
+            <li>Predict the winner before the juries even start.</li>
+            <li>Deep analytics: Bayes' Theorem & Gauss graphs.</li>
+            <li>Professional-grade probability breakdowns.</li>
+            <li>15 pages of sleek infographics to win arguments.</li>
+          </ul>
+          <span class="price-tag">$14.99</span>
+          <button class="btn btn--secondary btn--full mt-md" style="color: var(--clr-cyan); border-color: var(--clr-cyan); box-shadow: 4px 4px 0px var(--clr-cyan);">Get the Analytics</button>
+        </div>
+
+        <div class="tool-card tool-card--purple anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">📱 ESC VIP Stickers:<br><span class="neon-purple">Chat Breakers</span></h3>
+          <ul class="product-list">
+            <li>Stand out in the group chat during the live show.</li>
+            <li>Unique vector designs of stars and cringe moments.</li>
+            <li>One-click import for Telegram and WhatsApp.</li>
+            <li>Express emotions when words fail (0 points!).</li>
+          </ul>
+          <span class="price-tag">$2.99</span>
+          <button class="btn btn--primary btn--full mt-md" style="background: var(--clr-purple); box-shadow: 4px 4px 0px #5c007a, var(--glow-purple);">Install Stickers</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">★ ESCTOOLS</div>
+      <div class="footer__tagline">
+        Your ultimate Eurovision 2026 fan toolkit. 
+        Fan project, not affiliated with EBU.
+      </div>
+
+      <nav aria-label="Footer links" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./vote.html">Rate</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Forecast</a></li>
+          <li><a href="./guide.html">Shop Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div>
+      <p class="section-label">Connect & Share</p>
+      <div class="flex flex-wrap gap-sm" style="margin-top: var(--space-md);">
+        <a class="social-link" href="#" target="_blank">Twitter</a>
+        <a class="social-link" href="#" target="_blank">Reddit</a>
+        <a class="social-link" href="#" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__copy">
+    &copy; 2026 Eurovision Tools. Built by fans, for fans.
+  </p>
+</footer>
+
+<script src="./assets/js/script.js" defer></script>
+
+</body>
+</html>
