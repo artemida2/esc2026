@@ -9,17 +9,24 @@
 
   <!-- SEO -->
   <meta name="description" content="Rate countries, play Bingo, forecast the winner with AI — the ultimate free Eurovision 2026 fan toolkit. No ads, just pure ESC energy." />
-  <meta name="keywords" content="Eurovision 2026, Eurovision tools, ESC bingo, Eurovision scorecard, Eurovision forecast, Basel 2026" />
+  <meta name="keywords" content="Eurovision 2026, Eurovision tools, ESC bingo, Eurovision scorecard, Eurovision forecast, Vienna 2026" />
   <meta name="author" content="Eurovision Tools" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://yourname.github.io/index.html" />
+  
+  <!-- CANONICAL + HREFLANG (ОЧЕНЬ ВАЖНО ДЛЯ SEO) -->
+  <link rel="canonical" href="https://eurovisiontoolkit.com/" />
+  
+  <link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/" />
+  <link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/" />
+  <link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/" />
+  <link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://yourname.github.io/index.html" />
+  <meta property="og:url"         content="https://eurovisiontoolkit.com/" />
   <meta property="og:title"       content="Eurovision Tools 2026 — Your Ultimate Fan Toolkit" />
   <meta property="og:description" content="Rate. Bingo. Forecast. The ultimate free Eurovision toolkit — built by fans, for fans." />
-  <meta property="og:image"       content="https://yourname.github.io/assets/img/og-cover.png" />
+  <meta property="og:image"       content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
@@ -28,13 +35,12 @@
 
   <!-- Emoji Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
-  <!-- ── STYLES ───────────────────────────────────── -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
   <link rel="stylesheet" href="./assets/css/styles.css" />
-
-  <!-- Preconnect for Google Fonts (already imported inside CSS, this just warms the connection) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 
   <!-- Inline critical hero styles to prevent layout shift -->
   <style>
@@ -183,6 +189,16 @@
     </div>
 
   </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Eurovision Tools 2026",
+  "url": "https://eurovisiontoolkit.com",
+  "description": "Ultimate free Eurovision 2026 fan toolkit",
+  "inLanguage": ["en", "es", "de"]
+}
+</script>
 </header>
 
 <!-- Mobile Navigation Drawer -->
@@ -226,7 +242,7 @@
       <!-- Live badge -->
       <div class="live-badge" role="status" aria-live="polite">
         <span class="live-badge__dot" aria-hidden="true"></span>
-        Eurovision 2026 · Basel · 13–17 May
+        Eurovision 2026 · Vienna · 12–16 May
       </div>
 
       <!-- Overline -->
@@ -706,7 +722,7 @@
       <div class="stats-grid stagger" role="list">
 
         <div class="stat-card anim-scale-in" role="listitem">
-          <div class="stat-card__value" aria-label="37">37</div>
+          <div class="stat-card__value" aria-label="37">35</div>
           <div class="stat-card__label">Competing Countries</div>
         </div>
 
@@ -812,7 +828,7 @@
       >
         <a
           class="social-link"
-          href="https://twitter.com/intent/tweet?text=Check%20out%20this%20free%20%23Eurovision2026%20toolkit!&url=https%3A%2F%2Fyourname.github.io"
+          href="https://twitter.com/intent/tweet?text=Check%20out%20this%20free%20%23Eurovision2026%20toolkit!&url=https%3A%2F%2Feurovisiontoolkit.com"
           target="_blank"
           rel="noopener noreferrer"
           role="listitem"
