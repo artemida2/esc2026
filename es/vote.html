@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Puntúa los Países — Eurovision Tools 2026</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Puntúa cada actuación de la Gran Final de Eurovisión 2026 con el sistema oficial de puntos ESC. Crea tu marcador personal y comparte tu Top 12 con amigos." />
+  <meta name="keywords" content="marcador Eurovisión 2026, puntuar canciones Eurovisión, puntos ESC, votación Eurovisión 2026, Basilea 2026" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourname.github.io/es/vote.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://yourname.github.io/es/vote.html" />
+  <meta property="og:title"       content="Puntúa los Países de Eurovisión 2026 — Marcador ESC" />
+  <meta property="og:description" content="Asigna los puntos oficiales de Eurovisión y crea tu marcador personal. ¡Comparte tu Top 12!" />
+  <meta property="og:image"       content="https://yourname.github.io/assets/img/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Marcador Eurovisión 2026" />
+  <meta name="twitter:description" content="¡Puntúa a los 26 finalistas y comparte tu marcador personal!" />
+
+  <!-- Emoji Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <style>
+    /* ══════════════════════════════════════════
+       VOTE PAGE — page-specific styles
+    ══════════════════════════════════════════ */
+
+    /* Page Hero */
+    .page-hero {
+      padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-2xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% 0%, rgba(255,45,120,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 30% at 80% 100%, rgba(255,230,0,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-pink);
+      text-shadow: var(--glow-pink);
+      margin-bottom: var(--space-md);
+    }
+    .page-hero__eyebrow::before,
+    .page-hero__eyebrow::after {
+      content: '—';
+      color: #444;
+    }
+    .page-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: var(--space-lg);
+    }
+    .page-hero__title span { display: block; }
+    .page-hero__title .accent { color: var(--clr-pink); text-shadow: var(--glow-pink); }
+    .page-hero__sub {
+      max-width: 54ch;
+      margin: 0 auto;
+      color: #777;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      line-height: 2;
+    }
+    .page-hero__sub strong { color: var(--clr-yellow); text-shadow: var(--glow-yellow); }
+
+    /* Rule / instruction bar */
+    .rule-bar {
+      background: rgba(255,45,120,0.06);
+      border: 1px solid rgba(255,45,120,0.18);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-xl);
+    }
+    .rule-bar__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clr-pink);
+      flex-shrink: 0;
+    }
+    .rule-bar__pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .rule-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 30px;
+      height: 24px;
+      padding: 0 6px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--clr-border);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #666;
+    }
+    .rule-pill--gold { border-color: var(--clr-yellow); color: var(--clr-yellow); background: rgba(255,230,0,0.08); }
+    .rule-pill--silver { border-color: #aaa; color: #aaa; background: rgba(200,200,200,0.06); }
+
+    /* Scorecard card */
+    .scorecard {
+      background: var(--clr-surface);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--neo-shadow);
+    }
+    .scorecard__header {
+      display: grid;
+      grid-template-columns: 200px 1fr 80px;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-xl);
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .scorecard__header span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #444;
+    }
+    .scorecard__header span:last-child { text-align: center; }
+
+    /* Vote row */
+    .vote-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 80px;
+      gap: var(--space-md);
+      align-items: center;
+      padding: var(--space-md) var(--space-xl);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      transition: background var(--t-fast);
+      position: relative;
+    }
+    .vote-row:last-child { border-bottom: none; }
+    .vote-row:hover { background: rgba(255,255,255,0.02); }
+    .vote-row.scored {
+      background: rgba(255,45,120,0.03);
+    }
+    .vote-row.scored::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--clr-pink);
+      box-shadow: var(--glow-pink);
+    }
+
+    /* Country cell */
+    .country-info {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .country-flag {
+      font-size: 1.6rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .country-meta { display: flex; flex-direction: column; gap: 2px; }
+    .country-name {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #ccc;
+      line-height: 1.2;
+    }
+    .country-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .badge--host   { background: rgba(255,230,0,0.12); color: var(--clr-yellow); border: 1px solid rgba(255,230,0,0.25); }
+    .badge--big5   { background: rgba(0,245,255,0.08); color: var(--clr-cyan);   border: 1px solid rgba(0,245,255,0.2); }
+    .badge--fav    { background: rgba(191,0,255,0.10); color: var(--clr-purple); border: 1px solid rgba(191,0,255,0.22); }
+
+    /* Score pills */
+    .score-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: center;
+    }
+    .score-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1.5px solid #2a2a3a;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: #555;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      user-select: none;
+      position: relative;
+    }
+    .score-pill:hover {
+      border-color: var(--clr-pink);
+      color: var(--clr-pink);
+      background: rgba(255,45,120,0.08);
+      transform: translateY(-2px) scale(1.08);
+      box-shadow: 0 4px 12px rgba(255,45,120,0.3);
+    }
+    .score-pill.selected {
+      border-color: var(--clr-pink);
+      background: var(--clr-pink);
+      color: #000 !important;
+      font-weight: 900;
+      transform: translateY(-1px);
+      box-shadow: var(--glow-pink);
+    }
+    /* Gold highlight for top scores */
+    .score-pill[data-score="10"].selected,
+    .score-pill[data-score="12"].selected {
+      border-color: var(--clr-yellow);
+      background: var(--clr-yellow);
+      color: #000 !important;
+      box-shadow: var(--glow-yellow);
+    }
+    .score-pill[data-score="12"] {
+      border-color: rgba(255,230,0,0.25);
+      color: rgba(255,230,0,0.5);
+    }
+    .score-pill[data-score="12"]:not(.selected):hover {
+      border-color: var(--clr-yellow);
+      color: var(--clr-yellow);
+      background: rgba(255,230,0,0.08);
+      box-shadow: 0 4px 12px rgba(255,230,0,0.3);
+    }
+
+    /* Hidden actual input */
+    .score-input {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+      pointer-events: none;
+    }
+
+    /* Score display badge */
+    .score-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--clr-border);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 900;
+      color: #333;
+      margin: 0 auto;
+      transition: all var(--t-fast);
+      background: rgba(255,255,255,0.02);
+    }
+    .score-display.has-score {
+      border-color: var(--clr-pink);
+      color: var(--clr-pink);
+      text-shadow: var(--glow-pink);
+      background: rgba(255,45,120,0.08);
+      box-shadow: inset 0 0 12px rgba(255,45,120,0.1);
+    }
+    .score-display.has-score--gold {
+      border-color: var(--clr-yellow);
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      background: rgba(255,230,0,0.08);
+      box-shadow: inset 0 0 12px rgba(255,230,0,0.1);
+    }
+
+    /* ── Sticky total bar ── */
+    .vote-total-bar {
+      position: sticky;
+      bottom: 0;
+      z-index: var(--z-sticky);
+      background: rgba(10,10,15,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 2px solid rgba(255,45,120,0.3);
+      box-shadow: 0 -8px 32px rgba(255,45,120,0.08);
+      padding: var(--space-lg) 0;
+    }
+    .vote-total-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+    }
+    .total-block {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-md);
+    }
+    .total-block__label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #444;
+    }
+    .total-block__value {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      line-height: 1;
+      min-width: 2.5ch;
+      transition: color var(--t-fast);
+    }
+    .total-block__pts {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #555;
+    }
+    .vote-cta {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .scored-count {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: #555;
+    }
+    .scored-count strong { color: var(--clr-cyan); }
+
+    /* ── Results panel ── */
+    .results-panel {
+      display: none;
+      margin-top: var(--space-2xl);
+    }
+    .results-panel.visible {
+      display: block;
+      animation: slideUpFade 0.5s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .podium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+    .podium-card {
+      background: var(--clr-surface-2);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg) var(--space-md);
+      text-align: center;
+      transition: all var(--t-mid);
+      position: relative;
+      overflow: hidden;
+      animation: scalePop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    .podium-card:nth-child(1) { border-color: var(--clr-yellow); box-shadow: var(--glow-yellow), var(--neo-shadow); animation-delay: 0.05s; }
+    .podium-card:nth-child(2) { border-color: #888; box-shadow: 0 0 12px #88888844; animation-delay: 0.10s; }
+    .podium-card:nth-child(3) { border-color: #c87941; box-shadow: 0 0 12px #c8794144; animation-delay: 0.15s; }
+    .podium-card:nth-child(n+4) { animation-delay: calc(0.1s + 0.04s * var(--i, 0)); }
+    @keyframes scalePop {
+      from { opacity: 0; transform: scale(0.8); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .podium-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .podium-card:nth-child(1)::before { background: var(--clr-yellow); box-shadow: var(--glow-yellow); }
+    .podium-card:nth-child(2)::before { background: #888; }
+    .podium-card:nth-child(3)::before { background: #c87941; }
+    .podium-card__medal { font-size: 1.4rem; margin-bottom: var(--space-xs); }
+    .podium-card__flag  { font-size: 2.2rem; margin: var(--space-xs) 0; }
+    .podium-card__name  { font-size: 0.72rem; font-weight: 700; color: #bbb; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .podium-card__pts   {
+      font-family: var(--font-mono);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--clr-pink);
+      text-shadow: var(--glow-pink);
+    }
+    .podium-card:nth-child(1) .podium-card__pts { color: var(--clr-yellow); text-shadow: var(--glow-yellow); }
+
+    /* ── Share Modal ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: var(--z-modal);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--t-mid);
+      padding: var(--space-lg);
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal {
+      background: var(--clr-surface);
+      border: 2px solid var(--clr-pink);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--glow-pink), var(--neo-shadow), 0 32px 80px rgba(0,0,0,0.7);
+      padding: var(--space-2xl) var(--space-2xl);
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      transform: scale(0.88) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .modal-overlay.open .modal { transform: scale(1) translateY(0); }
+    .modal__close {
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      background: none;
+      border: 1px solid var(--clr-border);
+      color: #555;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--t-fast);
+    }
+    .modal__close:hover { border-color: var(--clr-pink); color: var(--clr-pink); transform: rotate(90deg); }
+    .modal__icon { font-size: 2.5rem; margin-bottom: var(--space-sm); }
+    .modal__title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--clr-pink);
+      text-shadow: var(--glow-pink);
+      margin-bottom: 6px;
+    }
+    .modal__sub {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #555;
+      margin-bottom: var(--space-xl);
+      line-height: 1.8;
+    }
+    .share-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+    .share-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-lg) var(--space-md);
+      background: rgba(255,255,255,0.03);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      color: #888;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all var(--t-mid);
+    }
+    .share-btn:hover {
+      border-color: var(--clr-pink);
+      color: var(--clr-pink);
+      background: rgba(255,45,120,0.07);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(255,45,120,0.2);
+    }
+    .share-btn__icon { font-size: 1.6rem; }
+    .modal__result-preview {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-lg);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    .modal__result-preview strong { color: var(--clr-yellow); }
+
+    /* ── Social link (footer override) ── */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #888;
+      padding: 6px 12px;
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      transition: all var(--t-fast);
+    }
+    .social-link:hover {
+      color: var(--clr-yellow);
+      border-color: var(--clr-yellow);
+      box-shadow: var(--glow-yellow);
+      text-shadow: var(--glow-yellow);
+      background: rgba(255,230,0,0.05);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .scorecard__header { grid-template-columns: 160px 1fr 60px; padding: var(--space-md); }
+      .vote-row { grid-template-columns: 160px 1fr 60px; padding: var(--space-md); }
+    }
+    @media (max-width: 700px) {
+      .scorecard__header { display: none; }
+      .vote-row { grid-template-columns: 1fr; gap: var(--space-sm); padding: var(--space-md) var(--space-lg); }
+      .vote-row::before { bottom: auto; right: 0; width: auto; height: 3px; }
+      .score-display { margin: 0; width: 44px; height: 44px; font-size: 0.9rem; }
+      .score-pill { width: 30px; height: 30px; font-size: 0.63rem; }
+      .vote-total-bar__inner { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+      .share-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header role="banner">
+  <div class="header__inner">
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Ir al inicio">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./vote.html" aria-current="page" class="active">Votar</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Pronóstico</a></li>
+        <li><a href="./history.html">Historia</a></li>
+        <li><a href="./guide.html">Tienda</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <div class="lang-switcher" role="group" aria-label="Seleccionar idioma">
+        <button data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+        <button data-lang="es" class="active" aria-label="Cambiar a Español" aria-pressed="true">ES</button>
+        <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
+      </div>
+      <button class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Inicio</a></li>
+    <li><a href="./vote.html" aria-current="page">Votar</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Pronóstico</a></li>
+    <li><a href="./history.html">Historia</a></li>
+    <li><a href="./guide.html">Tienda</a></li>
+  </ul>
+  <div class="lang-switcher" role="group" aria-label="Seleccionar idioma" style="margin-top:var(--space-xl);">
+    <button data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+    <button data-lang="es" class="active" aria-label="Cambiar a Español" aria-pressed="true">ES</button>
+    <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="vote-heading">
+    <div class="container">
+      <div class="page-hero__eyebrow" aria-hidden="true">Escala Oficial de Puntos ESC</div>
+      <h1 id="vote-heading" class="page-hero__title">
+        <span>PUNTÚA LAS</span>
+        <span class="accent">26 ACTUACIONES</span>
+      </h1>
+      <p class="page-hero__sub">
+        Haz clic en los puntos oficiales de Eurovisión (1–12) para puntuar cada país.
+        Tu total se actualiza <strong>en vivo</strong>. Sin cuenta necesaria. Puntuaciones guardadas localmente.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <!-- SCORECARD SECTION -->
+  <section class="section--tight" aria-label="Marcador Eurovisión 2026">
+    <div class="container">
+
+      <!-- Rule bar -->
+      <div class="rule-bar" role="note" aria-label="Reglas de puntuación oficial">
+        <span class="rule-bar__label">Escala Oficial ↓</span>
+        <div class="rule-bar__pills" aria-hidden="true">
+          <span class="rule-pill">1</span>
+          <span class="rule-pill">2</span>
+          <span class="rule-pill">3</span>
+          <span class="rule-pill">4</span>
+          <span class="rule-pill">5</span>
+          <span class="rule-pill">6</span>
+          <span class="rule-pill">7</span>
+          <span class="rule-pill">8</span>
+          <span class="rule-pill rule-pill--silver">10</span>
+          <span class="rule-pill rule-pill--gold">12</span>
+        </div>
+        <span style="font-family:var(--font-mono);font-size:0.62rem;color:#444;margin-left:auto;">Cada valor una vez · Duplicados avisados</span>
+      </div>
+
+      <!-- Scorecard -->
+      <div class="scorecard">
+
+        <!-- Table header (desktop) -->
+        <div class="scorecard__header" aria-hidden="true">
+          <span>País</span>
+          <span>Tus Puntos — Escala Oficial ESC</span>
+          <span style="text-align:center;">Puntuación</span>
+        </div>
+
+        <!-- ── ALBANIA ── -->
+        <div class="vote-row" data-country="al" role="row">
+          <div class="country-info" role="cell">
+            <span class="country-flag" aria-hidden="true">🇦🇱</span>
+            <div class="country-meta"><span class="country-name">Albania</span></div>
+          </div>
+          <div class="score-pills" role="cell" aria-label="Puntos para Albania">
+            <button class="score-pill" data-score="1"  type="button" aria-label="1 punto">1</button>
+            <button class="score-pill" data-score="2"  type="button" aria-label="2 puntos">2</button>
+            <button class="score-pill" data-score="3"  type="button" aria-label="3 puntos">3</button>
+            <button class="score-pill" data-score="4"  type="button" aria-label="4 puntos">4</button>
+            <button class="score-pill" data-score="5"  type="button" aria-label="5 puntos">5</button>
+            <button class="score-pill" data-score="6"  type="button" aria-label="6 puntos">6</button>
+            <button class="score-pill" data-score="7"  type="button" aria-label="7 puntos">7</button>
+            <button class="score-pill" data-score="8"  type="button" aria-label="8 puntos">8</button>
+            <button class="score-pill" data-score="10" type="button" aria-label="10 puntos">10</button>
+            <button class="score-pill" data-score="12" type="button" aria-label="Douze points — 12">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="al" name="score-al" value="0" tabindex="-1" aria-hidden="true" />
+          <div role="cell"><span class="score-display" id="disp-al">—</span></div>
+        </div>
+
+        <!-- ── ARMENIA ── -->
+        <div class="vote-row" data-country="am" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇦🇲</span>
+            <div class="country-meta"><span class="country-name">Armenia</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Armenia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="am" name="score-am" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-am">—</span></div>
+        </div>
+
+        <!-- ── AUSTRALIA ── -->
+        <div class="vote-row" data-country="au" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇦🇺</span>
+            <div class="country-meta"><span class="country-name">Australia</span><span class="country-badge badge--fav">Fan Fav</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Australia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="au" name="score-au" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-au">—</span></div>
+        </div>
+
+        <!-- ── AUSTRIA ── -->
+        <div class="vote-row" data-country="at" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇦🇹</span>
+            <div class="country-meta"><span class="country-name">Austria</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Austria">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="at" name="score-at" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-at">—</span></div>
+        </div>
+
+        <!-- ── AZERBAIJAN ── -->
+        <div class="vote-row" data-country="az" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇦🇿</span>
+            <div class="country-meta"><span class="country-name">Azerbaiyán</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Azerbaiyán">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="az" name="score-az" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-az">—</span></div>
+        </div>
+
+        <!-- ── BELGIUM ── -->
+        <div class="vote-row" data-country="be" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇧🇪</span>
+            <div class="country-meta"><span class="country-name">Bélgica</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Bélgica">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="be" name="score-be" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-be">—</span></div>
+        </div>
+
+        <!-- ── CROATIA ── -->
+        <div class="vote-row" data-country="hr" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇭🇷</span>
+            <div class="country-meta"><span class="country-name">Croacia</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Croacia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="hr" name="score-hr" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-hr">—</span></div>
+        </div>
+
+        <!-- ── CYPRUS ── -->
+        <div class="vote-row" data-country="cy" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇨🇾</span>
+            <div class="country-meta"><span class="country-name">Chipre</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Chipre">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="cy" name="score-cy" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-cy">—</span></div>
+        </div>
+
+        <!-- ── CZECH REPUBLIC ── -->
+        <div class="vote-row" data-country="cz" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇨🇿</span>
+            <div class="country-meta"><span class="country-name">República Checa</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para República Checa">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="cz" name="score-cz" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-cz">—</span></div>
+        </div>
+
+        <!-- ── DENMARK ── -->
+        <div class="vote-row" data-country="dk" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇩🇰</span>
+            <div class="country-meta"><span class="country-name">Dinamarca</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Dinamarca">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="dk" name="score-dk" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-dk">—</span></div>
+        </div>
+
+        <!-- ── FINLAND ── -->
+        <div class="vote-row" data-country="fi" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇫🇮</span>
+            <div class="country-meta"><span class="country-name">Finlandia</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Finlandia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="fi" name="score-fi" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-fi">—</span></div>
+        </div>
+
+        <!-- ── FRANCE (Big 5) ── -->
+        <div class="vote-row" data-country="fr" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇫🇷</span>
+            <div class="country-meta"><span class="country-name">Francia</span><span class="country-badge badge--big5">Big 5</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Francia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="fr" name="score-fr" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-fr">—</span></div>
+        </div>
+
+        <!-- ── GERMANY (Big 5) ── -->
+        <div class="vote-row" data-country="de" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇩🇪</span>
+            <div class="country-meta"><span class="country-name">Alemania</span><span class="country-badge badge--big5">Big 5</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Alemania">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="de" name="score-de" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-de">—</span></div>
+        </div>
+
+        <!-- ── GREECE ── -->
+        <div class="vote-row" data-country="gr" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇬🇷</span>
+            <div class="country-meta"><span class="country-name">Grecia</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Grecia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="gr" name="score-gr" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-gr">—</span></div>
+        </div>
+
+        <!-- ── IRELAND ── -->
+        <div class="vote-row" data-country="ie" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇮🇪</span>
+            <div class="country-meta"><span class="country-name">Irlanda</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Irlanda">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="ie" name="score-ie" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-ie">—</span></div>
+        </div>
+
+        <!-- ── ISRAEL ── -->
+        <div class="vote-row" data-country="il" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇮🇱</span>
+            <div class="country-meta"><span class="country-name">Israel</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Israel">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="il" name="score-il" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-il">—</span></div>
+        </div>
+
+        <!-- ── ITALY (Big 5) ── -->
+        <div class="vote-row" data-country="it" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇮🇹</span>
+            <div class="country-meta"><span class="country-name">Italia</span><span class="country-badge badge--big5">Big 5</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Italia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="it" name="score-it" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-it">—</span></div>
+        </div>
+
+        <!-- ── LATVIA ── -->
+        <div class="vote-row" data-country="lv" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇱🇻</span>
+            <div class="country-meta"><span class="country-name">Letonia</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Letonia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="lv" name="score-lv" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-lv">—</span></div>
+        </div>
+
+        <!-- ── LUXEMBOURG ── -->
+        <div class="vote-row" data-country="lu" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇱🇺</span>
+            <div class="country-meta"><span class="country-name">Luxemburgo</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Luxemburgo">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="lu" name="score-lu" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-lu">—</span></div>
+        </div>
+
+        <!-- ── NORWAY ── -->
+        <div class="vote-row" data-country="no" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇳🇴</span>
+            <div class="country-meta"><span class="country-name">Noruega</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Noruega">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="no" name="score-no" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-no">—</span></div>
+        </div>
+
+        <!-- ── POLAND ── -->
+        <div class="vote-row" data-country="pl" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇵🇱</span>
+            <div class="country-meta"><span class="country-name">Polonia</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Polonia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="pl" name="score-pl" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-pl">—</span></div>
+        </div>
+
+        <!-- ── PORTUGAL ── -->
+        <div class="vote-row" data-country="pt" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇵🇹</span>
+            <div class="country-meta"><span class="country-name">Portugal</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Portugal">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="pt" name="score-pt" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-pt">—</span></div>
+        </div>
+
+        <!-- ── SERBIA ── -->
+        <div class="vote-row" data-country="rs" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇷🇸</span>
+            <div class="country-meta"><span class="country-name">Serbia</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Serbia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="rs" name="score-rs" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-rs">—</span></div>
+        </div>
+
+        <!-- ── SPAIN (Big 5) ── -->
+        <div class="vote-row" data-country="es" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇪🇸</span>
+            <div class="country-meta"><span class="country-name">España</span><span class="country-badge badge--big5">Big 5</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para España">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="es" name="score-es" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-es">—</span></div>
+        </div>
+
+        <!-- ── SWEDEN ── -->
+        <div class="vote-row" data-country="se" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇸🇪</span>
+            <div class="country-meta"><span class="country-name">Suecia</span><span class="country-badge badge--fav">Fan Fav</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Suecia">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="se" name="score-se" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-se">—</span></div>
+        </div>
+
+        <!-- ── SWITZERLAND (Host) ── -->
+        <div class="vote-row" data-country="ch" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇨🇭</span>
+            <div class="country-meta"><span class="country-name">Suiza</span><span class="country-badge badge--host">Sede 2026</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Suiza">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="ch" name="score-ch" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-ch">—</span></div>
+        </div>
+
+        <!-- ── UKRAINE ── -->
+        <div class="vote-row" data-country="ua" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇺🇦</span>
+            <div class="country-meta"><span class="country-name">Ucrania</span><span class="country-badge badge--fav">Fan Fav</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Ucrania">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="ua" name="score-ua" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-ua">—</span></div>
+        </div>
+
+        <!-- ── UNITED KINGDOM (Big 5) ── -->
+        <div class="vote-row" data-country="gb" role="row">
+          <div class="country-info">
+            <span class="country-flag" aria-hidden="true">🇬🇧</span>
+            <div class="country-meta"><span class="country-name">Reino Unido</span><span class="country-badge badge--big5">Big 5</span></div>
+          </div>
+          <div class="score-pills" aria-label="Puntos para Reino Unido">
+            <button class="score-pill" data-score="1"  type="button">1</button>
+            <button class="score-pill" data-score="2"  type="button">2</button>
+            <button class="score-pill" data-score="3"  type="button">3</button>
+            <button class="score-pill" data-score="4"  type="button">4</button>
+            <button class="score-pill" data-score="5"  type="button">5</button>
+            <button class="score-pill" data-score="6"  type="button">6</button>
+            <button class="score-pill" data-score="7"  type="button">7</button>
+            <button class="score-pill" data-score="8"  type="button">8</button>
+            <button class="score-pill" data-score="10" type="button">10</button>
+            <button class="score-pill" data-score="12" type="button">12</button>
+          </div>
+          <input type="number" class="score-input" data-country="gb" name="score-gb" value="0" tabindex="-1" aria-hidden="true" />
+          <div><span class="score-display" id="disp-gb">—</span></div>
+        </div>
+
+      </div><!-- /scorecard -->
+
+      <!-- ── STICKY TOTAL BAR ── -->
+      <div class="vote-total-bar" role="status" aria-live="polite" aria-atomic="true">
+        <div class="container">
+          <div class="vote-total-bar__inner">
+            <div class="total-block">
+              <div>
+                <div class="total-block__label">Puntos Totales</div>
+                <div class="total-block__value" id="total-score">0</div>
+              </div>
+              <div class="total-block__pts">pts</div>
+              <div class="scored-count">
+                <strong id="scored-count">0</strong> / 26 puntuados
+              </div>
+            </div>
+            <div class="vote-cta">
+              <button
+                type="button"
+                class="btn btn--primary btn--xl"
+                id="calc-top-btn"
+                onclick="calculateMyTop()"
+                aria-label="Calcular y mostrar tu clasificación personal"
+              >
+                🏆 Calcular Mi Top
+              </button>
+              <button
+                type="button"
+                class="btn btn--secondary btn--xl"
+                data-modal-open="share-modal"
+                aria-label="Compartir tu resultado"
+              >
+                🔗 Compartir Resultado
+              </button>
+              <button
+                type="button"
+                class="btn btn--yellow"
+                onclick="resetAllScores()"
+                aria-label="Reiniciar todas las puntuaciones"
+                title="Reiniciar todas las puntuaciones"
+              >
+                ↺ Reiniciar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RESULTS PANEL ── -->
+      <div class="results-panel" id="results-panel" aria-live="polite" aria-label="Tus mejores resultados">
+        <div class="card card--brutal" style="padding:var(--space-2xl);">
+          <div class="text-center">
+            <span class="section-label" style="justify-content:center;" aria-hidden="true">— Tu Clasificación —</span>
+            <h2 style="margin-bottom:var(--space-sm);">
+              Tu <span class="neon-yellow">Top Personal</span>
+            </h2>
+            <p style="font-family:var(--font-mono);font-size:0.72rem;color:#555;max-width:40ch;margin-inline:auto;">
+              Ordenado por tus puntos. Solo se muestran los países puntuados.
+            </p>
+          </div>
+          <div class="podium-grid" id="results-podium" aria-label="Países clasificados"></div>
+          <div class="text-center" style="margin-top:var(--space-2xl);">
+            <button type="button" class="btn btn--primary btn--xl" data-modal-open="share-modal">
+              🔗 Compartir Tu Top
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ══════════════════════════════════════
+     SHARE MODAL
+══════════════════════════════════════ -->
+<div
+  class="modal-overlay"
+  id="share-modal"
+  data-modal="share-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="share-modal-title"
+>
+  <div class="modal">
+    <button
+      class="modal__close"
+      data-modal-close="share-modal"
+      aria-label="Cerrar diálogo de compartir"
+    >✕</button>
+
+    <div class="modal__icon" aria-hidden="true">🔗</div>
+    <div class="modal__title" id="share-modal-title">COMPARTE TU <br>MARCADOR</div>
+    <p class="modal__sub">
+      Muéstrale al mundo tu gusto en Eurovisión.<br>
+      Tu Top 3 se incluirá en el texto.
+    </p>
+
+    <div class="share-grid">
+      <a
+        class="share-btn"
+        id="share-twitter"
+        href="https://twitter.com/intent/tweet?text=Mi+Top+3+de+Eurovisi%C3%B3n+2026%21+Crea+tu+marcador+en+https%3A%2F%2Fyourname.github.io%2Fes%2Fvote.html+%23Eurovision2026+%23ESC2026+%23Basel2026"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en X / Twitter"
+      >
+        <span class="share-btn__icon" aria-hidden="true">𝕏</span>
+        <span>Twitter / X</span>
+      </a>
+      <a
+        class="share-btn"
+        href="https://www.reddit.com/r/eurovision/submit?title=Mi+Marcador+de+Eurovi%C3%B3n+2026+%F0%9F%8E%84&url=https%3A%2F%2Fyourname.github.io%2Fes%2Fvote.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en Reddit"
+      >
+        <span class="share-btn__icon" aria-hidden="true">🤖</span>
+        <span>Reddit</span>
+      </a>
+      <button
+        type="button"
+        class="share-btn"
+        data-copy="https://yourname.github.io/es/vote.html"
+        aria-label="Copiar enlace al portapapeles"
+      >
+        <span class="share-btn__icon" aria-hidden="true">🔗</span>
+        <span>Copiar Enlace</span>
+      </button>
+      <button
+        type="button"
+        class="share-btn"
+        data-share
+        aria-label="Abrir diálogo de compartir nativo"
+      >
+        <span class="share-btn__icon" aria-hidden="true">📤</span>
+        <span>Compartir</span>
+      </button>
+    </div>
+
+    <div class="modal__result-preview" id="modal-preview" aria-live="polite">
+      <strong>Tu Top 3</strong> aparecerá aquí después de hacer clic en
+      <em>"Calcular Mi Top"</em> 🏆
+    </div>
+  </div>
+</div>
+
+
+<footer role="contentinfo">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools brand">★ ESCTOOLS</div>
+      <div class="footer__tagline">
+        Tu kit de herramientas definitivo para fans de Eurovisión 2026 ·
+        Proyecto de fans, no afiliado con la UER ni el Festival de la Canción de Eurovisión.
+      </div>
+      <nav aria-label="Navegación del pie de página" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./vote.html">Votar</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Pronóstico</a></li>
+          <li><a href="./history.html">Historia</a></li>
+          <li><a href="./guide.html">Guía de Tienda</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <p class="section-label" aria-hidden="true">Conectar y Compartir</p>
+      <div class="flex flex-wrap gap-sm" style="margin-top: var(--space-md);" role="list" aria-label="Enlaces a redes sociales">
+        <a class="social-link" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20free%20%23Eurovision2026%20toolkit!&url=https%3A%2F%2Fyourname.github.io" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Compartir en X / Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a class="social-link" href="https://www.reddit.com/r/eurovision" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Visitar r/Eurovision en Reddit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a class="social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Seguir en Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a class="social-link" href="https://tiktok.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Seguir en TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Hecho con <span aria-label="amor">♥</span> por fans de Eurovisión, para fans de Eurovisión
+    &nbsp;·&nbsp;
+    No afiliado con la UER ni el Festival de la Canción de Eurovisión
+    &nbsp;·&nbsp;
+    <a href="mailto:aiinformatorbot@gmail.com" style="color: inherit; text-decoration: underline;" aria-label="Enviar un correo a Eurovision Tools">aiinformatorbot@gmail.com</a>
+  </p>
+</footer>
+
+<script>
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+
+<script src="../assets/js/script.js" defer></script>
+
+<script>
+  document.addEventListener('click', function (e) {
+    const pill = e.target.closest('.score-pill');
+    if (!pill) return;
+    const row = pill.closest('.vote-row');
+    if (!row) return;
+    const countryId = row.dataset.country;
+    const val = parseInt(pill.dataset.score, 10);
+    const disp = document.getElementById('disp-' + countryId);
+    if (disp) {
+      disp.textContent = val;
+      disp.className = val >= 10 ? 'score-display has-score has-score--gold' : 'score-display has-score';
+    }
+    row.classList.add('scored');
+    const input = row.querySelector('.score-input');
+    if (input) {
+      input.value = val;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+    updateScoredCount();
+  });
+
+  function updateScoredCount() {
+    const scored = document.querySelectorAll('.vote-row.scored').length;
+    const el = document.getElementById('scored-count');
+    if (el) el.textContent = scored;
+  }
+
+  function calculateMyTop() {
+    if (window.EurovisionApp) {
+      EurovisionApp.ScoreCalc.recalculate();
+    }
+    const rows = document.querySelectorAll('.vote-row.scored');
+    const scored = [];
+    rows.forEach(function (row) {
+      const input = row.querySelector('.score-input');
+      const val = parseInt(input?.value, 10);
+      if (isNaN(val) || val <= 0) return;
+      const flag = row.querySelector('.country-flag')?.textContent?.trim() || '';
+      const name = row.querySelector('.country-name')?.textContent?.trim() || '';
+      scored.push({ flag, name, pts: val });
+    });
+
+    if (scored.length === 0) {
+      if (window.EurovisionApp) {
+        EurovisionApp.Toast.show('¡Puntúa al menos un país primero!', {
+          type: 'warning', title: 'Aún nada que clasificar'
+        });
+      }
+      return;
+    }
+
+    scored.sort(function (a, b) { return b.pts - a.pts; });
+    const medals = ['🥇', '🥈', '🥉'];
+
+    const podium = document.getElementById('results-podium');
+    podium.innerHTML = scored.map(function (c, i) {
+      return [
+        '<div class="podium-card" style="--i:' + i + '">',
+        '  <div class="podium-card__medal">' + (medals[i] || '#' + (i + 1)) + '</div>',
+        '  <div class="podium-card__flag">'  + c.flag + '</div>',
+        '  <div class="podium-card__name">'  + c.name + '</div>',
+        '  <div class="podium-card__pts">'   + c.pts + ' pts</div>',
+        '</div>',
+      ].join('');
+    }).join('');
+
+    const panel = document.getElementById('results-panel');
+    panel.classList.add('visible');
+    setTimeout(function () {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+
+    const preview = document.getElementById('modal-preview');
+    if (preview) {
+      preview.innerHTML = '<strong>Tu Top ' + Math.min(3, scored.length) + '</strong><br>'
+        + scored.slice(0, 3).map(function (c, i) {
+          return medals[i] + ' <strong style="color:var(--clr-yellow)">' + c.flag + ' ' + c.name + '</strong> — '
+            + '<span style="color:var(--clr-pink)">' + c.pts + ' pts</span>';
+        }).join('<br>');
+    }
+
+    const twitterBtn = document.getElementById('share-twitter');
+    if (twitterBtn && scored[0]) {
+      const top = scored[0];
+      const tweet = encodeURIComponent(
+        'Mi #Eurovision2026 n.º1: ' + top.flag + ' ' + top.name + ' (' + top.pts + ' pts)! '
+        + 'Crea el tuyo en https://yourname.github.io/es/vote.html '
+        + '#ESC2026 #Basel2026'
+      );
+      twitterBtn.href = 'https://twitter.com/intent/tweet?text=' + tweet;
+    }
+
+    if (window.EurovisionApp) {
+      EurovisionApp.Toast.show(
+        scored[0].flag + ' ' + scored[0].name + ' lidera tu marcador con ' + scored[0].pts + ' pts! 🌟',
+        { type: 'success', title: '🏆 ¡Top Calculado!' }
+      );
+      EurovisionApp.Confetti.burst();
+    }
+  }
+
+  function resetAllScores() {
+    document.querySelectorAll('.vote-row').forEach(function (row) {
+      row.classList.remove('scored');
+      row.querySelectorAll('.score-pill').forEach(function (p) {
+        p.classList.remove('selected');
+      });
+      const input = row.querySelector('.score-input');
+      if (input) { input.value = 0; input.dispatchEvent(new Event('input', { bubbles: true })); }
+      const countryId = row.dataset.country;
+      const disp = document.getElementById('disp-' + countryId);
+      if (disp) { disp.textContent = '—'; disp.className = 'score-display'; }
+    });
+    updateScoredCount();
+    document.getElementById('results-panel').classList.remove('visible');
+    document.getElementById('modal-preview').innerHTML =
+      '<strong>Tu Top 3</strong> aparecerá aquí después de hacer clic en <em>"Calcular Mi Top"</em> 🏆';
+    if (window.EurovisionApp) {
+      EurovisionApp.Toast.show('¡Marcador reiniciado!', { type: 'info' });
+    }
+  }
+</script>
+
+</body>
+</html>

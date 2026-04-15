@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Guía de Tienda — Eurovision Tools 2026</title>
+
+  <meta name="description" content="Descargas digitales exclusivas para fans de Eurovisión 2026. Packs de fiesta, juegos de bebida y pronósticos matemáticos en profundidad." />
+  <meta name="keywords" content="tienda Eurovisión 2026, descargas digitales ESC, pack de fiesta Eurovisión, stickers ESC" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourname.github.io/es/guide.html" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* Guide specific layout tweaks */
+    .hero--shop {
+      min-height: 40vh;
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-xl);
+    }
+    
+    .product-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-md) 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .product-list li {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #aaa;
+      position: relative;
+      padding-left: 1.2rem;
+      line-height: 1.4;
+    }
+    
+    .product-list li::before {
+      content: '⚡';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.7rem;
+    }
+    
+    .price-tag {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: #fff;
+      display: block;
+      margin-top: auto;
+      padding-top: var(--space-md);
+    }
+  </style>
+</head>
+
+<body>
+
+<header role="banner">
+  <div class="header__inner">
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Ir al inicio">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./vote.html">Votar</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Pronóstico</a></li>
+        <li><a href="./history.html">Historia</a></li>
+        <li><a href="./guide.html" aria-current="page" class="active">Tienda</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <div class="lang-switcher" role="group" aria-label="Seleccionar idioma">
+        <button data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+        <button data-lang="es" class="active" aria-label="Cambiar a Español" aria-pressed="true">ES</button>
+        <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
+      </div>
+      <button class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Inicio</a></li>
+    <li><a href="./vote.html">Votar</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Pronóstico</a></li>
+    <li><a href="./history.html">Historia</a></li>
+    <li><a href="./guide.html" aria-current="page">Tienda</a></li>
+  </ul>
+  <div class="lang-switcher" role="group" aria-label="Seleccionar idioma" style="margin-top:var(--space-xl);">
+    <button data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+    <button data-lang="es" class="active" aria-label="Cambiar a Español" aria-pressed="true">ES</button>
+    <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
+  </div>
+</nav>
+
+
+<main id="main-content">
+
+  <section class="hero hero--shop" aria-labelledby="shop-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="particles" aria-hidden="true"></div>
+    
+    <div class="hero__content text-center">
+      <span class="hero__subtitle">★ DESCARGAS DIGITALES EXCLUSIVAS ★</span>
+      <h1 id="shop-heading" class="display-title neon-purple">
+        GUÍA DE TIENDA
+      </h1>
+      <p class="mt-md" style="max-width: 50ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.95rem;">
+        Todo lo que necesitas para la Gran Final perfecta. Entrega digital instantánea directamente a tu dispositivo. Lleva tu experiencia ESC al siguiente nivel.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <section class="section pt-0" aria-labelledby="products-heading">
+    <div class="container">
+      
+      <div class="tools-grid stagger" role="list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+        <div class="tool-card tool-card--pink anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🖨️ Pack de Fiesta Definitivo:<br><span class="neon-pink">¡Imprime y Celebra!</span></h3>
+          <ul class="product-list">
+            <li>Descargas PDF instantáneas de alta calidad.</li>
+            <li>Ahorra más de 10 horas de diseño — ¡nosotros ya lo hemos hecho!</li>
+            <li>Marcadores, guirnaldas de banderas e invitaciones VIP.</li>
+            <li>Perfecto para cualquier grupo, de 2 a 20+ fans.</li>
+          </ul>
+          <span class="price-tag">$9.99</span>
+          <button class="btn btn--primary btn--full mt-md">Descargar y Empezar la Fiesta</button>
+        </div>
+
+        <div class="tool-card tool-card--yellow anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🍻 ESC 2026<br><span class="neon-yellow">Juego de Bebida (18+)</span></h3>
+          <ul class="product-list">
+            <li>Haz que la final sea inolvidable (o un poco borrosa).</li>
+            <li>Memes exclusivos, tópicos y chistes de este año.</li>
+            <li>Modos Hardcore y Lite para todos los niveles.</li>
+            <li>Compatible con cualquier bebida (¡incluso el té!).</li>
+          </ul>
+          <span class="price-tag">$4.99</span>
+          <button class="btn btn--yellow btn--full mt-md">Obtener las Reglas</button>
+        </div>
+
+        <div class="tool-card tool-card--cyan anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">📈 Pronóstico Bayesiano:<br><span class="neon-cyan">Descifra el ESC</span></h3>
+          <ul class="product-list">
+            <li>Predice al ganador antes de que empiecen los jurados.</li>
+            <li>Analítica profunda: Teorema de Bayes y gráficos gaussianos.</li>
+            <li>Desglose de probabilidades de nivel profesional.</li>
+            <li>15 páginas de infografías elegantes para ganar debates.</li>
+          </ul>
+          <span class="price-tag">$14.99</span>
+          <button class="btn btn--secondary btn--full mt-md" style="color: var(--clr-cyan); border-color: var(--clr-cyan); box-shadow: 4px 4px 0px var(--clr-cyan);">Obtener el Análisis</button>
+        </div>
+
+        <div class="tool-card tool-card--purple anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">📱 Stickers VIP ESC:<br><span class="neon-purple">Rompe el Chat</span></h3>
+          <ul class="product-list">
+            <li>Destácate en el grupo durante el directo.</li>
+            <li>Diseños vectoriales únicos de estrellas y momentos cringe.</li>
+            <li>Importación con un clic para Telegram y WhatsApp.</li>
+            <li>Expresa emociones cuando las palabras fallan (¡0 puntos!).</li>
+          </ul>
+          <span class="price-tag">$2.99</span>
+          <button class="btn btn--primary btn--full mt-md" style="background: var(--clr-purple); box-shadow: 4px 4px 0px #5c007a, var(--glow-purple);">Instalar Stickers</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer role="contentinfo">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools brand">★ ESCTOOLS</div>
+      <div class="footer__tagline">
+        Tu kit de herramientas definitivo para fans de Eurovisión 2026 ·
+        Proyecto de fans, no afiliado con la UER ni el Festival de la Canción de Eurovisión.
+      </div>
+      <nav aria-label="Navegación del pie de página" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./vote.html">Votar</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Pronóstico</a></li>
+          <li><a href="./history.html">Historia</a></li>
+          <li><a href="./guide.html">Guía de Tienda</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <p class="section-label" aria-hidden="true">Conectar y Compartir</p>
+      <div class="flex flex-wrap gap-sm" style="margin-top: var(--space-md);" role="list" aria-label="Enlaces a redes sociales">
+        <a class="social-link" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20free%20%23Eurovision2026%20toolkit!&url=https%3A%2F%2Fyourname.github.io" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Compartir en X / Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a class="social-link" href="https://www.reddit.com/r/eurovision" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Visitar r/Eurovision en Reddit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a class="social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Seguir en Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a class="social-link" href="https://tiktok.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Seguir en TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Hecho con <span aria-label="amor">♥</span> por fans de Eurovisión, para fans de Eurovisión
+    &nbsp;·&nbsp;
+    No afiliado con la UER ni el Festival de la Canción de Eurovisión
+    &nbsp;·&nbsp;
+    <a href="mailto:aiinformatorbot@gmail.com" style="color: inherit; text-decoration: underline;" aria-label="Enviar un correo a Eurovision Tools">aiinformatorbot@gmail.com</a>
+  </p>
+</footer>
+
+<script src="../assets/js/script.js" defer></script>
+
+<script>
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+
+</body>
+</html>
