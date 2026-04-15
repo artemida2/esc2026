@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Historia de Eurovisión 1956–2026 — Cronología Interactiva de Ganadores</title>
+
+  <!-- SEO -->
+  <meta name="description" content="70+ años de ganadores de Eurovisión, cero puntos, momentos icónicos y victorias épicas. Cronología interactiva para auténticos fans del ESC." />
+  <meta name="keywords" content="historia Eurovisión, ganadores ESC cronología, Eurovisión 1956-2026, cero puntos, Eurovisión Viena 2026" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- CANONICAL + HREFLANG -->
+  <link rel="canonical" href="https://eurovisiontoolkit.com/es/history.html" />
+  <link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/history.html" />
+  <link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/history.html" />
+  <link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/history.html" />
+  <link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/history.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eurovisiontoolkit.com/es/history.html" />
+  <meta property="og:title" content="Historia de Eurovisión 1956–2026 — Cronología Interactiva" />
+  <meta property="og:description" content="70 años de ganadores, cero puntos y momentos legendarios." />
+  <meta property="og:image" content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cronología Historia ESC" />
+  <meta name="twitter:description" content="De 1956 a 2026 — todos los ganadores de Eurovisión." />
+
+  <!-- Emoji Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cronología Historia de Eurovisión",
+    "url": "https://eurovisiontoolkit.com/es/history.html"
+  }
+  </script>
+  <style>
+    /* ══════════════════════════════════════
+       HISTORY PAGE — Page-specific styles
+    ══════════════════════════════════════ */
+
+    /* Social link (reused from index) */
+    .social-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-mono); font-size: .8rem; color: #888;
+      padding: 6px 12px; border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm); transition: all var(--t-fast);
+    }
+    .social-link:hover {
+      color: var(--clr-yellow); border-color: var(--clr-yellow);
+      box-shadow: var(--glow-yellow); background: rgba(255,230,0,.05);
+    }
+
+    /* ── Hero ── */
+    .hero--history {
+      min-height: 48vh;
+      padding-top: calc(var(--header-height) + var(--space-3xl));
+      padding-bottom: var(--space-2xl);
+    }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-mono); font-size: .7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .15em; color: #000;
+      background: var(--clr-purple); padding: 4px 12px;
+      border-radius: 3px; box-shadow: var(--glow-purple);
+      margin-bottom: var(--space-lg);
+    }
+    .live-badge__dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #000; animation: pulse-beat 1.2s ease-in-out infinite;
+    }
+
+    /* ── Decade tabs ── */
+    .decade-tabs {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      margin-bottom: var(--space-xl);
+      padding: var(--space-md);
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--neo-shadow);
+    }
+    .decade-tab {
+      font-family: var(--font-display); font-size: 1rem;
+      letter-spacing: .05em; padding: 8px 18px;
+      border: 2px solid var(--clr-border);
+      background: var(--clr-surface-2); color: #666;
+      border-radius: var(--radius-sm); cursor: pointer;
+      transition: all var(--t-fast);
+    }
+    .decade-tab:hover { border-color: var(--clr-purple); color: var(--clr-purple); }
+    .decade-tab.active {
+      background: var(--clr-purple); color: #fff; border-color: var(--clr-purple);
+      box-shadow: var(--glow-purple); text-shadow: 0 0 8px rgba(191,0,255,.6);
+    }
+
+    .decade-panel { display: none; }
+    .decade-panel.active { display: block; animation: panel-in .4s var(--t-mid) both; }
+    @keyframes panel-in { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── Timeline entry ── */
+    .timeline { display: flex; flex-direction: column; gap: var(--space-lg); }
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .timeline-year {
+      font-family: var(--font-display); font-size: 1.6rem;
+      color: var(--clr-yellow); text-shadow: var(--glow-yellow);
+      text-align: right; padding-top: 4px; line-height: 1;
+      position: relative;
+    }
+    .timeline-year::after {
+      content: '';
+      position: absolute; right: -22px; top: 10px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--clr-yellow); box-shadow: var(--glow-yellow);
+    }
+    .timeline-body {
+      border-left: 2px solid var(--clr-border);
+      padding-left: var(--space-xl);
+      padding-bottom: var(--space-md);
+    }
+    .timeline-entry:last-child .timeline-body { border-color: transparent; }
+    .timeline-title {
+      font-family: var(--font-display); font-size: 1.2rem;
+      letter-spacing: .05em; color: #fff; margin-bottom: 6px;
+    }
+    .timeline-meta {
+      font-family: var(--font-mono); font-size: .72rem; color: #666;
+      margin-bottom: 8px; text-transform: uppercase; letter-spacing: .08em;
+    }
+    .timeline-desc {
+      font-family: var(--font-mono); font-size: .8rem; color: #999; line-height: 1.7;
+    }
+    .timeline-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .tag {
+      font-family: var(--font-mono); font-size: .62rem; padding: 2px 8px;
+      border-radius: 3px; text-transform: uppercase; letter-spacing: .08em;
+    }
+    .tag--pink   { background: rgba(255,45,120,.15); color: var(--clr-pink); border: 1px solid rgba(255,45,120,.3); }
+    .tag--yellow { background: rgba(255,230,0,.1);  color: var(--clr-yellow); border: 1px solid rgba(255,230,0,.25); }
+    .tag--cyan   { background: rgba(0,245,255,.1);  color: var(--clr-cyan);  border: 1px solid rgba(0,245,255,.25); }
+    .tag--purple { background: rgba(191,0,255,.12); color: var(--clr-purple);border: 1px solid rgba(191,0,255,.3); }
+    .tag--green  { background: rgba(0,255,136,.1);  color: var(--clr-green); border: 1px solid rgba(0,255,136,.25); }
+
+    /* ── History cards (original style, kept) ── */
+    .history-list { list-style: none; padding: 0; margin: var(--space-md) 0 0; display: flex; flex-direction: column; gap: .5rem; }
+    .history-list li {
+      font-family: var(--font-mono); font-size: .82rem; color: #aaa;
+      position: relative; padding-left: 1.2rem; line-height: 1.5;
+    }
+    .history-list li::before { content: '✦'; position: absolute; left: 0; top: 1px; font-size: .65rem; }
+    .year-tag { font-family: var(--font-display); font-size: 2rem; color: #fff; display: block; margin-top: auto; padding-top: var(--space-md); }
+
+    /* ── Records leaderboard ── */
+    .leaderboard { display: flex; flex-direction: column; gap: 10px; }
+    .leaderboard-row {
+      display: flex; align-items: center; gap: var(--space-md);
+      background: var(--clr-surface-2); border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm); padding: 12px var(--space-md);
+      transition: border-color var(--t-fast), transform var(--t-fast);
+    }
+    .leaderboard-row:hover { border-color: var(--clr-yellow); transform: translateX(4px); }
+    .leaderboard-rank {
+      font-family: var(--font-display); font-size: 1.8rem; min-width: 2.5ch;
+      text-align: center; line-height: 1;
+    }
+    .leaderboard-row:nth-child(1) .leaderboard-rank { color: var(--clr-yellow); text-shadow: var(--glow-yellow); }
+    .leaderboard-row:nth-child(2) .leaderboard-rank { color: #ccc; text-shadow: 0 0 10px #ccc6; }
+    .leaderboard-row:nth-child(3) .leaderboard-rank { color: #cd7f32; }
+    .leaderboard-row:nth-child(n+4) .leaderboard-rank { color: #555; }
+    .leaderboard-flag { font-size: 1.6rem; }
+    .leaderboard-info { flex: 1; }
+    .leaderboard-country { font-family: var(--font-display); font-size: 1.05rem; color: #fff; letter-spacing: .04em; }
+    .leaderboard-detail { font-family: var(--font-mono); font-size: .68rem; color: #555; margin-top: 2px; }
+    .leaderboard-wins {
+      font-family: var(--font-display); font-size: 1.4rem;
+      color: var(--clr-pink); text-shadow: var(--glow-pink);
+    }
+
+    /* ── Trivia cards ── */
+    .trivia-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--space-lg);
+    }
+    .trivia-card {
+      background: var(--clr-surface); border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md); padding: var(--space-lg);
+      box-shadow: var(--neo-shadow);
+      display: flex; flex-direction: column; gap: var(--space-sm);
+      transition: transform var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast);
+      cursor: default;
+    }
+    .trivia-card:hover { transform: translateY(-4px); box-shadow: var(--neo-shadow-hover); }
+    .trivia-card--pink:hover   { border-color: var(--clr-pink);   box-shadow: var(--neo-shadow-hover), var(--glow-pink); }
+    .trivia-card--yellow:hover { border-color: var(--clr-yellow); box-shadow: var(--neo-shadow-hover), var(--glow-yellow); }
+    .trivia-card--cyan:hover   { border-color: var(--clr-cyan);   box-shadow: var(--neo-shadow-hover), var(--glow-cyan); }
+    .trivia-card--purple:hover { border-color: var(--clr-purple); box-shadow: var(--neo-shadow-hover), var(--glow-purple); }
+    .trivia-card--green:hover  { border-color: var(--clr-green);  box-shadow: var(--neo-shadow-hover), var(--glow-green); }
+    .trivia-emoji { font-size: 2rem; line-height: 1; }
+    .trivia-q {
+      font-family: var(--font-display); font-size: 1rem; letter-spacing: .04em;
+      color: #ddd; line-height: 1.2;
+    }
+    .trivia-a {
+      font-family: var(--font-mono); font-size: .75rem; color: #666;
+      line-height: 1.6;
+    }
+    .trivia-reveal {
+      font-family: var(--font-mono); font-size: .65rem; color: var(--clr-pink);
+      cursor: pointer; border: none; background: none; padding: 0;
+      text-transform: uppercase; letter-spacing: .1em; text-decoration: underline;
+      transition: color var(--t-fast);
+    }
+    .trivia-reveal:hover { color: var(--clr-yellow); }
+    .trivia-answer { display: none; }
+    .trivia-answer.revealed { display: block; animation: panel-in .3s var(--t-mid) both; }
+
+    /* ── Vienna 2026 banner (corrected from Basel) ── */
+    .vienna-banner {
+      background: var(--clr-surface);
+      border: 2px solid var(--clr-pink);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl) var(--space-xl);
+      box-shadow: var(--glow-pink), var(--neo-shadow);
+      position: relative; overflow: hidden;
+    }
+    .vienna-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(255,45,120,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .vienna-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+    @media (max-width: 700px) { .vienna-grid { grid-template-columns: 1fr; } }
+    .vienna-schedule { display: flex; flex-direction: column; gap: 10px; }
+    .schedule-row {
+      display: flex; align-items: center; gap: var(--space-md);
+      padding: 10px var(--space-md);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono); font-size: .78rem;
+      transition: border-color var(--t-fast);
+    }
+    .schedule-row:hover { border-color: var(--clr-pink); }
+    .schedule-date { color: var(--clr-yellow); text-shadow: var(--glow-yellow); font-weight: 700; min-width: 8ch; }
+    .schedule-event { color: #bbb; flex: 1; }
+    .schedule-badge { padding: 2px 8px; border-radius: 3px; font-size: .62rem; text-transform: uppercase; letter-spacing: .08em; }
+    .schedule-badge--sf1 { background: rgba(0,245,255,.15); color: var(--clr-cyan); }
+    .schedule-badge--sf2 { background: rgba(0,255,136,.15); color: var(--clr-green); }
+    .schedule-badge--gf  { background: rgba(255,45,120,.2); color: var(--clr-pink); box-shadow: var(--glow-pink); }
+
+    /* ── Country map grid ── */
+    .winners-map {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-md);
+    }
+    .winner-country-card {
+      background: var(--clr-surface-2);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md);
+      display: flex; align-items: center; gap: var(--space-md);
+      transition: all var(--t-fast);
+    }
+    .winner-country-card:hover { border-color: var(--clr-yellow); transform: translateY(-2px); }
+    .wcc-flag { font-size: 1.8rem; }
+    .wcc-info { flex: 1; }
+    .wcc-name { font-family: var(--font-display); font-size: .95rem; letter-spacing: .04em; color: #ddd; }
+    .wcc-wins { font-family: var(--font-mono); font-size: .65rem; color: #666; }
+    .wcc-bar { height: 3px; border-radius: 2px; margin-top: 6px; background: linear-gradient(90deg, var(--clr-yellow), var(--clr-pink)); box-shadow: var(--glow-yellow); }
+
+    /* ── Stat counters ── */
+    .history-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-lg);
+    }
+    .hstat {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg) var(--space-md);
+      text-align: center;
+      box-shadow: var(--neo-shadow);
+      transition: transform var(--t-fast), border-color var(--t-fast);
+    }
+    .hstat:hover { transform: translateY(-3px); border-color: var(--clr-purple); }
+    .hstat__val {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      line-height: 1;
+    }
+    .hstat__lbl {
+      font-family: var(--font-mono); font-size: .68rem; color: #555;
+      text-transform: uppercase; letter-spacing: .1em; margin-top: 6px;
+    }
+
+    /* ── Milestone banner ── */
+    .milestone-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: .7rem; text-transform: uppercase;
+      letter-spacing: .12em; color: #000; font-weight: 700;
+      padding: 5px 14px; border-radius: 3px;
+      margin-bottom: var(--space-lg);
+    }
+    .milestone-pill--purple { background: var(--clr-purple); box-shadow: var(--glow-purple); }
+    .milestone-pill--yellow { background: var(--clr-yellow); box-shadow: var(--glow-yellow); }
+    .milestone-pill--pink   { background: var(--clr-pink);   box-shadow: var(--glow-pink);   }
+    .milestone-pill--cyan   { background: var(--clr-cyan);   box-shadow: var(--glow-cyan);   }
+    .milestone-pill--green  { background: var(--clr-green);  box-shadow: var(--glow-green);  }
+
+    /* ── Expandable accordion ── */
+    .accordion { display: flex; flex-direction: column; gap: 8px; }
+    .accordion-item {
+      background: var(--clr-surface); border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm); overflow: hidden;
+      transition: border-color var(--t-fast);
+    }
+    .accordion-item:hover { border-color: var(--clr-purple); }
+    .accordion-btn {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: var(--space-md) var(--space-lg);
+      background: none; border: none; cursor: pointer; text-align: left;
+      gap: var(--space-md);
+    }
+    .accordion-btn-text { font-family: var(--font-display); font-size: 1.05rem; letter-spacing: .04em; color: #ddd; }
+    .accordion-btn-year { font-family: var(--font-mono); font-size: .7rem; color: #555; }
+    .accordion-chevron {
+      color: #555; transition: transform var(--t-fast); flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .accordion-item.open .accordion-chevron { transform: rotate(180deg); color: var(--clr-purple); }
+    .accordion-item.open .accordion-btn-text { color: var(--clr-purple); }
+    .accordion-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .45s cubic-bezier(.16,1,.3,1);
+    }
+    .accordion-item.open .accordion-body { max-height: 600px; }
+    .accordion-content {
+      padding: 0 var(--space-lg) var(--space-lg);
+      font-family: var(--font-mono); font-size: .8rem; color: #888; line-height: 1.8;
+      border-top: 1px solid var(--clr-border);
+    }
+    .accordion-content strong { color: var(--clr-yellow); font-weight: 400; }
+
+    @media (max-width: 600px) {
+      .timeline-entry { grid-template-columns: 70px 1fr; gap: var(--space-md); }
+      .decade-tab { font-size: .85rem; padding: 6px 12px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<header role="banner">
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a href="../index.html" class="header__logo" aria-label="Eurovision Tools — Ir a inicio">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Navegación principal">
+      <ul class="header__nav" role="list">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../vote.html">Votar</a></li>
+        <li><a href="../bingo.html">Bingo</a></li>
+        <li><a href="../forecast.html">Pronóstico</a></li>
+        <li><a href="../history.html" aria-current="page">Historia</a></li>
+        <li><a href="../guide.html">Tienda</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right side: lang switcher + hamburger -->
+    <div class="header__actions">
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" role="group" aria-label="Seleccionar idioma">
+        <button data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+        <button data-lang="es" class="active" aria-label="Cambiar a Español" aria-pressed="true">ES</button>
+        <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
+      </div>
+
+      <!-- Hamburger Button (mobile only) -->
+      <button
+        class="hamburger"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+  <ul role="list">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="../vote.html">Votar</a></li>
+    <li><a href="../bingo.html">Bingo</a></li>
+    <li><a href="../forecast.html">Pronóstico</a></li>
+    <li><a href="../history.html" aria-current="page">Historia</a></li>
+    <li><a href="../guide.html">Tienda</a></li>
+  </ul>
+  <!-- Language also accessible in mobile menu -->
+  <div class="lang-switcher" role="group" aria-label="Seleccionar idioma" style="margin-top:var(--space-xl);">
+    <button data-lang="en" aria-pressed="false">EN</button>
+    <button data-lang="es" class="active" aria-pressed="true">ES</button>
+    <button data-lang="de" aria-pressed="false">DE</button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MAIN CONTENT — history.html (versión ES)
+══════════════════════════════════════════════════════════ -->
+<main id="main-content">
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   HERO                         ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="hero hero--history" aria-labelledby="history-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="particles" aria-hidden="true"></div>
+
+    <div class="hero__content text-center">
+
+      <div class="live-badge" role="status">
+        <span class="live-badge__dot" aria-hidden="true"></span>
+        70 Años · 1956 → Viena 2026
+      </div>
+
+      <span class="hero__subtitle">★ El Archivo Definitivo del ESC ★</span>
+
+      <h1 id="history-heading" class="display-title glitch neon-purple"
+          data-text="HISTORIA DE EUROVISIÓN"
+          style="max-width: 18ch; margin-inline: auto;">
+        HISTORIA DE<br><span class="neon-pink">EUROVISIÓN</span>
+      </h1>
+
+      <p class="mt-md" style="max-width: 52ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: .9rem; line-height: 1.9;">
+        Desde siete países en un casino de Lugano hasta <span class="neon-cyan">200 millones de espectadores</span> en todo el mundo —
+        cada ganador, cada escándalo, cada momento icónico. Esta es la historia del mayor espectáculo musical del mundo.
+      </p>
+
+      <div class="hero__cta mt-2xl">
+        <a href="#timeline" class="btn btn--primary btn--xl">📜 Explorar Cronología</a>
+        <a href="#records"  class="btn btn--yellow btn--xl">🏆 Récords Históricos</a>
+        <a href="#vienna2026" class="btn btn--secondary btn--xl">🇦🇹 Viena 2026</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   QUICK STATS                  ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section--tight" aria-labelledby="stats-heading">
+    <div class="container">
+
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <span class="section-label" style="justify-content: center;" aria-hidden="true">— En números —</span>
+        <h2 id="stats-heading" class="neon-yellow">Eurovisión En Números</h2>
+      </div>
+
+      <div class="history-stats">
+        <div class="hstat">
+          <div class="hstat__val" data-count="70">70</div>
+          <div class="hstat__lbl">Ediciones celebradas</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat__val" data-count="52">52</div>
+          <div class="hstat__lbl">Países que han competido</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat__val">7</div>
+          <div class="hstat__lbl">Países con 5+ victorias</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat__val">758</div>
+          <div class="hstat__lbl">Puntuación máxima (récord 2023)</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat__val">200M+</div>
+          <div class="hstat__lbl">Espectadores pico mundiales</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat__val">2</div>
+          <div class="hstat__lbl">Artistas ganadores dos veces (Loreen, Logan)</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat__val">35</div>
+          <div class="hstat__lbl">Países en Viena 2026</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat__val">0</div>
+          <div class="hstat__lbl">"Cero puntos" → vergüenza eterna</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   INTERACTIVE DECADE TIMELINE  ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section" id="timeline" aria-labelledby="timeline-heading">
+    <div class="container">
+
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="milestone-pill milestone-pill--purple" aria-hidden="true">📜 Cronología Interactiva</span>
+        <h2 id="timeline-heading">Siete Décadas de<br><span class="neon-purple">Historia</span></h2>
+        <p class="mt-md" style="color: #666; font-family: var(--font-mono); font-size: .82rem;">
+          Haz clic en una década para explorar sus momentos clave, ganadores y controversias.
+        </p>
+      </div>
+
+      <!-- Decade selector tabs -->
+      <div class="decade-tabs" role="tablist" aria-label="Seleccionar década">
+        <button class="decade-tab active" role="tab" aria-selected="true"  aria-controls="dec-50s" data-decade="50s">50s</button>
+        <button class="decade-tab"        role="tab" aria-selected="false" aria-controls="dec-60s" data-decade="60s">60s</button>
+        <button class="decade-tab"        role="tab" aria-selected="false" aria-controls="dec-70s" data-decade="70s">70s</button>
+        <button class="decade-tab"        role="tab" aria-selected="false" aria-controls="dec-80s" data-decade="80s">80s</button>
+        <button class="decade-tab"        role="tab" aria-selected="false" aria-controls="dec-90s" data-decade="90s">90s</button>
+        <button class="decade-tab"        role="tab" aria-selected="false" aria-controls="dec-00s" data-decade="00s">00s</button>
+        <button class="decade-tab"        role="tab" aria-selected="false" aria-controls="dec-10s" data-decade="10s">10s</button>
+        <button class="decade-tab"        role="tab" aria-selected="false" aria-controls="dec-20s" data-decade="20s">20s+</button>
+      </div>
+
+      <!-- ▸ 1950s -->
+      <div class="decade-panel active" id="dec-50s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">1956</div>
+            <div class="timeline-body">
+              <div class="timeline-title">El Primer Concurso — Lugano, Suiza</div>
+              <div class="timeline-meta">🇨🇭 Ganadora: Lys Assia · "Refrain" · Suiza</div>
+              <div class="timeline-desc">Siete naciones se reunieron en un casino de Lugano para competir en el primer Festival de Eurovisión de la historia. Cada país interpretó dos canciones — una norma que nunca volvió. Ganó Suiza, donde se celebró el evento. Crítico: nadie ha visto nunca los resultados de votación de 1956. Se perdieron. Para siempre.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--yellow">Primera Edición</span>
+                <span class="tag tag--purple">7 Países</span>
+                <span class="tag tag--cyan">Votos Perdidos</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1957</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Países Bajos Gana la Primera Repetición</div>
+              <div class="timeline-meta">🇳🇱 Ganadora: Corry Brokken · "Net Als Toen" · Países Bajos</div>
+              <div class="timeline-desc">Fráncfort albergó la segunda edición. Diez países compitieron y triunfó Países Bajos. Se introdujo una norma: el país ganador debe organizar la siguiente edición — una tradición que se mantiene hasta hoy.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--green">10 Países</span>
+                <span class="tag tag--yellow">Nace la Norma de Anfitrión</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1959</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Teddy Bear Se Convierte en la Primera Superestrella</div>
+              <div class="timeline-meta">🇳🇱 Ganadora: Teddy Scholten · "Een Beetje" · Países Bajos</div>
+              <div class="timeline-desc">Países Bajos volvió a ganar, convirtiéndose en el primer país con victorias consecutivas. El concurso empezaba a generar auténticos fans en toda Europa, con audiencias que crecían año tras año a medida que más hogares adquirían televisores.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Victorias Consecutivas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▸ 1960s -->
+      <div class="decade-panel" id="dec-60s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">1963</div>
+            <div class="timeline-body">
+              <div class="timeline-title">El Primer Empate — Dos Ganadores a la Vez</div>
+              <div class="timeline-meta">🇾🇺🇱🇺 Ganadores Conjuntos: Yugoslavia & Luxemburgo</div>
+              <div class="timeline-desc">El primer empate de Eurovisión — Francia había ganado en 1960 con Jacqueline Boyer, pero 1963 trajo una victoria compartida sin precedentes. El concurso aún no tenía norma de desempate, lo que provocó caos. Los organizadores finalmente entregaron el trofeo a ambos.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Primer Empate</span>
+                <span class="tag tag--cyan">Crisis de Reglas</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1967</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Sandie Shaw Pasa a la Historia Descalza</div>
+              <div class="timeline-meta">🇬🇧 Ganadora: Sandie Shaw · "Puppet on a String" · Reino Unido</div>
+              <div class="timeline-desc">Sandie Shaw actuó famosa descalza y su canción pop pegadiza se convirtió en la ganadora más vendida de los 60. La victoria del Reino Unido provocó júbilo nacional y llevó el concurso a Viena — confirmando a Eurovisión como institución continental.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--yellow">Actuación Icónica</span>
+                <span class="tag tag--green">Primera Victoria del Reino Unido</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1969</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Empate Cuádruple — La Noche Más Caótica de la Historia del ESC</div>
+              <div class="timeline-meta">🇪🇸🇬🇧🇳🇱🇫🇷 Cuatro ganadores simultáneos</div>
+              <div class="timeline-desc">España, Reino Unido, Países Bajos y Francia terminaron con la misma puntuación. Eurovisión no tenía desempate — así que los cuatro fueron declarados ganadores. La absurdidad de este resultado provocó el boicot de Austria, Finlandia, Noruega, Portugal y Suecia al concurso de 1970.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Empate de 4</span>
+                <span class="tag tag--purple">Boicot de 5 Países</span>
+                <span class="tag tag--cyan">Reforma de Reglas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▸ 1970s -->
+      <div class="decade-panel" id="dec-70s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">1974</div>
+            <div class="timeline-body">
+              <div class="timeline-title">ABBA Gana con "Waterloo" — El Momento que lo Cambió Todo</div>
+              <div class="timeline-meta">🇸🇪 Ganadores: ABBA · "Waterloo" · Suecia · Brighton</div>
+              <div class="timeline-desc">Quizás la noche más importante de la historia de Eurovisión. ABBA interpretó "Waterloo" en Brighton y ganó de forma convincente. La canción los lanzó a la superstardom global — convirtiéndolos en uno de los mayores grupos pop de la década. Eurovisión nunca volvería a ser visto solo como un concurso de novedad.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--yellow">La Mayor Victoria ESC de Siempre</span>
+                <span class="tag tag--pink">Impacto Global Pop</span>
+                <span class="tag tag--green">1ª Victoria de Suecia</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1975</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Teach-In y "Ding Dinge Dong" — El Ganador Más Raro</div>
+              <div class="timeline-meta">🇳🇱 Ganadores: Teach-In · Países Bajos</div>
+              <div class="timeline-desc">Países Bajos volvió a la gloria de Eurovisión con lo que muchos llaman la entrada más absurdamente pegadiza de todos los tiempos. "Ding Dinge Dong" es imposible de odiar y imposible de explicar.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--cyan">Favorito de los Fans</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1979</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Israel Gana Dos Veces Seguidas — Un Milagro Diplomático</div>
+              <div class="timeline-meta">🇮🇱 Ganadores: Milk & Honey · "Hallelujah" · Israel</div>
+              <div class="timeline-desc">Israel había ganado en 1978 con Izhar Cohen. Volvió a ganar en 1979, convirtiéndose en el primer país con victorias consecutivas. Organizarlo en Jerusalén generó controversia política y algunos canales árabes se negaron a emitir el show.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--purple">Controversia Política</span>
+                <span class="tag tag--yellow">Dos Victorias Seguidas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▸ 1980s -->
+      <div class="decade-panel" id="dec-80s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">1980</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Johnny Logan Inicia su Dinastía</div>
+              <div class="timeline-meta">🇮🇪 Ganador: Johnny Logan · "What's Another Year" · Irlanda</div>
+              <div class="timeline-desc">Johnny Logan se convertiría en la única persona en la historia de Eurovisión que ganó como intérprete dos veces Y como compositor. Su victoria de 1980 inició el dominio irlandés del concurso que definiría la década siguiente.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--green">Comienza la Dinastía Irlandesa</span>
+                <span class="tag tag--pink">Récord Histórico</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1987</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Hold Me Now — La Tercera Corona de Irlanda</div>
+              <div class="timeline-meta">🇮🇪 Ganador: Johnny Logan · "Hold Me Now" · Irlanda</div>
+              <div class="timeline-desc">La segunda victoria de Logan como intérprete — la única persona que lo ha logrado. Su balada emotiva se convirtió en una de las ganadoras más reproducidas de todos los tiempos. También escribió "Why Me?" para la victoria de Irlanda en 1992, convirtiéndose en el único triple ganador de Eurovisión.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--yellow">2x Ganador como Intérprete</span>
+                <span class="tag tag--purple">Estatus Legendario</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1988</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Céline Dion Gana por Suiza — Sí, de Verdad</div>
+              <div class="timeline-meta">🇨🇭 Ganadora: Céline Dion · "Ne Partez Pas Sans Moi" · Suiza</div>
+              <div class="timeline-desc">Una futura superestrella mundial ganó Eurovisión para Suiza por solo un punto de diferencia con el Reino Unido — uno de los finales más ajustados de la historia. La victoria de Céline Dion demuestra que Eurovisión siempre ha sido un trampolín para talentos de talla mundial.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Victoria por 1 Punto</span>
+                <span class="tag tag--cyan">Futura Superestrella</span>
+                <span class="tag tag--yellow">Suiza</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▸ 1990s -->
+      <div class="decade-panel" id="dec-90s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">1992</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Comienza la Racha de Cuatro Victorias de Irlanda</div>
+              <div class="timeline-meta">🇮🇪 Ganadora: Linda Martin · "Why Me?" · Irlanda</div>
+              <div class="timeline-desc">Escrita por Johnny Logan, "Why Me?" dio a Irlanda su tercera victoria en una década. Irlanda ganaría cuatro veces en cinco años (1992–1996), una racha que dejó en bancarrota a RTE — la televisión irlandesa literalmente no podía permitirse organizar más shows.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--green">3ª Victoria de Irlanda</span>
+                <span class="tag tag--purple">Racha de Victorias</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1997</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Katrina and the Waves — Love Shine a Light</div>
+              <div class="timeline-meta">🇬🇧 Ganadores: Katrina and the Waves · "Love Shine a Light" · Reino Unido · Dublín</div>
+              <div class="timeline-desc">La quinta victoria del Reino Unido llegó en Dublín y con la puntuación más alta registrada hasta entonces. "Love Shine a Light" sigue siendo una de las ganadoras más queridas — anthemica, alegre y con una energía espectacular.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--yellow">Récord de Puntuación (1997)</span>
+                <span class="tag tag--pink">Favorito de los Fans</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">1999</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Charlotte Nilsson — El Tercer Título de Suecia</div>
+              <div class="timeline-meta">🇸🇪 Ganadora: Charlotte Nilsson · "Take Me to Your Heaven" · Suecia</div>
+              <div class="timeline-desc">Suecia continuó fortaleciendo su tradición de victorias en Eurovisión. El alcance del concurso se ampliaba: Dana International de Israel había ganado en 1998 como la primera ganadora abiertamente transgénero — un hito para la representación LGBTQ+.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--cyan">Hito LGBTQ+ (1998)</span>
+                <span class="tag tag--green">3ª Victoria de Suecia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▸ 2000s -->
+      <div class="decade-panel" id="dec-00s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">2003</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Controversia de Playback de t.A.T.u. — Rusia Sorprende a Europa</div>
+              <div class="timeline-meta">🇷🇺 3er Lugar: t.A.T.u. · Rusia · Riga</div>
+              <div class="timeline-desc">Aunque no ganaron, las rusas t.A.T.u. provocaron la mayor controversia previa al concurso en años. Su actuación y los patrones de votación política de esa noche iniciaron el debate del "voto en bloques" que aún domina las conversaciones de Eurovisión. Turquía ganó finalmente.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Controversia</span>
+                <span class="tag tag--purple">Nace el Debate del Voto en Bloques</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2006</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Lordi Lleva el Heavy Metal a Eurovisión — y Gana</div>
+              <div class="timeline-meta">🇫🇮 Ganadores: Lordi · "Hard Rock Hallelujah" · Finlandia · Atenas</div>
+              <div class="timeline-desc">Finlandia había competido desde 1961 sin una sola victoria. Entonces enviaron a la banda de heavy metal con disfraces de monstruos Lordi — y ganaron con la puntuación más alta de la historia del concurso hasta ese momento. "Hard Rock Hallelujah" sigue siendo el ganador más inesperado de todos los tiempos.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--green">1ª Victoria de Finlandia Tras 45 Años</span>
+                <span class="tag tag--pink">Ganador Heavy Metal</span>
+                <span class="tag tag--yellow">Récord de Puntuación (2006)</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2009</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Alexander Rybak Establece el Récord Absoluto</div>
+              <div class="timeline-meta">🇳🇴 Ganador: Alexander Rybak · "Fairytale" · Noruega · Moscú</div>
+              <div class="timeline-desc"> "Fairytale" de Rybak obtuvo 387 puntos — un récord que duró 6 años. Su actuación con violín, carisma y la alegría pura de la canción la convirtieron en una de las entradas más votadas de siempre. Sigue siendo adorada por los fans hoy en día, un auténtico cuento de hadas de Eurovisión.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--yellow">Récord Absoluto (hasta 2015)</span>
+                <span class="tag tag--cyan">Máximos Puntos del Jurado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▸ 2010s -->
+      <div class="decade-panel" id="dec-10s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-body">
+              <div class="timeline-title"> "Euphoria" de Loreen — Quizás la Mejor Ganadora de Siempre</div>
+              <div class="timeline-meta">🇸🇪 Ganadora: Loreen · "Euphoria" · Suecia · Bakú</div>
+              <div class="timeline-desc">Cuando Loreen subió al escenario en Bakú, nadie esperaba lo que ocurrió. "Euphoria" ganó por goleada — los puntos más altos del público hasta ese momento. La canción se convirtió en un auténtico éxito en las listas de toda Europa y se sigue reproduciendo años después. Muchos la consideran la mejor canción ganadora de la historia de Eurovisión.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Mejor Canción ESC (discutida)</span>
+                <span class="tag tag--yellow">Récord de Televoto</span>
+                <span class="tag tag--purple">5ª Victoria de Suecia</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2014</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Conchita Wurst — Un Momento que Trasciende la Música</div>
+              <div class="timeline-meta">🇦🇹 Ganadora: Conchita Wurst · "Rise Like a Phoenix" · Austria · Copenhague</div>
+              <div class="timeline-desc">Austria no ganaba desde 1966. Conchita Wurst — el personaje drag de Thomas Neuwirth — interpretó "Rise Like a Phoenix" y ganó de forma abrumadora. La victoria trascendió Eurovisión: se convirtió en un momento definitorio para la visibilidad LGBTQ+ en el entretenimiento mainstream de Europa.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Hito Cultural</span>
+                <span class="tag tag--cyan">Icono LGBTQ+</span>
+                <span class="tag tag--green">2ª Victoria de Austria (48 años después)</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Jamala de Ucrania Gana con una Bomba Política</div>
+              <div class="timeline-meta">🇺🇦 Ganadora: Jamala · "1944" · Ucrania · Estocolmo</div>
+              <div class="timeline-desc">Una canción sobre la deportación de los tártaros de Crimea por parte de la Unión Soviética en 1944 — interpretada solo dos años después de la anexión rusa de Crimea — ganó el concurso en medio de un intenso debate político. La norma de Eurovisión contra contenido político fue puesta a prueba pero no se aplicó, lo que provocó una revisión de reglas durante años.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--purple">Controversia Política</span>
+                <span class="tag tag--yellow">Victoria Más Debateda</span>
+                <span class="tag tag--pink">2ª Victoria de Ucrania</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▸ 2020s -->
+      <div class="decade-panel" id="dec-20s" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Måneskin Rompe Todo — El Rock Vuelve</div>
+              <div class="timeline-meta">🇮🇹 Ganadores: Måneskin · "Zitti e buoni" · Italia · Róterdam</div>
+              <div class="timeline-desc">Primera victoria de Italia en 31 años. Måneskin actuó con una energía rock cruda que parecía ajena al pop mainstream de Eurovisión — y al público le encantó. La banda se convirtió en estrellas globales, encabezando festivales en todo el mundo y demostrando una vez más el poder de Eurovisión como trampolín.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Ganador Rock</span>
+                <span class="tag tag--yellow">3ª Victoria de Italia</span>
+                <span class="tag tag--cyan">Estrellas Globales Tras ESC</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Kalush Orchestra Gana para Ucrania en Plena Guerra</div>
+              <div class="timeline-meta">🇺🇦 Ganadores: Kalush Orchestra · "Stefania" · Ucrania · Turín</div>
+              <div class="timeline-desc">El ganador más cargado emocionalmente de Eurovisión en décadas. Con la invasión rusa de Ucrania en marcha, "Stefania" ganó gracias a un enorme apoyo del televoto de toda Europa. El concurso tuvo que tomar una decisión sin precedentes: Ucrania no podía organizar el evento con seguridad, por lo que Reino Unido fue anfitrión sustituto en Liverpool.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--purple">Contexto de Guerra</span>
+                <span class="tag tag--green">3ª Victoria de Ucrania</span>
+                <span class="tag tag--pink">Máxima Puntuación de Televoto</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Loreen Hace lo Imposible — Gana de Nuevo</div>
+              <div class="timeline-meta">🇸🇪 Ganadora: Loreen · "Tattoo" · Suecia · Liverpool</div>
+              <div class="timeline-desc">Loreen se convirtió en la primera artista femenina solista en ganar Eurovisión dos veces, y solo la segunda persona en lograrlo (después de Johnny Logan). "Tattoo" fue la favorita absoluta del jurado, consiguiendo la mayor puntuación de jurado de la historia. Séptima victoria de Suecia — nuevo récord absoluto para cualquier país.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--yellow">7ª Victoria de Suecia (Récord)</span>
+                <span class="tag tag--pink">Única Doble Ganadora Femenina</span>
+                <span class="tag tag--cyan">Mayor Puntuación del Jurado de Siempre</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Nemo Gana para Suiza — Se Hace Historia No Binaria</div>
+              <div class="timeline-meta">🇨🇭 Ganador: Nemo · "The Code" · Suiza · Malmö</div>
+              <div class="timeline-desc">Primera victoria de Suiza desde Céline Dion en 1988 — y llegó envuelta en historia. Nemo, persona no binaria, se convirtió en la primera ganadora abiertamente no binaria de Eurovisión. "The Code" fusionó rap, clásico y pop en una actuación deslumbrante. La victoria llevó Eurovisión 2025 a Basilea… y de ahí a Viena 2026.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--purple">Hito No Binario</span>
+                <span class="tag tag--yellow">3ª Victoria de Suiza</span>
+                <span class="tag tag--green">Camino a Viena</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-body">
+              <div class="timeline-title">Eurovisión 2025 — Basilea Organiza por Primera Vez</div>
+              <div class="timeline-meta">🇨🇭 Anfitrión: Suiza · St. Jakobshalle, Basilea</div>
+              <div class="timeline-desc">Suiza organizó Eurovisión por primera vez en la era moderna. JJ de Austria ganó con una espectacular actuación ópera-pop, enviando Eurovisión 2026 de vuelta a Austria — la tercera vez que el país organiza el evento. Basilea ofreció un show impecable y emocionalmente rico que consolidó el estatus de Suiza como nación eurovisiva.</div>
+              <div class="timeline-tags">
+                <span class="tag tag--pink">Ganador 2025: JJ (Austria)</span>
+                <span class="tag tag--cyan">Debut de Basilea</span>
+                <span class="tag tag--yellow">Camino a Viena 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   ALL-TIME WINNERS LEADERBOARD ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section" id="records" aria-labelledby="records-heading">
+    <div class="container">
+
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="milestone-pill milestone-pill--yellow" aria-hidden="true">🏆 Récords Históricos</span>
+        <h2 id="records-heading">Más Victorias<br><span class="neon-yellow">Por País</span></h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
+
+        <!-- Leaderboard -->
+        <div>
+          <h3 style="font-family: var(--font-mono); font-size: .75rem; color: #555; text-transform: uppercase; letter-spacing: .1em; margin-bottom: var(--space-lg);">— Victorias —</h3>
+          <div class="leaderboard" role="list">
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">1</span>
+              <span class="leaderboard-flag">🇸🇪</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Suecia</div>
+                <div class="leaderboard-detail">1974, 1984, 1991, 1994, 1999, 2012, 2015, 2023</div>
+              </div>
+              <span class="leaderboard-wins">7</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">2</span>
+              <span class="leaderboard-flag">🇮🇪</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Irlanda</div>
+                <div class="leaderboard-detail">1970, 1980, 1987, 1992, 1993, 1994, 1996</div>
+              </div>
+              <span class="leaderboard-wins">7</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">3</span>
+              <span class="leaderboard-flag">🇱🇺</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Luxemburgo</div>
+                <div class="leaderboard-detail">1961, 1965, 1972, 1973, 1983</div>
+              </div>
+              <span class="leaderboard-wins">5</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">4</span>
+              <span class="leaderboard-flag">🇫🇷</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Francia</div>
+                <div class="leaderboard-detail">1958, 1960, 1962, 1969, 1977</div>
+              </div>
+              <span class="leaderboard-wins">5</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">5</span>
+              <span class="leaderboard-flag">🇬🇧</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Reino Unido</div>
+                <div class="leaderboard-detail">1967, 1969, 1976, 1981, 1997</div>
+              </div>
+              <span class="leaderboard-wins">5</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">6</span>
+              <span class="leaderboard-flag">🇳🇱</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Países Bajos</div>
+                <div class="leaderboard-detail">1957, 1959, 1969, 1975, 2019</div>
+              </div>
+              <span class="leaderboard-wins">5</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">7</span>
+              <span class="leaderboard-flag">🇮🇹</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Italia</div>
+                <div class="leaderboard-detail">1964, 1990, 2021</div>
+              </div>
+              <span class="leaderboard-wins">3</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">8</span>
+              <span class="leaderboard-flag">🇺🇦</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Ucrania</div>
+                <div class="leaderboard-detail">2004, 2016, 2022</div>
+              </div>
+              <span class="leaderboard-wins">3</span>
+            </div>
+            <div class="leaderboard-row" role="listitem">
+              <span class="leaderboard-rank">9</span>
+              <span class="leaderboard-flag">🇨🇭</span>
+              <div class="leaderboard-info">
+                <div class="leaderboard-country">Suiza</div>
+                <div class="leaderboard-detail">1956, 1988, 2024</div>
+              </div>
+              <span class="leaderboard-wins">3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Individual records -->
+        <div>
+          <h3 style="font-family: var(--font-mono); font-size: .75rem; color: #555; text-transform: uppercase; letter-spacing: .1em; margin-bottom: var(--space-lg);">— Récords Individuales —</h3>
+          <div class="accordion" id="records-accordion">
+
+            <div class="accordion-item">
+              <button class="accordion-btn" aria-expanded="false">
+                <span class="accordion-btn-text">🎙️ Más Victorias como Intérprete</span>
+                <span style="display:flex;align-items:center;gap:8px;"><span class="accordion-btn-year">2 victorias</span><span class="accordion-chevron">▼</span></span>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                <strong>Johnny Logan (Irlanda)</strong> ganó en 1980 ("What's Another Year") y 1987 ("Hold Me Now"). <strong>Loreen (Suecia)</strong> ganó en 2012 ("Euphoria") y 2023 ("Tattoo"). Ambos tienen el honor único de haber ganado dos veces como intérpretes principales — una hazaña casi imposible dada la competitividad actual.
+              </div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn" aria-expanded="false">
+                <span class="accordion-btn-text">📊 Mayor Puntuación de la Historia</span>
+                <span style="display:flex;align-items:center;gap:8px;"><span class="accordion-btn-year">758 pts</span><span class="accordion-chevron">▼</span></span>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                <strong>Kalush Orchestra de Ucrania</strong> obtuvo 439 puntos del televoto en Turín 2022 — el récord de televoto. La puntuación total récord de <strong>758 puntos</strong> la estableció Nemo (Suiza) en Malmö 2024 gracias al nuevo sistema de jurado ampliado. En el sistema anterior, "Tattoo" de Loreen 2023 tenía el récord de jurado.
+              </div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn" aria-expanded="false">
+                <span class="accordion-btn-text">🚫 Más Cero Puntos</span>
+                <span style="display:flex;align-items:center;gap:8px;"><span class="accordion-btn-year">Salón de la Vergüenza</span><span class="accordion-chevron">▼</span></span>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                El famoso "cero puntos" ha golpeado a Noruega (4 veces), Austria (3), Suiza (2) y varios más. El más reciente fue Alemania en 2015. Con el televoto moderno es casi imposible obtener cero, por eso los ceros históricos pesan mucho más.
+              </div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn" aria-expanded="false">
+                <span class="accordion-btn-text">⏳ Mayor Tiempo entre Victorias</span>
+                <span style="display:flex;align-items:center;gap:8px;"><span class="accordion-btn-year">48 años</span><span class="accordion-chevron">▼</span></span>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                <strong>Austria</strong> esperó 48 años entre victorias: de Udo Jürgens en 1966 a Conchita Wurst en 2014. Es el mayor intervalo de cualquier país. Luxemburgo tiene el récord de ausencia total: compitió por última vez en 1993 y aún no ha regresado.
+              </div></div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn" aria-expanded="false">
+                <span class="accordion-btn-text">🌍 Más Países en una Edición</span>
+                <span style="display:flex;align-items:center;gap:8px;"><span class="accordion-btn-year">43 países</span><span class="accordion-chevron">▼</span></span>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                El récord de países participantes en una sola edición es <strong>43</strong>, establecido en 2018 en Lisboa. Las semifinales introducidas en 2004 permitieron esta expansión manteniendo la final en 26 participantes. La exclusión de Rusia (desde 2022) y Bielorrusia (desde 2021) ha reducido ligeramente el número.
+              </div></div>
+            </div>
+
+          </div><!-- /accordion -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   TRIVIA / DID YOU KNOW        ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section" aria-labelledby="trivia-heading">
+    <div class="container">
+
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="milestone-pill milestone-pill--cyan" aria-hidden="true">🤯 Trivia para Fans</span>
+        <h2 id="trivia-heading">¿Sabías que?<br><span class="neon-cyan">Pon a Prueba tu Conocimiento ESC</span></h2>
+        <p class="mt-md" style="color: #666; font-family: var(--font-mono); font-size: .82rem;">
+          Haz clic en "Revelar" de cada tarjeta para ver la respuesta.
+        </p>
+      </div>
+
+      <div class="trivia-grid">
+
+        <div class="trivia-card trivia-card--pink">
+          <div class="trivia-emoji">🏅</div>
+          <div class="trivia-q">¿Qué país fundador nunca ha ganado Eurovisión?</div>
+          <button class="trivia-reveal" aria-expanded="false">Revelar Respuesta ↓</button>
+          <div class="trivia-answer trivia-a">
+            <strong style="color: var(--clr-pink);">¡Bélgica!</strong> — Uno de los 7 países originales de 1956 y aún sin victoria en 2025. Estuvo muy cerca en 1978 y 2003. "Mama" de Sandra Kim ganó en 1986, pero la EBU admitió después que Sandra tenía solo 13 años y mintió sobre su edad.
+          </div>
+        </div>
+
+        <div class="trivia-card trivia-card--yellow">
+          <div class="trivia-emoji">🎻</div>
+          <div class="trivia-q">¿Cuántos instrumentos tocó Alexander Rybak durante "Fairytale" en 2009?</div>
+          <button class="trivia-reveal" aria-expanded="false">Revelar Respuesta ↓</button>
+          <div class="trivia-answer trivia-a">
+            <strong style="color: var(--clr-yellow);">Solo el violín</strong> — pero lo tocó mientras cantaba, bailaba y conquistaba a 120 millones de espectadores. Nacido en Bielorrusia, se mudó a Noruega con 6 años y ganó por 169 puntos — la mayor diferencia de la historia en ese momento.
+          </div>
+        </div>
+
+        <div class="trivia-card trivia-card--cyan">
+          <div class="trivia-emoji">🎭</div>
+          <div class="trivia-q">¿Qué ganador de Eurovisión vendió más de 200 millones de discos en todo el mundo?</div>
+          <button class="trivia-reveal" aria-expanded="false">Revelar Respuesta ↓</button>
+          <div class="trivia-answer trivia-a">
+            <strong style="color: var(--clr-cyan);">ABBA</strong> — ganó en 1974 con "Waterloo" y se convirtió en uno de los grupos más vendidos de la historia. Mención honorífica: Céline Dion ganó por Suiza en 1988 y también ha vendido más de 200 millones de discos. Eurovisión: fábrica de leyendas.
+          </div>
+        </div>
+
+        <div class="trivia-card trivia-card--purple">
+          <div class="trivia-emoji">📺</div>
+          <div class="trivia-q">¿Qué tienen en común Australia, Marruecos y China en la historia de Eurovisión?</div>
+          <button class="trivia-reveal" aria-expanded="false">Revelar Respuesta ↓</button>
+          <div class="trivia-answer trivia-a">
+            <strong style="color: var(--clr-purple);">Los tres han participado o emitido Eurovisión</strong> fuera de Europa. Australia compite desde 2015. Marruecos participó una vez en 1980 (y nunca regresó). China emitió Eurovisión en 2018 pero fue vetada por censurar contenido LGBTQ+ durante la transmisión.
+          </div>
+        </div>
+
+        <div class="trivia-card trivia-card--green">
+          <div class="trivia-emoji">🗳️</div>
+          <div class="trivia-q">¿Qué país recibió "doce puntos" de más países en un solo año?</div>
+          <button class="trivia-reveal" aria-expanded="false">Revelar Respuesta ↓</button>
+          <div class="trivia-answer trivia-a">
+            <strong style="color: var(--clr-green);">Ucrania en 2022</strong> — Kalush Orchestra recibió 12 puntos de 28 de los 40 países que votaron por televoto, una muestra extraordinaria de solidaridad durante la invasión rusa. Solo con el televoto ya habrían ganado por una diferencia enorme.
+          </div>
+        </div>
+
+        <div class="trivia-card trivia-card--pink">
+          <div class="trivia-emoji">🕯️</div>
+          <div class="trivia-q">¿Qué pasó el año en que Eurovisión se canceló por primera (y única) vez?</div>
+          <button class="trivia-reveal" aria-expanded="false">Revelar Respuesta ↓</button>
+          <div class="trivia-answer trivia-a">
+            <strong style="color: var(--clr-pink);">2020 — COVID-19</strong> canceló Eurovisión por primera y única vez en sus 64 años de historia. El evento previsto en Róterdam se sustituyó por "Eurovision: Europe Shine a Light" — un show homenaje no competitivo. Róterdam finalmente lo organizó en 2021.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   VIENNA 2026 PREVIEW          ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section" id="vienna2026" aria-labelledby="vienna-heading">
+    <div class="container">
+
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="milestone-pill milestone-pill--pink" aria-hidden="true">🇦🇹 Lo que Viene</span>
+        <h2 id="vienna-heading">Eurovisión 2026<br><span class="neon-pink">De Vuelta a Viena</span></h2>
+      </div>
+
+      <div class="vienna-banner">
+        <div class="vienna-grid">
+
+          <!-- Left: info -->
+          <div>
+            <h3 style="font-family: var(--font-display); font-size: clamp(1.5rem,4vw,2.5rem); color: #fff; letter-spacing: .04em; margin-bottom: var(--space-md);">
+              El 70º Festival de la Canción de Eurovisión
+            </h3>
+            <p style="font-family: var(--font-mono); font-size: .82rem; color: #888; line-height: 1.8; margin-bottom: var(--space-lg);">
+              Tras la victoria de JJ por Austria en Eurovisión 2025 en Basilea, el concurso viaja a Viena para la Gran Final. <strong style="color: var(--clr-cyan);">Eurovisión 2026</strong> regresa a Viena con Austria como radiodifusora anfitriona tras su triunfo en 2025. 35 países competirán a lo largo de tres noches en directo.
+            </p>
+
+            <div class="flex gap-sm" style="flex-wrap: wrap; margin-bottom: var(--space-xl);">
+              <span class="tag tag--pink" style="font-size: .75rem; padding: 4px 12px;">35 Países</span>
+              <span class="tag tag--yellow" style="font-size: .75rem; padding: 4px 12px;">Wiener Stadthalle, Viena</span>
+              <span class="tag tag--cyan" style="font-size: .75rem; padding: 4px 12px;">12–16 Mayo 2026</span>
+              <span class="tag tag--green" style="font-size: .75rem; padding: 4px 12px;">ORF Radiodifusora Anfitriona</span>
+            </div>
+
+            <div class="flex gap-sm">
+              <a href="../forecast.html" class="btn btn--primary">📊 Pronóstico IA</a>
+              <a href="../vote.html"     class="btn btn--yellow">🗳️ Valorar Países</a>
+            </div>
+          </div>
+
+          <!-- Right: schedule -->
+          <div>
+            <h3 style="font-family: var(--font-mono); font-size: .75rem; color: #555; text-transform: uppercase; letter-spacing: .12em; margin-bottom: var(--space-md);">— Calendario 2026 —</h3>
+            <div class="vienna-schedule">
+              <div class="schedule-row">
+                <span class="schedule-date">12 Mayo</span>
+                <span class="schedule-event">Semifinal 1 · 15 países compiten</span>
+                <span class="schedule-badge schedule-badge--sf1">SF1</span>
+              </div>
+              <div class="schedule-row">
+                <span class="schedule-date">14 Mayo</span>
+                <span class="schedule-event">Semifinal 2 · 15 países compiten</span>
+                <span class="schedule-badge schedule-badge--sf2">SF2</span>
+              </div>
+              <div class="schedule-row">
+                <span class="schedule-date">15 Mayo</span>
+                <span class="schedule-event">Gran Final · 25 países · En directo desde Viena</span>
+                <span class="schedule-badge schedule-badge--gf">FINAL</span>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-xl); padding: var(--space-md); background: var(--clr-surface-2); border: 1px solid var(--clr-border); border-radius: var(--radius-sm);">
+              <p style="font-family: var(--font-mono); font-size: .72rem; color: #666; line-height: 1.7; margin: 0;">
+                <strong style="color: var(--clr-yellow);">Clasificados automáticos:</strong> Francia, Alemania, Italia, Reino Unido + Austria (anfitrión).<br>
+                Los otros 30 países deben clasificarse a través de las dos semifinales.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   ORIGINAL CARDS (enhanced)    ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section pt-0" aria-labelledby="eras-heading">
+    <div class="container">
+
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="milestone-pill milestone-pill--green" aria-hidden="true">📖 Las Cuatro Eras</span>
+        <h2 id="eras-heading">Cuatro Eras que<br><span class="neon-green">Definieron el Concurso</span></h2>
+      </div>
+
+      <div class="tools-grid stagger" role="list" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+        <div class="tool-card tool-card--pink anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🎤 El Nacimiento<br><span class="neon-pink">1956–1969</span></h3>
+          <ul class="history-list">
+            <li>Siete países, un casino en Lugano, Suiza — 1956.</li>
+            <li>Lys Assia gana el primer concurso para la nación anfitriona.</li>
+            <li>El empate cuádruple de 1969 provoca la primera gran crisis de reglas.</li>
+            <li>El equivalente de Céline Dion — Sandie Shaw actúa descalza (1967).</li>
+            <li>Eurovisión se consolida como símbolo de la unidad europea de posguerra.</li>
+          </ul>
+          <span class="year-tag neon-pink">1956–69</span>
+        </div>
+
+        <div class="tool-card tool-card--yellow anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🏆 La Edad de Oro<br><span class="neon-yellow">1974–1988</span></h3>
+          <ul class="history-list">
+            <li>"Waterloo" de ABBA (1974) convierte Eurovisión en un escenario global.</li>
+            <li>Johnny Logan gana dos veces como intérprete — nadie más lo ha hecho.</li>
+            <li>Irlanda comienza a construir su imperio de victorias.</li>
+            <li>Céline Dion gana por Suiza por solo un punto (1988).</li>
+            <li>La música pop y Eurovisión se vuelven inseparables durante una década.</li>
+          </ul>
+          <span class="year-tag neon-yellow">1974–88</span>
+        </div>
+
+        <div class="tool-card tool-card--cyan anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🌍 La Expansión<br><span class="neon-cyan">1990–2010</span></h3>
+          <ul class="history-list">
+            <li>La expansión postsoviética trae a Europa del Este al escenario.</li>
+            <li>Se introduce el televoto — el público toma el poder real (1998).</li>
+            <li>La victoria metal de Lordi (2006) rompe para siempre las expectativas de género.</li>
+            <li>"Fairytale" de Rybak establece el récord de 387 puntos (2009).</li>
+            <li>El concurso se duplica en tamaño, se introducen las semifinales (2004).</li>
+          </ul>
+          <span class="year-tag neon-cyan">1990–10</span>
+        </div>
+
+        <div class="tool-card tool-card--purple anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">✨ La Era Moderna<br><span class="neon-purple">2012–Hoy</span></h3>
+          <ul class="history-list">
+            <li>"Euphoria" de Loreen (2012) redefine cómo debe ser un ganador de Eurovisión.</li>
+            <li>Conchita Wurst (2014) — Eurovisión como plataforma de cambio cultural.</li>
+            <li>Måneskin (2021) demuestra que el rock puede ganar y se hace famoso mundialmente.</li>
+            <li>Loreen gana de nuevo (2023) — lo imposible se hace realidad.</li>
+            <li>"The Code" de Nemo (2024) — historia no binaria en Basilea.</li>
+          </ul>
+          <span class="year-tag neon-purple">2012–Ahora</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- CTA Banner -->
+  <section class="section--tight">
+    <div class="container">
+      <div class="card card--brutal text-center" style="padding: var(--space-3xl) var(--space-xl);">
+        <span class="hero__subtitle" style="margin-bottom: var(--space-md);">70 años de historia — ahora te toca a ti.</span>
+        <h2 style="font-size: clamp(2rem,6vw,4rem); margin-bottom: var(--space-lg);">
+          Escribe Tu Propia<br><span class="neon-pink">Historia de Eurovisión</span>
+        </h2>
+        <p style="margin-inline: auto; margin-bottom: var(--space-2xl); color: #888; font-family: var(--font-mono); font-size: .85rem; max-width: 45ch;">
+          Valora cada actuación, juega al Bingo en directo y pronostica el ganador con nuestra herramienta IA.
+        </p>
+        <div class="hero__cta">
+          <a href="../vote.html"     class="btn btn--primary btn--xl">🗳️ Valorar Países</a>
+          <a href="../bingo.html"    class="btn btn--yellow btn--xl">🎱 Cartón de Bingo</a>
+          <a href="../forecast.html" class="btn btn--secondary btn--xl">📊 Pronóstico IA</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer__inner">
+
+    <!-- Brand & primary links -->
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools brand">
+        ★ ESCTOOLS
+      </div>
+      <div class="footer__tagline">
+        Tu kit definitivo para fans de Eurovisión 2026 ·
+        Proyecto de fans, no afiliado a la UER ni al Festival de Eurovisión.
+      </div>
+
+      <nav aria-label="Navegación del pie de página" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../vote.html">Votar</a></li>
+          <li><a href="../bingo.html">Bingo</a></li>
+          <li><a href="../forecast.html">Pronóstico</a></li>
+          <li><a href="../history.html">Historia</a></li>
+          <li><a href="../guide.html">Guía Tienda</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Social / Share -->
+    <div>
+      <p class="section-label" aria-hidden="true">Conecta &amp; Comparte</p>
+      <div
+        class="flex flex-wrap gap-sm"
+        style="margin-top: var(--space-md);"
+        role="list"
+        aria-label="Enlaces a redes sociales"
+      >
+        <a
+          class="social-link"
+          href="https://twitter.com/intent/tweet?text=¡Mira%20este%20kit%20gratis%20de%20%23Eurovisión2026!&url=https%3A%2F%2Feurovisiontoolkit.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Compartir en X / Twitter"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a
+          class="social-link"
+          href="https://www.reddit.com/r/eurovision"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Visitar r/Eurovision en Reddit"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a
+          class="social-link"
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Seguir en Instagram"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a
+          class="social-link"
+          href="https://tiktok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Seguir en TikTok"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /footer__inner -->
+
+  <!-- Copyright bar -->
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Hecho con <span aria-label="amor">♥</span> por fans de Eurovisión, para fans de Eurovisión
+    &nbsp;·&nbsp;
+    No afiliado a la UER ni al Festival de Eurovisión
+    &nbsp;·&nbsp;
+    <a
+      href="mailto:aiinformatorbot@gmail.com"
+      style="color: inherit; text-decoration: underline;"
+      aria-label="Enviar un correo a Eurovision Tools"
+    >hello@esctools.dev</a>
+  </p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script src="../assets/js/script.js" defer></script>
+
+<script>
+  /* ── Footer year ── */
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+
+  /* ── Decade tabs ── */
+  document.querySelectorAll('.decade-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var decade = this.dataset.decade;
+
+      // Tabs
+      document.querySelectorAll('.decade-tab').forEach(function (t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+
+      // Panels
+      document.querySelectorAll('.decade-panel').forEach(function (p) {
+        p.classList.remove('active');
+      });
+      var panel = document.getElementById('dec-' + decade);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  /* ── Accordion ── */
+  document.querySelectorAll('.accordion-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = this.closest('.accordion-item');
+      var isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.accordion-item').forEach(function (i) {
+        i.classList.remove('open');
+        i.querySelector('.accordion-btn').setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Trivia reveal ── */
+  document.querySelectorAll('.trivia-reveal').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var answer = this.nextElementSibling;
+      var isOpen = answer.classList.contains('revealed');
+      if (isOpen) {
+        answer.classList.remove('revealed');
+        this.textContent = 'Revelar Respuesta ↓';
+        this.setAttribute('aria-expanded', 'false');
+      } else {
+        answer.classList.add('revealed');
+        this.textContent = 'Ocultar Respuesta ↑';
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Lang switcher — redirect to localised version ── */
+  document.querySelectorAll('[data-lang]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = this.dataset.lang;
+      if (lang === 'es') window.location.href = '../es/history.html';
+      else if (lang === 'de') window.location.href = '../../de/history.html';
+      else window.location.href = '../../history.html';
+    });
+  });
+</script>
+
+</body>
+</html>
