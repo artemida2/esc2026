@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Sticker Packs & Digitale Fan-Produkte Eurovision 2026 Wien</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Lustige digitale Sticker-Packs, Wallpapers und Fan-Produkte für den Eurovision Song Contest 2026 in Wien. 100% fan-made, nicht offiziell." />
+  <meta name="keywords" content="Eurovision Sticker, Sticker Pack ESC 2026, digitale Fan-Produkte Wien, ESC Stickers, Eurovision Wien Merch" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- CANONICAL + HREFLANG -->
+  <link rel="canonical" href="https://eurovisiontoolkit.com/de/guide.html" />
+  <link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/guide.html" />
+  <link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/guide.html" />
+  <link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/guide.html" />
+  <link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/de/guide.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eurovisiontoolkit.com/de/guide.html" />
+  <meta property="og:title" content="Sticker Packs & Digitale Fan-Produkte für Eurovision 2026 Wien" />
+  <meta property="og:description" content="Coole Sticker-Packs, Wallpapers und digitale Fan-Artikel für den ESC in Wien. Fan-made." />
+  <meta property="og:image" content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sticker Packs Eurovision 2026 Wien" />
+  <meta name="twitter:description" content="Lustige digitale Fan-Produkte und Sticker für den ESC 2026." />
+
+  <!-- Emoji Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sticker Packs & Digitale Fan-Produkte ESC 2026 Wien",
+    "url": "https://eurovisiontoolkit.com/de/guide.html"
+  }
+  </script>
+  <style>
+    /* ── Guide page styles ─────────────────────────────────── */
+    .hero--shop {
+      min-height: 40vh;
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-xl);
+    }
+
+    /* ── Product list inside cards ─────────────────────────── */
+    .product-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-md) 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .product-list li {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #bbb;
+      position: relative;
+      padding-left: 1.3rem;
+      line-height: 1.45;
+    }
+    .product-list li::before {
+      content: '⚡';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.65rem;
+    }
+
+    /* ── Games sub-list inside party kit card ──────────────── */
+    .games-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem 0.6rem;
+      margin: var(--space-sm) 0 var(--space-md);
+      padding: var(--space-sm) var(--space-md);
+      background: rgba(255, 45, 120, 0.07);
+      border: 1px solid rgba(255, 45, 120, 0.2);
+      border-radius: var(--radius-sm);
+    }
+    .games-grid span {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .games-grid span::before {
+      content: '▸';
+      color: var(--clr-pink);
+      flex-shrink: 0;
+    }
+
+    /* ── Bestseller badge animation ────────────────────────── */
+    .badge--hot {
+      background: linear-gradient(90deg, var(--clr-pink), var(--clr-yellow));
+      color: #000;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      animation: pulse-hot 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse-hot {
+      0%, 100% { box-shadow: 0 0 8px #ff2d78, 0 0 20px #ffe60066; }
+      50%       { box-shadow: 0 0 16px #ff2d78, 0 0 40px #ffe600aa; }
+    }
+
+    /* ── Price tag ─────────────────────────────────────────── */
+    .price-tag {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      color: #fff;
+      display: block;
+      margin-top: auto;
+      padding-top: var(--space-md);
+      letter-spacing: 0.05em;
+    }
+    .price-tag .price-currency {
+      font-size: 1.2rem;
+      vertical-align: super;
+      color: #aaa;
+    }
+
+    /* ── Featured card: extra glow ring ───────────────────── */
+    .tool-card--featured {
+      position: relative;
+      outline: 2px solid rgba(255, 45, 120, 0.4);
+      outline-offset: 4px;
+    }
+    .tool-card--featured::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: inherit;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,45,120,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Boosty info block ─────────────────────────────────── */
+    .boosty-banner {
+      background: linear-gradient(135deg, #111118 0%, #1a1a24 100%);
+      border: 2px solid var(--clr-yellow);
+      box-shadow: 6px 6px 0 var(--clr-yellow-dim), var(--glow-yellow);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl) var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+    .boosty-banner__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-lg);
+    }
+    .boosty-logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      letter-spacing: 0.05em;
+    }
+    .boosty-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+    .boosty-step {
+      background: var(--clr-surface-2);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md);
+      display: flex;
+      gap: var(--space-sm);
+      align-items: flex-start;
+    }
+    .boosty-step__num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--clr-yellow);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .boosty-step__text {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #bbb;
+      line-height: 1.45;
+    }
+    .boosty-step__text strong {
+      display: block;
+      color: #eee;
+      margin-bottom: 2px;
+    }
+
+    /* ── Sticker card specifics ────────────────────────────── */
+    .sticker-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: var(--space-md) 0;
+      padding: var(--space-sm);
+      background: rgba(191, 0, 255, 0.06);
+      border: 1px solid rgba(191, 0, 255, 0.2);
+      border-radius: var(--radius-sm);
+    }
+    .sticker-preview span {
+      font-size: 1.6rem;
+      line-height: 1;
+      filter: drop-shadow(0 0 6px rgba(191,0,255,0.6));
+      transition: transform 0.2s ease;
+      cursor: default;
+    }
+    .sticker-preview span:hover { transform: scale(1.3) rotate(-5deg); }
+
+    .sticker-preview--wa {
+      background: rgba(255, 230, 0, 0.06);
+      border-color: rgba(255, 230, 0, 0.2);
+    }
+    .sticker-preview--wa span {
+      filter: drop-shadow(0 0 6px rgba(255,230,0,0.5));
+    }
+
+    /* ── Responsive tweaks ────────────────────────────────── */
+    @media (max-width: 480px) {
+      .boosty-banner {
+        padding: var(--space-lg) var(--space-md);
+      }
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<header role="banner">
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Zur Startseite">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Hauptnavigation">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Startseite</a></li>
+        <li><a href="./vote.html">Bewerten</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Vorhersage</a></li>
+        <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+        <li><a href="./guide.html">Shop</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right side: lang switcher + hamburger -->
+    <div class="header__actions">
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" role="group" aria-label="Sprache wählen">
+        <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+        <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+        <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+      </div>
+
+      <!-- Hamburger Button (mobile only) -->
+      <button
+        class="hamburger"
+        aria-label="Navigationsmenü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Startseite</a></li>
+    <li><a href="./vote.html">Bewerten</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Vorhersage</a></li>
+    <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+    <li><a href="./guide.html">Shop</a></li>
+  </ul>
+  <!-- Language also accessible in mobile menu -->
+  <div class="lang-switcher" role="group" aria-label="Sprache wählen" style="margin-top:var(--space-xl);">
+    <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+    <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+    <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MAIN — Shop Guide
+══════════════════════════════════════════════════════════ -->
+<main id="main-content">
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="hero hero--shop" aria-labelledby="shop-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="particles" aria-hidden="true"></div>
+
+    <div class="hero__content text-center">
+      <span class="hero__subtitle">★ EXKLUSIVE DIGITALE DROPS ★</span>
+      <h1 id="shop-heading" class="display-title neon-pink">
+        FAN-SHOP
+      </h1>
+      <p class="mt-md" style="max-width: 52ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.9rem;">
+        Drei digitale Produkte, damit Eurovision 2026 die beste Nacht des Jahres wird.<br>
+        Sofortige Lieferung · Kein Warten · 100% von Fans für Fans.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ── Boosty Onboarding Banner ──────────────────────────── -->
+  <section class="section pt-0 pb-0" aria-labelledby="boosty-heading">
+    <div class="container">
+
+      <div class="boosty-banner">
+        <div class="boosty-banner__header">
+          <div class="boosty-logo">⚡ BOOSTY</div>
+          <div>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: #ccc; max-width: 58ch; line-height: 1.55;">
+              Alle Produkte werden über <strong style="color: var(--clr-yellow);">Boosty</strong> verkauft — eine vertrauenswürdige europäische Plattform für digitale Creator,
+              die von Tausenden Fans und Künstlern genutzt wird. Sichere Zahlungen, sofortiger Download-Zugriff und alle Inhalte an einem Ort.
+            </p>
+            <p style="font-family: var(--font-mono); font-size: 0.78rem; color: #888; margin-top: 0.4rem;">
+              Kein Abonnement nötig · Einmal zahlen · Sofort nach dem Kauf herunterladen
+            </p>
+          </div>
+        </div>
+
+        <p style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--clr-yellow); margin-bottom: var(--space-sm);">
+          So funktioniert’s — 3 einfache Schritte:
+        </p>
+
+        <div class="boosty-steps">
+          <div class="boosty-step">
+            <div class="boosty-step__num">01</div>
+            <div class="boosty-step__text">
+              <strong>Klicke auf den Button unten</strong>
+              Du wirst zur Produktseite auf Boosty weitergeleitet.
+            </div>
+          </div>
+          <div class="boosty-step">
+            <div class="boosty-step__num">02</div>
+            <div class="boosty-step__text">
+              <strong>Erstelle ein kostenloses Konto</strong>
+              Schnelle Registrierung per E-Mail — dauert 30 Sekunden.
+            </div>
+          </div>
+          <div class="boosty-step">
+            <div class="boosty-step__num">03</div>
+            <div class="boosty-step__text">
+              <strong>Zahlen &amp; herunterladen</strong>
+              Karte / PayPal möglich. Dateien werden direkt nach der Zahlung freigeschaltet.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── Product Cards ─────────────────────────────────────── -->
+  <section class="section" aria-labelledby="products-heading">
+    <div class="container">
+
+      <h2 id="products-heading" class="section-label" style="margin-bottom: var(--space-xl);">
+        Wähle deinen Drop
+      </h2>
+
+      <div class="tools-grid stagger" role="list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: start;">
+
+
+        <!-- PRODUCT 1 — Watch Party Kit (PDF) -->
+        <article
+          class="tool-card tool-card--pink tool-card--featured anim-fade-up"
+          role="listitem"
+          aria-labelledby="product-party-kit"
+        >
+          <div style="display:flex; align-items:center; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-sm);">
+            <span class="badge--hot">🔥 Topseller</span>
+            <span class="badge badge--pink">PDF · Sofort-Download</span>
+          </div>
+
+          <h3 id="product-party-kit" class="tool-card__title">
+            🖨️ Watch-Party-Kit<br>
+            <span class="neon-pink">10-in-1 Spiel-Bundle</span>
+          </h3>
+
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
+            Alles, was du für die perfekte Watch-Party brauchst — drucken, spielen, wiederholen.
+            Funktioniert für 2 bis 20+ Fans.
+          </p>
+
+          <!-- What's inside the PDF -->
+          <p style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-pink); margin-bottom: var(--space-xs);">
+            Was ist enthalten:
+          </p>
+          <div class="games-grid" aria-label="Enthaltene Spiele im Party-Kit">
+            <span>Song-Bingo</span>
+            <span>Künstler-Bingo</span>
+            <span>Länder-Match</span>
+            <span>Trivia-Quiz</span>
+            <span>Gewinnspiel-Ziehung</span>
+            <span>Punkte-Karte</span>
+            <span>Jury-Vorhersagen</span>
+            <span>Flaggen-Quiz</span>
+            <span>Intro-Raten</span>
+            <span>+ Bonus-Spiel</span>
+          </div>
+
+          <ul class="product-list">
+            <li>Druckfertiges A4 / Letter-Format, hohe Auflösung.</li>
+            <li>Spart 8+ Stunden Designarbeit — wir haben es für dich gemacht.</li>
+            <li>Funktioniert für jedes Publikum: Einsteiger bis Hardcore-Fans.</li>
+            <li>Wunderschön gestaltete, Eurovision-typische Grafiken.</li>
+          </ul>
+
+          <!-- PRICE -->
+          <span class="price-tag">
+            <span class="price-currency">€</span>XX
+          </span>
+
+          <a
+            class="btn btn--primary btn--full mt-md"
+            href="ВСТАВЬ_ССЫЛКУ_BOOSTY_СЮДА"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch-Party-Kit auf Boosty kaufen"
+          >
+            🛒 Auf Boosty kaufen →
+          </a>
+        </article>
+
+
+        <!-- PRODUCT 2 — Telegram Sticker Pack -->
+        <article
+          class="tool-card tool-card--purple anim-fade-up"
+          role="listitem"
+          aria-labelledby="product-tg-stickers"
+        >
+          <div style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--cyan">Telegram · Sofort hinzufügen</span>
+          </div>
+
+          <h3 id="product-tg-stickers" class="tool-card__title">
+            ✈️ Telegram-Sticker-Pack<br>
+            <span class="neon-purple">ESC 2026 Reaktionen</span>
+          </h3>
+
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
+            Dominiere den Gruppenchat während der Live-Show. Ein Tippen zum Hinzufügen, null Aufwand zum Angeben.
+          </p>
+
+          <!-- Sticker emoji preview -->
+          <div class="sticker-preview" aria-label="Vorschau der Sticker-Emojis">
+            <span title="Schockiert">😱</span>
+            <span title="10 Punkte!">💯</span>
+            <span title="Nul points">🚫</span>
+            <span title="Tränenlachend">😂</span>
+            <span title="Krone">👑</span>
+            <span title="Feuer-Act">🔥</span>
+            <span title="Side Eye">👀</span>
+            <span title="Mic Drop">🎤</span>
+            <span title="ESC-Herz">💜</span>
+            <span title="Jury-Chaos">⚡</span>
+          </div>
+
+          <ul class="product-list">
+            <li>Einzigartige ESC-thematisierte Vektor-Sticker — die gibt’s nirgendwo sonst.</li>
+            <li>Drücke jede Eurovision-Emotion aus: Hype, Cringe, Schock, Begeisterung.</li>
+            <li>Ein-Klick-Installation — direkt in Telegram.</li>
+            <li>Funktioniert in allen Gruppenchats und DMs, kein App-Update nötig.</li>
+          </ul>
+
+          <!-- PRICE -->
+          <span class="price-tag">
+            <span class="price-currency">€</span>XX
+          </span>
+
+          <a
+            class="btn btn--full mt-md"
+            href="ВСТАВЬ_ССЫЛКУ_НА_СТИКЕРПАК_t.me/addstickers/XXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="ESC 2026 Telegram-Sticker-Pack hinzufügen"
+            style="background: var(--clr-purple); color: #fff; box-shadow: 4px 4px 0px #5c007a, var(--glow-purple);"
+          >
+            ➕ Zu Telegram hinzufügen →
+          </a>
+        </article>
+
+
+        <!-- PRODUCT 3 — WhatsApp Sticker Pack (ZIP) -->
+        <article
+          class="tool-card tool-card--yellow anim-fade-up"
+          role="listitem"
+          aria-labelledby="product-wa-stickers"
+        >
+          <div style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--yellow">WhatsApp · ZIP-Download</span>
+          </div>
+
+          <h3 id="product-wa-stickers" class="tool-card__title">
+            📦 WhatsApp-Sticker-Kit<br>
+            <span class="neon-yellow">Fertig-zum-Verwenden ZIP</span>
+          </h3>
+
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
+            Gleiches Feeling, andere App. Fertige Bilder, optimiert für WhatsApp — kein Bearbeiten nötig.
+          </p>
+
+          <!-- WA sticker preview -->
+          <div class="sticker-preview sticker-preview--wa" aria-label="Vorschau der WhatsApp-Sticker">
+            <span title="Flaggen-Parade">🏳️</span>
+            <span title="Voting-Chaos">🗳️</span>
+            <span title="Weinender Fan">😭</span>
+            <span title="Standing Ovation">👏</span>
+            <span title="Glitzer">✨</span>
+            <span title="Schockiert">🤯</span>
+            <span title="Trophäe">🏆</span>
+            <span title="Gebrochenes Herz">💔</span>
+            <span title="ESC-Stern">⭐</span>
+            <span title="Party">🎉</span>
+          </div>
+
+          <ul class="product-list">
+            <li>ZIP enthält 20+ hochauflösende PNG-Sticker, optimiert für WhatsApp.</li>
+            <li>In wenigen Minuten in WhatsApp hinzufügen mit jeder kostenlosen Sticker-App.</li>
+            <li>Funktioniert auf iOS und Android — vollständige Anleitung inklusive.</li>
+            <li>Perfektes Geschenk für den Familien-Chat vor dem Finale.</li>
+          </ul>
+
+          <!-- PRICE -->
+          <span class="price-tag" style="color: var(--clr-yellow);">
+            <span class="price-currency" style="color: #aaa;">€</span>XX
+          </span>
+
+          <a
+            class="btn btn--yellow btn--full mt-md"
+            href="ВСТАВЬ_ССЫЛКУ_BOOSTY_СЮДА"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp-Sticker-ZIP auf Boosty kaufen"
+          >
+            📥 ZIP auf Boosty herunterladen →
+          </a>
+        </article>
+
+
+      </div><!-- /tools-grid -->
+    </div>
+  </section>
+
+
+  <!-- ── Trust / FAQ strip ─────────────────────────────────── -->
+  <section class="section pt-0" aria-label="Häufig gestellte Fragen">
+    <div class="container">
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: var(--space-md);
+        border-top: 1px solid var(--clr-border);
+        padding-top: var(--space-xl);
+      ">
+
+        <div style="display:flex; gap: var(--space-sm); align-items: flex-start;">
+          <span style="font-size:1.4rem; line-height:1; flex-shrink:0;">💳</span>
+          <div>
+            <p style="font-family: var(--font-mono); font-size: 0.78rem; font-weight:700; color: #eee; margin-bottom:3px;">Sichere Zahlungen</p>
+            <p style="font-family: var(--font-mono); font-size: 0.73rem; color: #777; line-height:1.45;">Boosty wickelt alle Transaktionen sicher ab. Karte &amp; PayPal werden unterstützt.</p>
+          </div>
+        </div>
+
+        <div style="display:flex; gap: var(--space-sm); align-items: flex-start;">
+          <span style="font-size:1.4rem; line-height:1; flex-shrink:0;">⚡</span>
+          <div>
+            <p style="font-family: var(--font-mono); font-size: 0.78rem; font-weight:700; color: #eee; margin-bottom:3px;">Sofortige Lieferung</p>
+            <p style="font-family: var(--font-mono); font-size: 0.73rem; color: #777; line-height:1.45;">Dateien erscheinen direkt nach der Zahlungsbestätigung in deinem Boosty-Konto.</p>
+          </div>
+        </div>
+
+        <div style="display:flex; gap: var(--space-sm); align-items: flex-start;">
+          <span style="font-size:1.4rem; line-height:1; flex-shrink:0;">🔄</span>
+          <div>
+            <p style="font-family: var(--font-mono); font-size: 0.78rem; font-weight:700; color: #eee; margin-bottom:3px;">Jederzeit neu herunterladen</p>
+            <p style="font-family: var(--font-mono); font-size: 0.73rem; color: #777; line-height:1.45;">Datei verloren? Einfach bei Boosty einloggen und erneut herunterladen — keine Zusatzkosten.</p>
+          </div>
+        </div>
+
+        <div style="display:flex; gap: var(--space-sm); align-items: flex-start;">
+          <span style="font-size:1.4rem; line-height:1; flex-shrink:0;">🙋</span>
+          <div>
+            <p style="font-family: var(--font-mono); font-size: 0.78rem; font-weight:700; color: #eee; margin-bottom:3px;">Brauchst du Hilfe?</p>
+            <p style="font-family: var(--font-mono); font-size: 0.73rem; color: #777; line-height:1.45;">Schreib uns eine E-Mail an <a href="mailto:aiinformatorbot@gmail.com" style="color: var(--clr-pink);">hello@esctools.dev</a> — wir antworten schnell.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- end main -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer__inner">
+
+    <!-- Brand & primary links -->
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools Marke">
+        ★ ESCTOOLS
+      </div>
+      <div class="footer__tagline">
+        Dein ultimativer Eurovision 2026 Fan-Toolkit ·<br>
+        Fan-Projekt, nicht mit der EBU oder dem Eurovision Song Contest verbunden.
+      </div>
+
+      <nav aria-label="Footer-Navigation" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Start</a></li>
+          <li><a href="./vote.html">Bewerten</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Prognose</a></li>
+          <li><a href="./history.html">Historie</a></li>
+          <li><a href="./guide.html">Shop-Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Social / Share -->
+    <div>
+      <p class="section-label" aria-hidden="true">Verbinde dich &amp; teile</p>
+      <div
+        class="flex flex-wrap gap-sm"
+        style="margin-top: var(--space-md);"
+        role="list"
+        aria-label="Social-Media-Links"
+      >
+        <a
+          class="social-link"
+          href="https://twitter.com/intent/tweet?text=Schau%20dir%20dieses%20kostenlose%20%23Eurovision2026%20Toolkit%20an!&url=https%3A%2F%2Feurovisiontoolkit.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf X / Twitter teilen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a
+          class="social-link"
+          href="https://www.reddit.com/r/eurovision"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="r/Eurovision auf Reddit besuchen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a
+          class="social-link"
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf Instagram folgen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a
+          class="social-link"
+          href="https://tiktok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf TikTok folgen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /footer__inner -->
+
+  <!-- Copyright bar -->
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Mit <span aria-label="Liebe">♥</span> von Eurovision-Fans, für Eurovision-Fans
+    &nbsp;·&nbsp;
+    Nicht mit der EBU oder dem Eurovision Song Contest verbunden
+    &nbsp;·&nbsp;
+    <a
+      href="mailto:aiinformatorbot@gmail.com"
+      style="color: inherit; text-decoration: underline;"
+      aria-label="Eine E-Mail an Eurovision Tools senden"
+    >hello@esctools.dev</a>
+  </p>
+</footer>
+<!-- end footer -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script src="../assets/js/script.js" defer></script>
+
+<script>
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>

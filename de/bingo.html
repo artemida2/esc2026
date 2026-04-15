@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Eurovision 2026 Bingo Wien — 5×5 Live Bingo-Karte</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Spiele 5×5 Eurovision Bingo live beim ESC 2026 in Wien! Klassische ESC-Tropes, Key Changes, Windmaschinen. Konfetti explodiert bei BINGO!" />
+  <meta name="keywords" content="Eurovision Bingo, ESC Bingo 2026, Bingo Karte Eurovision, Live Bingo Wien 2026" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- CANONICAL + HREFLANG -->
+  <link rel="canonical" href="https://eurovisiontoolkit.com/de/bingo.html" />
+  <link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/bingo.html" />
+  <link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/bingo.html" />
+  <link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/bingo.html" />
+  <link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/de/bingo.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eurovisiontoolkit.com/de/bingo.html" />
+  <meta property="og:title" content="Eurovision 2026 Bingo Wien — 5×5 Live Bingo-Karte" />
+  <meta property="og:description" content="Markiere ESC-Tropes live. Konfetti bei BINGO! Kostenlos für Wien 2026." />
+  <meta property="og:image" content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eurovision Bingo 2026 Wien" />
+  <meta name="twitter:description" content="5×5 Bingo-Karte für das große Finale in Wien." />
+
+  <!-- Emoji Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Eurovision Bingo 2026 Wien",
+    "url": "https://eurovisiontoolkit.com/de/bingo.html"
+  }
+  </script>
+  <style>
+    /* ══════════════════════════════════════════
+       BINGO PAGE — page-specific styles
+    ══════════════════════════════════════════ */
+
+    /* Page hero */
+    .bingo-hero {
+      padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bingo-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 0%,  rgba(255,230,0,0.10) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 30% at 10% 80%, rgba(255,45,120,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 90% 80%, rgba(0,245,255,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .bingo-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      margin-bottom: var(--space-md);
+    }
+    .bingo-hero__eyebrow::before,
+    .bingo-hero__eyebrow::after { content: '—'; color: #333; }
+    .bingo-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      margin-bottom: var(--space-lg);
+    }
+    .bingo-hero__title .line1 { display: block; color: #e8e8f0; }
+    .bingo-hero__title .line2 { display: block; color: var(--clr-yellow); text-shadow: var(--glow-yellow); }
+    .bingo-hero__title .line3 { display: block; color: var(--clr-pink);   text-shadow: var(--glow-pink);   }
+    .bingo-hero__sub {
+      max-width: 52ch;
+      margin: 0 auto var(--space-xl);
+      color: #666;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 2;
+    }
+    .bingo-hero__sub em { color: var(--clr-cyan); font-style: normal; }
+    .bingo-hero__sub strong { color: var(--clr-yellow); }
+
+    /* Rules row */
+    .bingo-rules {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-2xl);
+    }
+    .bingo-rule {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #555;
+    }
+    .bingo-rule__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--clr-border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    /* ── Bingo wrapper (progress + grid) ── */
+    .bingo-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Progress bar */
+    .bingo-progress {
+      margin-bottom: var(--space-xl);
+    }
+    .bingo-progress__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-sm);
+    }
+    .bingo-progress__label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #444;
+    }
+    .bingo-progress__stat {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #555;
+    }
+    .bingo-progress__stat strong {
+      font-family: var(--font-mono);
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      font-weight: 700;
+    }
+    .bingo-progress__bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid var(--clr-border);
+    }
+    .bingo-progress__bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--clr-pink), var(--clr-yellow));
+      border-radius: 3px;
+      transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 0 10px var(--clr-pink);
+    }
+
+    /* ── 4×4 Bingo Grid ── */
+    .bingo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: var(--space-xl);
+      background: var(--clr-surface);
+      border: 2px solid var(--clr-yellow);
+      border-radius: var(--radius-lg);
+      box-shadow:
+        var(--glow-yellow),
+        var(--neo-shadow),
+        inset 0 0 60px rgba(255,230,0,0.02);
+      position: relative;
+    }
+
+    /* Bingo grid heading label */
+    .bingo-grid::before {
+      content: 'B · I · N · G · O';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--clr-bg);
+      padding: 0 var(--space-md);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      white-space: nowrap;
+    }
+
+    /* Cell base */
+    .bingo-cell {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-md) var(--space-sm);
+      min-height: 120px;
+      background: rgba(255,255,255,0.02);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      user-select: none;
+      overflow: hidden;
+      transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+      /* stagger animation */
+      opacity: 0;
+      transform: scale(0.85);
+      animation: cellAppear 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+
+    /* Staggered entrance */
+    .bingo-cell:nth-child(1)  { animation-delay: 0.05s; }
+    .bingo-cell:nth-child(2)  { animation-delay: 0.08s; }
+    .bingo-cell:nth-child(3)  { animation-delay: 0.11s; }
+    .bingo-cell:nth-child(4)  { animation-delay: 0.14s; }
+    .bingo-cell:nth-child(5)  { animation-delay: 0.17s; }
+    .bingo-cell:nth-child(6)  { animation-delay: 0.20s; }
+    .bingo-cell:nth-child(7)  { animation-delay: 0.23s; }
+    .bingo-cell:nth-child(8)  { animation-delay: 0.26s; }
+    .bingo-cell:nth-child(9)  { animation-delay: 0.29s; }
+    .bingo-cell:nth-child(10) { animation-delay: 0.32s; }
+    .bingo-cell:nth-child(11) { animation-delay: 0.35s; }
+    .bingo-cell:nth-child(12) { animation-delay: 0.38s; }
+    .bingo-cell:nth-child(13) { animation-delay: 0.41s; }
+    .bingo-cell:nth-child(14) { animation-delay: 0.44s; }
+    .bingo-cell:nth-child(15) { animation-delay: 0.47s; }
+    .bingo-cell:nth-child(16) { animation-delay: 0.50s; }
+    @keyframes cellAppear {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .bingo-cell:hover {
+      border-color: var(--clr-yellow);
+      background: rgba(255,230,0,0.06);
+      transform: scale(1.04) translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,230,0,0.2), var(--neo-shadow);
+    }
+
+    /* Active (ticked) state */
+    .bingo-cell.active {
+      border-color: var(--clr-pink);
+      background: rgba(255,45,120,0.12);
+      box-shadow: var(--glow-pink), inset 0 0 20px rgba(255,45,120,0.1);
+      transform: scale(1.02);
+    }
+    .bingo-cell.active:hover {
+      border-color: var(--clr-pink);
+      background: rgba(255,45,120,0.16);
+      transform: scale(1.03) translateY(-1px);
+    }
+
+    /* Win line highlight */
+    .bingo-cell.win-line {
+      border-color: var(--clr-yellow) !important;
+      background: rgba(255,230,0,0.15) !important;
+      box-shadow: var(--glow-yellow), inset 0 0 20px rgba(255,230,0,0.12) !important;
+      animation: winPulse 1s ease infinite;
+    }
+    @keyframes winPulse {
+      0%, 100% { box-shadow: var(--glow-yellow), inset 0 0 20px rgba(255,230,0,0.12); }
+      50%       { box-shadow: 0 0 20px var(--clr-yellow), 0 0 60px rgba(255,230,0,0.5), inset 0 0 30px rgba(255,230,0,0.2); }
+    }
+
+    /* Checkmark overlay */
+    .bingo-cell::after {
+      content: '✓';
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: var(--clr-pink);
+      text-shadow: var(--glow-pink);
+      opacity: 0;
+      transform: scale(0) rotate(-20deg);
+      transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .bingo-cell.active::after {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+
+    /* Cell emoji */
+    .bingo-cell__emoji {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+    .bingo-cell:hover .bingo-cell__emoji { transform: scale(1.15) rotate(-5deg); }
+    .bingo-cell.active .bingo-cell__emoji { transform: scale(1.1); }
+
+    /* Cell text */
+    .bingo-cell__text {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #999;
+      line-height: 1.35;
+      transition: color var(--t-fast);
+    }
+    .bingo-cell:hover  .bingo-cell__text { color: #ddd; }
+    .bingo-cell.active .bingo-cell__text {
+      color: var(--clr-pink);
+      text-shadow: 0 0 8px rgba(255,45,120,0.4);
+    }
+
+    /* Strikethrough on active */
+    .bingo-cell.active .bingo-cell__text::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--clr-pink), transparent);
+      margin-top: 4px;
+      opacity: 0.6;
+    }
+
+    /* ── Controls bar ── */
+    .bingo-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+      flex-wrap: wrap;
+    }
+    .bingo-controls__left {
+      display: flex;
+      gap: var(--space-md);
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Side panel: legend ── */
+    .bingo-legend {
+      margin-top: var(--space-2xl);
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg) var(--space-xl);
+    }
+    .bingo-legend__title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: var(--space-md);
+    }
+    .bingo-legend__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-sm);
+    }
+    .bingo-legend__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: #555;
+    }
+    .bingo-legend__dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .bingo-legend__dot--pink   { background: var(--clr-pink);   box-shadow: var(--glow-pink); }
+    .bingo-legend__dot--yellow { background: var(--clr-yellow); box-shadow: var(--glow-yellow); }
+    .bingo-legend__dot--cyan   { background: var(--clr-cyan);   box-shadow: var(--glow-cyan); }
+
+    /* ── Second card (bonus) ── */
+    .bonus-card-section {
+      margin-top: var(--space-2xl);
+    }
+    .bonus-card-section__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+      flex-wrap: wrap;
+    }
+    .bonus-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clr-cyan);
+      border: 1px solid rgba(0,245,255,0.25);
+      background: rgba(0,245,255,0.06);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* Bonus grid — cyan accent */
+    .bingo-grid--cyan {
+      border-color: var(--clr-cyan);
+      box-shadow: var(--glow-cyan), var(--neo-shadow), inset 0 0 60px rgba(0,245,255,0.02);
+    }
+    .bingo-grid--cyan::before {
+      color: var(--clr-cyan);
+      text-shadow: var(--glow-cyan);
+    }
+    .bingo-grid--cyan .bingo-cell:hover {
+      border-color: var(--clr-cyan);
+      background: rgba(0,245,255,0.05);
+      box-shadow: 0 8px 24px rgba(0,245,255,0.15), var(--neo-shadow);
+    }
+    .bingo-grid--cyan .bingo-cell.active {
+      border-color: var(--clr-cyan);
+      background: rgba(0,245,255,0.1);
+      box-shadow: var(--glow-cyan), inset 0 0 20px rgba(0,245,255,0.1);
+    }
+    .bingo-grid--cyan .bingo-cell.active::after {
+      color: var(--clr-cyan);
+      text-shadow: var(--glow-cyan);
+    }
+    .bingo-grid--cyan .bingo-cell.active .bingo-cell__text {
+      color: var(--clr-cyan);
+      text-shadow: 0 0 8px rgba(0,245,255,0.4);
+    }
+    .bingo-grid--cyan .bingo-cell.active .bingo-cell__text::after {
+      background: linear-gradient(90deg, transparent, var(--clr-cyan), transparent);
+    }
+
+    /* Social link (footer override) */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #888;
+      padding: 6px 12px;
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      transition: all var(--t-fast);
+    }
+    .social-link:hover {
+      color: var(--clr-yellow);
+      border-color: var(--clr-yellow);
+      box-shadow: var(--glow-yellow);
+      text-shadow: var(--glow-yellow);
+      background: rgba(255,230,0,0.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .bingo-grid { gap: 7px; padding: var(--space-lg); }
+      .bingo-cell { min-height: 90px; padding: var(--space-sm) 6px; }
+      .bingo-cell__emoji { font-size: 1.4rem; }
+      .bingo-cell__text  { font-size: 0.6rem; }
+      .bingo-controls { flex-direction: column; align-items: stretch; }
+      .bingo-controls__left { flex-direction: column; }
+    }
+    @media (max-width: 400px) {
+      .bingo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER — Shared across ALL pages
+══════════════════════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<header role="banner">
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Zur Startseite">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Hauptnavigation">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Startseite</a></li>
+        <li><a href="./vote.html">Bewerten</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Vorhersage</a></li>
+        <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+        <li><a href="./guide.html">Shop</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right side: lang switcher + hamburger -->
+    <div class="header__actions">
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" role="group" aria-label="Sprache wählen">
+        <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+        <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+        <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+      </div>
+
+      <!-- Hamburger Button (mobile only) -->
+      <button
+        class="hamburger"
+        aria-label="Navigationsmenü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Startseite</a></li>
+    <li><a href="./vote.html">Bewerten</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Vorhersage</a></li>
+    <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+    <li><a href="./guide.html">Shop</a></li>
+  </ul>
+  <!-- Language also accessible in mobile menu -->
+  <div class="lang-switcher" role="group" aria-label="Sprache wählen" style="margin-top:var(--space-xl);">
+    <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+    <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+    <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     MAIN
+══════════════════════════════════════════════════════════ -->
+<main id="main-content">
+
+  <!-- BINGO HERO -->
+  <section class="bingo-hero" aria-labelledby="bingo-heading">
+    <div class="container">
+
+      <div class="bingo-hero__eyebrow" aria-hidden="true">Party-Modus aktiviert</div>
+
+      <h1 id="bingo-heading" class="bingo-hero__title">
+        <span class="line1">EUROVISION</span>
+        <span class="line2">TRINK-</span>
+        <span class="line3">BINGO</span>
+      </h1>
+
+      <p class="bingo-hero__sub">
+        Tippe ein Feld an, <em>sobald es live passiert</em>.<br>
+        Vervollständige eine <strong>volle Reihe, Spalte oder Diagonale</strong> und gewinne 🏆<br>
+        Funktioniert bei den Semi-Finals UND im Grand Final.
+      </p>
+
+      <!-- Quick rules -->
+      <div class="bingo-rules" role="list" aria-label="Spielregeln">
+        <div class="bingo-rule" role="listitem">
+          <span class="bingo-rule__icon" aria-hidden="true">👆</span>
+          <span>Tippen zum Markieren</span>
+        </div>
+        <div class="bingo-rule" role="listitem">
+          <span class="bingo-rule__icon" aria-hidden="true">🔁</span>
+          <span>Nochmal tippen zum Entfernen</span>
+        </div>
+        <div class="bingo-rule" role="listitem">
+          <span class="bingo-rule__icon" aria-hidden="true">🥂</span>
+          <span>Bei jedem Markieren trinken</span>
+        </div>
+        <div class="bingo-rule" role="listitem">
+          <span class="bingo-rule__icon" aria-hidden="true">🎉</span>
+          <span>Bei einer Linie „BINGO!“ rufen</span>
+        </div>
+        <div class="bingo-rule" role="listitem">
+          <span class="bingo-rule__icon" aria-hidden="true">💾</span>
+          <span>Automatisch lokal gespeichert</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <!-- BINGO CARDS SECTION -->
+  <section class="section--tight" aria-label="Bingo-Karten">
+    <div class="container">
+
+      <!-- ══════════════════════════
+           CARD 1 — Classic
+      ══════════════════════════ -->
+      <div class="bingo-wrapper">
+
+        <!-- Card label -->
+        <div class="flex" style="align-items:center;gap:var(--space-md);margin-bottom:var(--space-xl);flex-wrap:wrap;">
+          <h2 style="font-size:clamp(1.4rem,3vw,2rem);">
+            Karte 1 · <span class="neon-pink">Klassischer Modus</span>
+          </h2>
+          <span class="badge badge--pink" style="font-family:var(--font-mono);font-size:0.6rem;padding:4px 10px;letter-spacing:0.1em;">4×4 · 16 FELDER</span>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="bingo-progress" aria-label="Fortschritt Karte 1">
+          <div class="bingo-progress__meta">
+            <span class="bingo-progress__label">Fortschritt</span>
+            <span class="bingo-progress__stat">
+              <strong class="bingo-progress__count">0</strong>
+              &nbsp;/ 16 Felder markiert &nbsp;·&nbsp;
+              <strong class="bingo-progress__pct">0%</strong>
+            </span>
+          </div>
+          <div class="bingo-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="bingo-progress__bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- 4×4 Grid — Card 1 -->
+        <div
+          class="bingo-grid"
+          data-card-id="classic"
+          role="grid"
+          aria-label="Eurovision Bingo Karte — Klassischer Modus"
+        >
+
+          <!-- ROW 1 -->
+          <div class="bingo-cell" role="gridcell" aria-label="Key Change im letzten Refrain — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">🎹</span>
+            <span class="bingo-cell__text">Key Change im<br>letzten Refrain</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Windmaschine auf der Bühne — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">💨</span>
+            <span class="bingo-cell__text">Windmaschine auf<br>der Bühne</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Moderator verhaspelt sich bei einem Ländernamen — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">😬</span>
+            <span class="bingo-cell__text">Moderator verhaspelt<br>sich bei einem Ländernamen</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Regenbogenfahne im Publikum — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">🏳️‍🌈</span>
+            <span class="bingo-cell__text">Regenbogenfahne<br>im Publikum</span>
+          </div>
+
+          <!-- ROW 2 -->
+          <div class="bingo-cell" role="gridcell" aria-label="Pyrotechnik zündet auf der Bühne — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">🔥</span>
+            <span class="bingo-cell__text">PYROTECHNIK<br>zündet auf der Bühne</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Sänger vergisst eigene Textzeilen — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">😱</span>
+            <span class="bingo-cell__text">Sänger vergisst<br>eigene Textzeilen</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Douze points an ein Nachbarland — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">🤝</span>
+            <span class="bingo-cell__text">Douze points an<br>ein Nachbarland</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Sprecher sagt „Liebe Grüße aus…“ — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">💌</span>
+            <span class="bingo-cell__text">Sprecher sagt<br>„Liebe Grüße aus…“</span>
+          </div>
+
+          <!-- ROW 3 -->
+          <div class="bingo-cell" role="gridcell" aria-label="Pausenact zieht sich ewig hin — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">⏰</span>
+            <span class="bingo-cell__text">Pausenact<br>zieht sich ewig hin</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Kommentator macht einen furchtbaren Wortwitz — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">😏</span>
+            <span class="bingo-cell__text">Kommentator macht<br>einen furchtbaren Wortwitz</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Komplett mit Pailletten besetztes Outfit von Kopf bis Fuß — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">✨</span>
+            <span class="bingo-cell__text">Komplett mit Pailletten<br>besetztes Outfit</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Ganzes Lied auf Englisch gesungen — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">🇬🇧</span>
+            <span class="bingo-cell__text">Ganzes Lied<br>auf Englisch</span>
+          </div>
+
+          <!-- ROW 4 -->
+          <div class="bingo-cell" role="gridcell" aria-label="Riesige LED-Wand stiehlt die Show — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">💡</span>
+            <span class="bingo-cell__text">Riesige LED-Wand<br>stiehlt die Show</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Background-Tänzer stiehlt die Show — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">💃</span>
+            <span class="bingo-cell__text">Background-Tänzer<br>stiehlt die Show</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Künstler weint auf der Bühne mitten im Song — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">😭</span>
+            <span class="bingo-cell__text">Künstler weint<br>auf der Bühne</span>
+          </div>
+
+          <div class="bingo-cell" role="gridcell" aria-label="Kommentator zerlegt eine Performance gnadenlos — tippen zum Markieren">
+            <span class="bingo-cell__emoji" aria-hidden="true">🎤</span>
+            <span class="bingo-cell__text">Kommentator<br>zerlegt eine Performance</span>
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <div class="bingo-controls">
+          <div class="bingo-controls__left">
+            <button
+              type="button"
+              class="btn btn--secondary"
+              data-bingo-reset="classic"
+              aria-label="Klassische Bingo-Karte zurücksetzen"
+            >
+              ↺ Karte zurücksetzen
+            </button>
+            <button
+              type="button"
+              class="btn btn--yellow"
+              data-share
+              aria-label="Diese Bingo-Karte teilen"
+            >
+              📤 Karte teilen
+            </button>
+          </div>
+          <button
+            type="button"
+            class="btn btn--primary"
+            data-copy="https://eurovisiontoolkit.com/de/bingo.html"
+            aria-label="Link zur Bingo-Karte kopieren"
+          >
+            🔗 Link kopieren
+          </button>
+        </div>
+
+        <!-- Legend -->
+        <div class="bingo-legend" role="note" aria-label="Legende">
+          <div class="bingo-legend__title">Legende</div>
+          <div class="bingo-legend__grid">
+            <div class="bingo-legend__item">
+              <span class="bingo-legend__dot bingo-legend__dot--pink" aria-hidden="true"></span>
+              Markiertes Feld
+            </div>
+            <div class="bingo-legend__item">
+              <span class="bingo-legend__dot bingo-legend__dot--yellow" aria-hidden="true"></span>
+              Abgeschlossene Gewinnlinie
+            </div>
+            <div class="bingo-legend__item">
+              <span class="bingo-legend__dot bingo-legend__dot--cyan" aria-hidden="true"></span>
+              Karte 2 — Chaotische Edition
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══════════════════════════
+           CARD 2 — Chaotic Edition
+      ══════════════════════════ -->
+      <div class="bonus-card-section">
+        <div class="container">
+          <div class="bingo-wrapper">
+
+            <div class="bonus-card-section__header">
+              <h2 style="font-size:clamp(1.4rem,3vw,2rem);">
+                Karte 2 · <span class="neon-cyan">Chaotische Edition</span>
+              </h2>
+              <span class="bonus-badge" aria-label="Bonus Hard-Mode-Karte">🌪️ HARD MODE</span>
+              <span class="badge" style="font-family:var(--font-mono);font-size:0.6rem;padding:4px 10px;letter-spacing:0.1em;background:rgba(0,245,255,0.06);color:var(--clr-cyan);border:1px solid rgba(0,245,255,0.2);">4×4 · 16 FELDER</span>
+            </div>
+
+            <!-- Progress bar 2 -->
+            <div class="bingo-progress" aria-label="Fortschritt Karte 2">
+              <div class="bingo-progress__meta">
+                <span class="bingo-progress__label">Fortschritt</span>
+                <span class="bingo-progress__stat">
+                  <strong class="bingo-progress__count">0</strong>
+                  &nbsp;/ 16 Felder markiert &nbsp;·&nbsp;
+                  <strong class="bingo-progress__pct">0%</strong>
+                </span>
+              </div>
+              <div class="bingo-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="bingo-progress__bar-fill" style="background:linear-gradient(90deg,var(--clr-cyan),var(--clr-purple));box-shadow:0 0 10px var(--clr-cyan);"></div>
+              </div>
+            </div>
+
+            <!-- 4×4 Grid — Card 2 -->
+            <div
+              class="bingo-grid bingo-grid--cyan"
+              data-card-id="chaotic"
+              role="grid"
+              aria-label="Eurovision Bingo Karte — Chaotische Edition"
+            >
+
+              <!-- ROW 1 -->
+              <div class="bingo-cell" role="gridcell" aria-label="Diaspora-Stimmen retten das Heimatland — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">📞</span>
+                <span class="bingo-cell__text">Diaspora-Stimmen<br>retten das Heimatland</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Überraschende Sprache auf der Bühne (nicht Englisch) — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🗣️</span>
+                <span class="bingo-cell__text">Überraschende Sprache<br>auf der Bühne</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Kostüm- oder Requisiten-Panne live — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">💀</span>
+                <span class="bingo-cell__text">Kostüm-/Requisiten-<br>Panne live</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Kameramann verpasst den entscheidenden Moment — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">📷</span>
+                <span class="bingo-cell__text">Kameramann verpasst<br>den Key-Moment</span>
+              </div>
+
+              <!-- ROW 2 -->
+              <div class="bingo-cell" role="gridcell" aria-label="Verdächtig politische Songtexte — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🕊️</span>
+                <span class="bingo-cell__text">Verdächtig politische<br>Songtexte</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Spontaner Outfit-Wechsel auf der Bühne — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">👗</span>
+                <span class="bingo-cell__text">Spontaner Outfit-<br>Wechsel auf der Bühne</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="JURY vergibt Null Punkte an jemanden — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🫥</span>
+                <span class="bingo-cell__text">JURY vergibt<br>Null Punkte</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Unerträgliche Pause vor Punkte-Verkündung — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🫀</span>
+                <span class="bingo-cell__text">Unerträgliche Pause<br>vor Punkte-Verkündung</span>
+              </div>
+
+              <!-- ROW 3 -->
+              <div class="bingo-cell" role="gridcell" aria-label="Abstraktes Staging, das niemand versteht — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🎭</span>
+                <span class="bingo-cell__text">Abstraktes Staging,<br>das niemand versteht</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Sänger singt komplett daneben — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🎵</span>
+                <span class="bingo-cell__text">Sänger singt<br>komplett daneben</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Underdog-Lied schafft es in die Top 5 — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🤯</span>
+                <span class="bingo-cell__text">Underdog schafft<br>es in die Top 5</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Sprecher liest die Karte extrem ungelenk vor — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">📋</span>
+                <span class="bingo-cell__text">Sprecher liest die Karte<br>extrem ungelenk</span>
+              </div>
+
+              <!-- ROW 4 -->
+              <div class="bingo-cell" role="gridcell" aria-label="Klassische Powerballade: langsamer Start, explosiver Schluss — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🌊</span>
+                <span class="bingo-cell__text">Klassische Powerballade:<br>langsamer Start,<br>explosiver Schluss</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Televoter drehen die Jury-Rangliste komplett um — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🗳️</span>
+                <span class="bingo-cell__text">Televoter drehen die<br>Jury-Rangliste um</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Postkarten-Film lustiger als jedes Meme — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🎬</span>
+                <span class="bingo-cell__text">Postkarten-Film<br>lustiger als jedes Meme</span>
+              </div>
+
+              <div class="bingo-cell" role="gridcell" aria-label="Publikum flippt total aus beim letzten Song — tippen zum Markieren">
+                <span class="bingo-cell__emoji" aria-hidden="true">🚨</span>
+                <span class="bingo-cell__text">Publikum flippt<br>total aus beim letzten Song</span>
+              </div>
+
+            </div>
+
+            <!-- Controls card 2 -->
+            <div class="bingo-controls">
+              <div class="bingo-controls__left">
+                <button
+                  type="button"
+                  class="btn btn--secondary"
+                  data-bingo-reset="chaotic"
+                  aria-label="Chaotische Bingo-Karte zurücksetzen"
+                >
+                  ↺ Karte zurücksetzen
+                </button>
+                <button
+                  type="button"
+                  class="btn"
+                  style="border-color:var(--clr-cyan);color:var(--clr-cyan);"
+                  data-share
+                  aria-label="Chaotische Bingo-Karte teilen"
+                >
+                  📤 Karte teilen
+                </button>
+              </div>
+              <button
+                type="button"
+                class="btn btn--primary"
+                data-copy="https://eurovisiontoolkit.com/de/bingo.html"
+                aria-label="Link zur Bingo-Karte kopieren"
+              >
+                🔗 Link kopieren
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CTA Banner ── -->
+      <div class="divider" role="separator" aria-hidden="true" style="margin-top:var(--space-2xl);"></div>
+      <div class="card card--brutal text-center" style="padding:var(--space-2xl);margin-top:var(--space-2xl);">
+        <span class="hero__subtitle">Noch mehr ESC-Spaß?</span>
+        <h2 style="font-size:clamp(1.8rem,5vw,3rem);margin:var(--space-sm) 0 var(--space-lg);">
+          Bewerte alle 25 Acts &amp;<br>
+          <span class="neon-yellow">erstelle deine Scorecard</span>
+        </h2>
+        <div class="hero__cta">
+          <a href="./vote.html"     class="btn btn--primary  btn--xl">🗳️ Länder bewerten</a>
+          <a href="./forecast.html" class="btn btn--secondary btn--xl">📊 AI-Prognose</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER — Shared across ALL pages
+══════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer__inner">
+
+    <!-- Brand & primary links -->
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools Marke">
+        ★ ESCTOOLS
+      </div>
+      <div class="footer__tagline">
+        Dein ultimatives Eurovision 2026 Fan-Toolkit ·<br>
+        Fan-Projekt, nicht mit der EBU oder dem Eurovision Song Contest verbunden.
+      </div>
+
+      <nav aria-label="Footer-Navigation" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Start</a></li>
+          <li><a href="./vote.html">Bewerten</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Prognose</a></li>
+          <li><a href="./history.html">Historie</a></li>
+          <li><a href="./guide.html">Shop</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Social / Share -->
+    <div>
+      <p class="section-label" aria-hidden="true">Verbinden &amp; Teilen</p>
+      <div
+        class="flex flex-wrap gap-sm"
+        style="margin-top: var(--space-md);"
+        role="list"
+        aria-label="Social-Media-Links"
+      >
+        <a
+          class="social-link"
+          href="https://twitter.com/intent/tweet?text=Schau+dir+dieses+kostenlose+%23Eurovision2026+Toolkit+an%21&url=https%3A%2F%2Feurovisiontoolkit.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf X / Twitter teilen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a
+          class="social-link"
+          href="https://www.reddit.com/r/eurovision"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="r/Eurovision auf Reddit besuchen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a
+          class="social-link"
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf Instagram folgen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a
+          class="social-link"
+          href="https://tiktok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf TikTok folgen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright bar -->
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Made with <span aria-label="Liebe">♥</span> von Eurovision-Fans, für Eurovision-Fans
+    &nbsp;·&nbsp;
+    Nicht mit der EBU oder dem Eurovision Song Contest verbunden
+    &nbsp;·&nbsp;
+    <a
+      href="mailto:aiinformatorbot@gmail.com"
+      style="color: inherit; text-decoration: underline;"
+      aria-label="E-Mail an Eurovision Tools senden"
+    >hello@esctools.dev</a>
+  </p>
+</footer>
+
+<!-- Inline: only tiny things that need to run before DOMContentLoaded -->
+<script>
+  // Stamp current year in footer
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script src="../assets/js/script.js" defer></script>
+
+</body>
+</html>

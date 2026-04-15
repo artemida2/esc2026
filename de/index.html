@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Eurovision Tools 2026 — Dein ultimatives Fan-Toolkit für Wien</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Bewerte Songs, spiele Bingo, prognostiziere den Gewinner mit KI — das kostenlose ultimative Toolkit für den Eurovision Song Contest 2026 in Wien." />
+  <meta name="keywords" content="Eurovision 2026, ESC Tools, Eurovision Bingo, Punktevergabe, Gewinner Prognose, Wien 2026" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- CANONICAL + HREFLANG -->
+  <link rel="canonical" href="https://eurovisiontoolkit.com/de/" />
+  <link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/" />
+  <link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/" />
+  <link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eurovisiontoolkit.com/de/" />
+  <meta property="og:title" content="Eurovision Tools 2026 — Dein ultimatives Fan-Toolkit für Wien" />
+  <meta property="og:description" content="Bewerten. Bingo. Prognose. Das kostenlose Fan-Toolkit für den ESC 2026 in Wien." />
+  <meta property="og:image" content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eurovision Tools 2026" />
+  <meta name="twitter:description" content="Bewerte Songs, spiele Bingo, prognostiziere den Gewinner — kostenloses ESC-Toolkit für Wien." />
+
+  <!-- Emoji Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Eurovision Tools 2026",
+    "url": "https://eurovisiontoolkit.com/de/",
+    "description": "Ultimatives kostenloses Fan-Toolkit für den Eurovision Song Contest 2026 in Wien",
+    "inLanguage": ["de", "en", "es"]
+  }
+  </script>
+
+  <!-- Inline critical hero styles -->
+  <style>
+    /* ... твой существующий <style> ... (не трогай) */
+  </style>
+  <!-- Inline critical hero styles to prevent layout shift -->
+  <style>
+    /* ── Hero overrides / page-specific tweaks ── */
+    .hero__title-line {
+      display: block;
+    }
+
+    .hero__title-line--accent {
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      display: block;
+    }
+
+    /* Live badge pulse */
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #000;
+      background: var(--clr-pink);
+      padding: 4px 12px;
+      border-radius: 3px;
+      box-shadow: var(--glow-pink);
+      margin-bottom: var(--space-lg);
+    }
+
+    .live-badge__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #000;
+      animation: pulse-beat 1.2s ease-in-out infinite;
+    }
+
+    /* Tool card hover accent colors */
+    .tool-card--pink:hover   { border-color: var(--clr-pink);   box-shadow: var(--neo-shadow-hover), var(--glow-pink); }
+    .tool-card--yellow:hover { border-color: var(--clr-yellow); box-shadow: var(--neo-shadow-hover), var(--glow-yellow); }
+    .tool-card--cyan:hover   { border-color: var(--clr-cyan);   box-shadow: var(--neo-shadow-hover), var(--glow-cyan); }
+    .tool-card--purple:hover { border-color: var(--clr-purple); box-shadow: var(--neo-shadow-hover), var(--glow-purple); }
+    .tool-card--green:hover  { border-color: var(--clr-green);  box-shadow: var(--neo-shadow-hover), var(--glow-green); }
+
+    /* Arrow on tool card */
+    .tool-card__arrow {
+      font-size: 1.4rem;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity var(--t-mid), transform var(--t-mid);
+      margin-left: auto;
+      align-self: flex-end;
+      color: var(--clr-pink);
+    }
+    .tool-card:hover .tool-card__arrow { opacity: 1; transform: translateX(0); }
+
+    /* Social icons in footer */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #888;
+      padding: 6px 12px;
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      transition: all var(--t-fast);
+    }
+    .social-link:hover {
+      color: var(--clr-yellow);
+      border-color: var(--clr-yellow);
+      box-shadow: var(--glow-yellow);
+      text-shadow: var(--glow-yellow);
+      background: rgba(255,230,0,0.05);
+    }
+
+    /* Countdown expired state */
+    .countdown--expired .countdown__number {
+      border-color: var(--clr-pink);
+      color: var(--clr-pink);
+      text-shadow: var(--glow-pink);
+    }
+
+    /* Hero countdown separator */
+    .countdown-sep {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: #333;
+      line-height: 1;
+      padding-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<header role="banner">
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Zur Startseite">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Hauptnavigation">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Startseite</a></li>
+        <li><a href="./vote.html">Bewerten</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Vorhersage</a></li>
+        <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+        <li><a href="./guide.html">Shop</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right side: lang switcher + hamburger -->
+    <div class="header__actions">
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" role="group" aria-label="Sprache wählen">
+        <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+        <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+        <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+      </div>
+
+      <!-- Hamburger Button (mobile only) -->
+      <button
+        class="hamburger"
+        aria-label="Navigationsmenü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Startseite</a></li>
+    <li><a href="./vote.html">Bewerten</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Vorhersage</a></li>
+    <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+    <li><a href="./guide.html">Shop</a></li>
+  </ul>
+  <!-- Language also accessible in mobile menu -->
+  <div class="lang-switcher" role="group" aria-label="Sprache wählen" style="margin-top:var(--space-xl);">
+    <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+    <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+    <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MAIN CONTENT — Index page specific
+══════════════════════════════════════════════════════════ -->
+<main id="main-content">
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   HERO SECTION                 ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="hero" aria-labelledby="hero-heading">
+
+    <!-- Animated gradient backdrop -->
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <!-- Floating particles (injected by Particles module) -->
+    <div class="particles" aria-hidden="true"></div>
+
+    <div class="hero__content">
+
+      <!-- Live badge -->
+      <div class="live-badge" role="status" aria-live="polite">
+        <span class="live-badge__dot" aria-hidden="true"></span>
+        Eurovision 2026 · Wien · 13.–17. Mai
+      </div>
+
+      <!-- Overline -->
+      <span class="hero__subtitle">★ Das ultimative von Fans gemachte Toolkit ★</span>
+
+      <!-- Main headline with glitch effect -->
+      <h1 id="hero-heading" class="display-title glitch" data-text="DEIN ULTIMATIVES EUROVISION TOOLKIT" style="max-width:16ch; margin-inline:auto;">
+        <span class="hero__title-line">DEIN ULTIMATIVES</span>
+        <span class="hero__title-line--accent">EUROVISION</span>
+        <span class="hero__title-line">TOOLKIT</span>
+      </h1>
+
+      <!-- Subheading -->
+      <p class="mt-lg" style="
+        max-width: 52ch;
+        margin-inline: auto;
+        color: #aaa;
+        font-family: var(--font-mono);
+        font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+        line-height: 1.9;
+      ">
+        Bewerte Auftritte mit offiziellen ESC-Punkten. Spiele 5×5 Bingo live.
+        Prognostiziere den Gewinner mit einem echten <span class="neon-cyan">Bayesianischen Wahrscheinlichkeits-Engine</span>.
+        Alles kostenlos. Keine Werbung. Pure <span class="neon-pink">Eurovision-Energie</span>.
+      </p>
+
+
+      <!-- ─── COUNTDOWN TIMER ──────────────────────── -->
+      <div class="mt-2xl" aria-label="Countdown-Bereich">
+        <p class="section-label" style="justify-content: center;" aria-hidden="true">
+          Countdown zum Grand Final
+        </p>
+
+        <!--
+          [data-countdown]        → Countdown module targets this wrapper
+          [data-countdown-days]   → updated every second by script.js
+          [data-countdown-hours]
+          [data-countdown-mins]
+          [data-countdown-secs]
+        -->
+        <div
+          class="countdown"
+          data-countdown
+          role="timer"
+          aria-label="Zeit bis zum Eurovision 2026 Grand Final am 16. Mai 2026"
+        >
+          <div class="countdown__unit">
+            <div
+              class="countdown__number"
+              data-countdown-days
+              aria-label="Tage"
+            >00</div>
+            <div class="countdown__label" aria-hidden="true">Tage</div>
+          </div>
+
+          <div class="countdown-sep" aria-hidden="true">:</div>
+
+          <div class="countdown__unit">
+            <div
+              class="countdown__number"
+              data-countdown-hours
+              aria-label="Stunden"
+            >00</div>
+            <div class="countdown__label" aria-hidden="true">Std</div>
+          </div>
+
+          <div class="countdown-sep" aria-hidden="true">:</div>
+
+          <div class="countdown__unit">
+            <div
+              class="countdown__number"
+              data-countdown-mins
+              aria-label="Minuten"
+            >00</div>
+            <div class="countdown__label" aria-hidden="true">Min</div>
+          </div>
+
+          <div class="countdown-sep" aria-hidden="true">:</div>
+
+          <div class="countdown__unit">
+            <div
+              class="countdown__number"
+              data-countdown-secs
+              aria-label="Sekunden"
+            >00</div>
+            <div class="countdown__label" aria-hidden="true">Sek</div>
+          </div>
+        </div>
+      </div>
+      <!-- end countdown -->
+
+
+      <!-- ─── CTA Buttons ──────────────────────────── -->
+      <div class="hero__cta">
+        <a href="./vote.html" class="btn btn--primary btn--xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Länder bewerten
+        </a>
+        <a href="./bingo.html" class="btn btn--yellow btn--xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Bingo spielen
+        </a>
+        <a href="./forecast.html" class="btn btn--secondary btn--xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          KI-Vorhersage
+        </a>
+      </div>
+
+    </div><!-- /hero__content -->
+  </section>
+  <!-- end hero -->
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+<!-- ② Add inside <main id="main-content"> — Ticket generator section -->
+<section class="section" id="ticket-gen" aria-labelledby="tg-heading">
+  <div class="container">
+ 
+    <!-- Section header -->
+    <div class="text-center tg-header">
+      <span class="section-label" style="justify-content:center;" aria-hidden="true">
+        — Fan-Erlebnis —
+      </span>
+      <h2 id="tg-heading">
+        Dein virtuelles<br>
+        <span class="neon-pink">Eurovision-Ticket</span>
+      </h2>
+      <p class="tg-header__sub">
+        Individualisiere · Vorschau · Lade in HD herunter — alles im Browser, kein Login nötig.
+      </p>
+    </div>
+ 
+    <!-- Form + Canvas layout -->
+    <div class="tg-layout">
+ 
+      <!-- LEFT: Controls panel -->
+      <aside class="tg-controls" aria-label="Ticket-Anpassungsoptionen">
+ 
+        <!-- Photo upload -->
+        <div class="tg-field-group">
+          <label class="tg-label" for="tg-photo">
+            <span class="tg-label__icon" aria-hidden="true">📸</span>
+            Dein Foto
+          </label>
+          <div
+            class="tg-upload-zone"
+            id="tg-upload-zone"
+            role="button"
+            tabindex="0"
+            aria-label="Foto hochladen — klicken oder Drag & Drop"
+          >
+            <div class="tg-upload-zone__icon" aria-hidden="true">👤</div>
+            <div class="tg-upload-zone__text">
+              <strong>Klicken zum Hochladen</strong> oder Drag & Drop
+            </div>
+            <div class="tg-upload-zone__hint">JPG, PNG, WEBP · max. 10 MB</div>
+            <input
+              type="file"
+              id="tg-photo"
+              name="tg-photo"
+              accept="image/*"
+              style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;"
+              aria-label="Foto-Datei hochladen"
+            />
+          </div>
+        </div>
+ 
+        <!-- Show Type -->
+        <div class="tg-field-group">
+          <label class="tg-label" for="tg-show">
+            <span class="tg-label__icon" aria-hidden="true">🎭</span>
+            Show-Typ
+          </label>
+          <div class="tg-select-wrap">
+            <select id="tg-show" class="tg-select" aria-label="Show-Typ auswählen">
+              <option value="GF"     selected>Grand Final — 16. Mai 2026</option>
+              <option value="SF1">Halbfinale 1 — 12. Mai 2026</option>
+              <option value="SF2">Halbfinale 2 — 14. Mai 2026</option>
+              <option value="GF_P">Grand Final (Vorschau) — 16. Mai</option>
+              <option value="SF1_AF">Halbfinale 1 Nachmittagsshow — 12. Mai</option>
+              <option value="SF2_AF">Halbfinale 2 Nachmittagsshow — 14. Mai</option>
+            </select>
+            <span class="tg-select-arrow" aria-hidden="true">▾</span>
+          </div>
+        </div>
+ 
+        <!-- Name -->
+        <div class="tg-field-group">
+          <label class="tg-label" for="tg-name">
+            <span class="tg-label__icon" aria-hidden="true">✍️</span>
+            Dein Name
+          </label>
+          <input
+            type="text"
+            id="tg-name"
+            class="tg-input"
+            placeholder="z. B. SUPERFAN 2026"
+            maxlength="28"
+            autocomplete="off"
+            aria-label="Deinen Namen für das Ticket eingeben"
+          />
+        </div>
+ 
+        <!-- Seat info (read-only, randomised) -->
+        <div class="tg-field-group">
+          <div class="tg-label">
+            <span class="tg-label__icon" aria-hidden="true">💺</span>
+            Sitzplatz-Zuweisung
+            <button
+              id="tg-randomize"
+              class="tg-randomize-btn"
+              type="button"
+              aria-label="Sitzplatz zufällig wählen"
+              title="Sitzplatz zufällig wählen"
+            >↻ Zufall</button>
+          </div>
+          <div class="tg-seat-row">
+            <div class="tg-seat-box">
+              <span class="tg-seat-box__label">Block</span>
+              <span class="tg-seat-box__val" id="tg-disp-block">—</span>
+            </div>
+            <div class="tg-seat-box">
+              <span class="tg-seat-box__label">Reihe</span>
+              <span class="tg-seat-box__val" id="tg-disp-row">—</span>
+            </div>
+            <div class="tg-seat-box">
+              <span class="tg-seat-box__label">Sitz</span>
+              <span class="tg-seat-box__val" id="tg-disp-seat">—</span>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Action buttons -->
+        <div class="tg-actions">
+          <button
+            id="tg-download"
+            class="btn btn--primary btn--xl tg-download-btn"
+            type="button"
+            aria-label="Dein Ticket als PNG herunterladen"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            HD-Ticket herunterladen
+          </button>
+          <button
+            id="tg-share"
+            class="btn btn--secondary tg-share-btn"
+            type="button"
+            data-share
+            aria-label="Tool teilen"
+          >
+            📤 Tool teilen
+          </button>
+        </div>
+ 
+        <!-- Disclaimer -->
+        <p class="tg-disclaimer">
+          🎫 Fan-gemachtes Tool. Nicht mit der EBU oder dem Eurovision Song Contest verbunden.
+          Ticket ist virtuell — nicht gültig für den Eintritt.
+        </p>
+ 
+      </aside>
+ 
+      <!-- RIGHT: Canvas preview -->
+      <div class="tg-preview" aria-label="Ticket-Vorschau">
+ 
+        <div class="tg-preview__label" aria-hidden="true">
+          <span class="tg-preview__dot"></span>
+          Live-Vorschau
+        </div>
+ 
+        <div class="tg-canvas-wrap" id="tg-canvas-wrap">
+          <canvas id="ticket-canvas" aria-label="Ticket-Vorschau-Canvas"></canvas>
+          <!-- Loading overlay -->
+          <div class="tg-canvas-loader" id="tg-canvas-loader" aria-hidden="true">
+            <div class="tg-canvas-loader__spinner"></div>
+          </div>
+        </div>
+ 
+        <div class="tg-preview__hint">
+          2× HD-Auflösung beim Download · Lokal im Browser gespeichert
+        </div>
+ 
+      </div>
+    </div><!-- /tg-layout -->
+ 
+  </div>
+</section>
+<!-- ► End of ticket generator section -->
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   TOOLS GRID SECTION           ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section" aria-labelledby="tools-heading">
+    <div class="container">
+
+      <!-- Section header -->
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="section-label" style="justify-content: center;" aria-hidden="true">
+          — Alle Tools —
+        </span>
+        <h2 id="tools-heading">
+          Fünf Wege, dieses<br>
+          <span class="neon-yellow">Eurovision legendär zu machen</span>
+        </h2>
+        <p class="mt-md" style="
+          margin-inline: auto;
+          color: #777;
+          font-family: var(--font-mono);
+          font-size: 0.85rem;
+        ">
+          Kostenlos. Interaktiv. Von Fans für Fans gemacht. Kein Login nötig.
+        </p>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="tools-grid stagger" role="list">
+
+        <!-- ① Rate / Vote -->
+        <a
+          href="./vote.html"
+          class="tool-card tool-card--pink anim-fade-up"
+          role="listitem"
+          aria-label="Länder bewerten — Scoring-Tool öffnen"
+        >
+          <div class="tool-card__icon" aria-hidden="true">🗳️</div>
+          <h3 class="tool-card__title">Länder bewerten</h3>
+          <p class="tool-card__desc">
+            Ordne jeder teilnehmenden Nation offizielle ESC-Punkte zu (1, 2, 3, 4, 5, 6, 7, 8, 10, 12). 
+            Dein Punktestand aktualisiert sich live. Exportiere oder teile deine Karte.
+          </p>
+          <div class="flex gap-sm mt-md" style="align-items:center;">
+            <span class="badge badge--pink">PUNKTEKARTE</span>
+            <span class="badge badge--pink" style="opacity:0.6;">LIVE-STAND</span>
+            <span class="tool-card__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- ② Bingo -->
+        <a
+          href="./bingo.html"
+          class="tool-card tool-card--yellow anim-fade-up"
+          role="listitem"
+          aria-label="Bingo — Eurovision-Bingo spielen"
+        >
+          <div class="tool-card__icon" aria-hidden="true">🎱</div>
+          <h3 class="tool-card__title">Bingo-Abend</h3>
+          <p class="tool-card__desc">
+            Eine 5×5-Karte mit klassischen ESC-Klischees — Key-Changes, Windmaschinen, Interval Acts. 
+            Markiere live. Konfetti explodiert bei BINGO!
+          </p>
+          <div class="flex gap-sm mt-md" style="align-items:center;">
+            <span class="badge badge--yellow">5×5-GITTER</span>
+            <span class="badge badge--yellow" style="opacity:0.6;">AUTO-SAVE</span>
+            <span class="tool-card__arrow" aria-hidden="true" style="color:var(--clr-yellow);">→</span>
+          </div>
+        </a>
+
+        <!-- ③ Forecast -->
+        <a
+          href="./forecast.html"
+          class="tool-card tool-card--cyan anim-fade-up"
+          role="listitem"
+          aria-label="KI-Vorhersage — Gewinner-Prognose"
+        >
+          <div class="tool-card__icon" aria-hidden="true">📊</div>
+          <h3 class="tool-card__title">KI-Vorhersage</h3>
+          <p class="tool-card__desc">
+            Unser Bayesian-Engine kombiniert Jury-Wertungen, Televote-Daten, Buchmacher-Quoten und Proben-Bewertungen 
+            zu einer Echtzeit-Siegeswahrscheinlichkeits-Rangliste.
+          </p>
+          <div class="flex gap-sm mt-md" style="align-items:center;">
+            <span class="badge badge--cyan">BAYESIAN</span>
+            <span class="badge badge--cyan" style="opacity:0.6;">ECHTZEIT</span>
+            <span class="tool-card__arrow" aria-hidden="true" style="color:var(--clr-cyan);">→</span>
+          </div>
+        </a>
+
+        <!-- ④ History -->
+        <a
+          href="./history.html"
+          class="tool-card tool-card--green anim-fade-up"
+          role="listitem"
+          aria-label="ESC-Geschichte — über 70 Jahre ESC erkunden"
+        >
+          <div class="tool-card__icon" aria-hidden="true">📜</div>
+          <h3 class="tool-card__title">ESC-Geschichte</h3>
+          <p class="tool-card__desc">
+            Reise durch über 70 Jahre Gewinner, ikonische Momente und berüchtigte Null-Punkte — 
+            alles auf einer atemberaubenden interaktiven Zeitleiste.
+          </p>
+          <div class="flex gap-sm mt-md" style="align-items:center;">
+            <span class="badge badge--green">SEIT 1956</span>
+            <span class="badge badge--green" style="opacity:0.6;">ZEITLEISTE</span>
+            <span class="tool-card__arrow" aria-hidden="true" style="color:var(--clr-green);">→</span>
+          </div>
+        </a>
+
+        <!-- ⑤ Shop Guide -->
+        <a
+          href="./guide.html"
+          class="tool-card tool-card--purple anim-fade-up"
+          role="listitem"
+          aria-label="Fan-Shop-Führer — offizielle Merch & Party-Essentials"
+        >
+          <div class="tool-card__icon" aria-hidden="true">🛍️</div>
+          <h3 class="tool-card__title">Fan-Shop-Führer</h3>
+          <p class="tool-card__desc">
+            Kuratierte Auswahl an offizieller Merch, Flaggen-Sets, Cosplay-Kits und Party-Essentials, 
+            damit du stilvoll zum Grand Final kommst.
+          </p>
+          <div class="flex gap-sm mt-md" style="align-items:center;">
+            <span class="badge badge--pink">MERCH</span>
+            <span class="badge badge--pink" style="opacity:0.6;">COSPLAY</span>
+            <span class="tool-card__arrow" aria-hidden="true" style="color:var(--clr-purple);">→</span>
+          </div>
+        </a>
+
+        <!-- ⑥ Share CTA card -->
+        <div
+          class="tool-card card--glow anim-fade-up"
+          role="listitem"
+          style="text-align: center; justify-content: center; align-items: center;"
+        >
+          <div class="tool-card__icon" aria-hidden="true">📣</div>
+          <h3 class="tool-card__title neon-pink">Verbreite die Botschaft</h3>
+          <p class="tool-card__desc" style="margin-inline: auto;">
+            Kennst du einen Fan, der das lieben würde? Teile das Toolkit und mach die Eurovision-Nacht 
+            zur interaktivsten aller Zeiten.
+          </p>
+          <div class="flex gap-sm mt-lg" style="flex-wrap:wrap; justify-content:center;">
+            <button
+              class="btn btn--primary"
+              data-share
+              aria-label="Diese Seite mit Freunden teilen"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Teilen
+            </button>
+            <button
+              class="btn btn--ghost"
+              data-copy
+              aria-label="Link in die Zwischenablage kopieren"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Link kopieren
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /tools-grid -->
+    </div><!-- /container -->
+  </section>
+  <!-- end tools section -->
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   STATS / KPI SECTION          ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section--tight" aria-labelledby="stats-heading">
+    <div class="container">
+
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <span class="section-label" style="justify-content: center;" aria-hidden="true">
+          — Zahlen & Fakten —
+        </span>
+        <h2 id="stats-heading" class="neon-cyan">Eurovision 2026 auf einen Blick</h2>
+      </div>
+
+      <div class="stats-grid stagger" role="list">
+
+        <div class="stat-card anim-scale-in" role="listitem">
+          <div class="stat-card__value" aria-label="37">35</div>
+          <div class="stat-card__label">Teilnehmende Länder</div>
+        </div>
+
+        <div class="stat-card anim-scale-in" role="listitem">
+          <div class="stat-card__value" aria-label="3">3</div>
+          <div class="stat-card__label">Live-Shows</div>
+        </div>
+
+        <div class="stat-card anim-scale-in" role="listitem">
+          <div class="stat-card__value" aria-label="180 million plus">180M+</div>
+          <div class="stat-card__label">Zuschauer weltweit</div>
+        </div>
+
+        <div class="stat-card anim-scale-in" role="listitem">
+          <div class="stat-card__value" aria-label="70">70</div>
+          <div class="stat-card__label">Jahre Geschichte</div>
+        </div>
+
+      </div><!-- /stats-grid -->
+    </div>
+  </section>
+  <!-- end stats -->
+
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║   BOTTOM CTA BANNER            ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section--tight" aria-labelledby="cta-heading">
+    <div class="container">
+      <div
+        class="card card--brutal text-center"
+        style="padding: var(--space-3xl) var(--space-xl);"
+      >
+        <span class="hero__subtitle" style="margin-bottom: var(--space-md);">
+          Bereit zum Mitmachen?
+        </span>
+        <h2 id="cta-heading" style="font-size: clamp(2rem, 6vw, 4rem); margin-bottom: var(--space-lg);">
+          Wähle deine Waffe, Fan.
+        </h2>
+        <p style="
+          margin-inline: auto;
+          margin-bottom: var(--space-2xl);
+          color: #888;
+          font-family: var(--font-mono);
+          font-size: 0.85rem;
+          max-width: 45ch;
+        ">
+          Das Grand Final rückt näher. Deine Punktekarte, dein Bingo-Card und deine Gewinner-Vorhersage warten.
+        </p>
+        <div class="hero__cta">
+          <a href="./vote.html"     class="btn btn--primary  btn--xl">🗳️ Jetzt bewerten</a>
+          <a href="./bingo.html"    class="btn btn--yellow   btn--xl">🎱 Bingo-Card</a>
+          <a href="./forecast.html" class="btn btn--secondary btn--xl">📊 Vorhersage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- end main -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer__inner">
+
+    <!-- Brand & primary links -->
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools Marke">
+        ★ ESCTOOLS
+      </div>
+      <div class="footer__tagline">
+        Dein ultimativer Eurovision 2026 Fan-Toolkit · 
+        Fan-Projekt, nicht mit der EBU oder dem Eurovision Song Contest verbunden.
+      </div>
+
+      <nav aria-label="Footer-Navigation" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Startseite</a></li>
+          <li><a href="./vote.html">Bewerten</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Vorhersage</a></li>
+          <li><a href="./history.html">Geschichte</a></li>
+          <li><a href="./guide.html">Shop</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Social / Share -->
+    <div>
+      <p class="section-label" aria-hidden="true">Verbinden &amp; Teilen</p>
+      <div
+        class="flex flex-wrap gap-sm"
+        style="margin-top: var(--space-md);"
+        role="list"
+        aria-label="Social-Media-Links"
+      >
+        <a
+          class="social-link"
+          href="https://twitter.com/intent/tweet?text=Schau%20dir%20dieses%20kostenlose%20%23Eurovision2026%20Toolkit%20an!&url=https%3A%2F%2Feurovisiontoolkit.com%2Fde"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf X / Twitter teilen"
+        >
+          <!-- X icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a
+          class="social-link"
+          href="https://www.reddit.com/r/eurovision"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="r/Eurovision auf Reddit besuchen"
+        >
+          <!-- Reddit icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a
+          class="social-link"
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf Instagram folgen"
+        >
+          <!-- Instagram icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a
+          class="social-link"
+          href="https://tiktok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf TikTok folgen"
+        >
+          <!-- TikTok icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /footer__inner -->
+
+  <!-- Copyright bar -->
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Mit <span aria-label="Liebe">♥</span> gemacht von Eurovision-Fans, für Eurovision-Fans
+    &nbsp;·&nbsp;
+    Nicht mit der EBU oder dem Eurovision Song Contest verbunden
+    &nbsp;·&nbsp;
+    <a
+      href="mailto:aiinformatorbot@gmail.com"
+      style="color: inherit; text-decoration: underline;"
+      aria-label="Eine E-Mail an Eurovision Tools senden"
+    >hello@esctools.dev</a>
+  </p>
+</footer>
+<!-- end footer -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script src="../assets/js/script.js" defer></script>
+
+<!-- Inline: only tiny things that need to run before DOMContentLoaded -->
+<script>
+  // Stamp current year in footer
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+<!-- ③ Add before </body> — initialise TicketGen after DOM is ready -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof TicketGen !== 'undefined') {
+      TicketGen.init();
+    }
+  });
+</script>
+</body>
+</html>

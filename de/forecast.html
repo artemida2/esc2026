@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>KI-Prognose Eurovision 2026 Wien — Bayesianischer Gewinner-Rechner</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Echtzeit-Prognosen für den Gewinner des Eurovision Song Contest 2026 in Wien. Bayesianischer Algorithmus kombiniert Jury, Televote, Quoten und Proben." />
+  <meta name="keywords" content="Eurovision 2026 Prognose, KI Gewinner Vorhersage, ESC Prognose Wien, Bayesian Eurovision" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- CANONICAL + HREFLANG -->
+  <link rel="canonical" href="https://eurovisiontoolkit.com/de/forecast.html" />
+  <link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/forecast.html" />
+  <link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/forecast.html" />
+  <link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/forecast.html" />
+  <link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/de/forecast.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eurovisiontoolkit.com/de/forecast.html" />
+  <meta property="og:title" content="KI-Prognose Eurovision 2026 Wien" />
+  <meta property="og:description" content="Bayesianischer Algorithmus prognostiziert den Gewinner des Grand Final in Wien in Echtzeit." />
+  <meta property="og:image" content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KI-Prognose ESC 2026 Wien" />
+  <meta name="twitter:description" content="Wer gewinnt den Eurovision Song Contest 2026 in Wien?" />
+
+  <!-- Emoji Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "KI-Prognose Eurovision 2026 Wien",
+    "url": "https://eurovisiontoolkit.com/de/forecast.html"
+  }
+  </script>
+
+  <style>
+    /* Forecast specific tweaks */
+    .hero--compact {
+      min-height: 40vh;
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-xl);
+    }
+    
+    .math-block {
+      background: var(--clr-surface-2);
+      border-left: 4px solid var(--clr-cyan);
+      padding: var(--space-md) var(--space-lg);
+      margin-block: var(--space-md);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #aaa;
+      box-shadow: var(--neo-shadow-inset);
+    }
+
+    .math-formula {
+      font-size: 1.1rem;
+      color: var(--clr-cyan);
+      text-shadow: var(--glow-cyan);
+      display: block;
+      margin-top: var(--space-xs);
+    }
+
+    .bloc-matrix td.high { color: var(--clr-pink); text-shadow: var(--glow-pink); font-weight: bold; }
+    .bloc-matrix td.mid { color: var(--clr-yellow); text-shadow: var(--glow-yellow); }
+    .bloc-matrix td.low { color: #666; }
+  </style>
+</head>
+
+<body>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<header role="banner">
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Zur Startseite">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Hauptnavigation">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Startseite</a></li>
+        <li><a href="./vote.html">Bewerten</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Vorhersage</a></li>
+        <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+        <li><a href="./guide.html">Shop</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right side: lang switcher + hamburger -->
+    <div class="header__actions">
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" role="group" aria-label="Sprache wählen">
+        <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+        <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+        <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+      </div>
+
+      <!-- Hamburger Button (mobile only) -->
+      <button
+        class="hamburger"
+        aria-label="Navigationsmenü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Startseite</a></li>
+    <li><a href="./vote.html">Bewerten</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Vorhersage</a></li>
+    <li><a href="./history.html" aria-current="page">Geschichte</a></li>
+    <li><a href="./guide.html">Shop</a></li>
+  </ul>
+  <!-- Language also accessible in mobile menu -->
+  <div class="lang-switcher" role="group" aria-label="Sprache wählen" style="margin-top:var(--space-xl);">
+    <button data-lang="en" aria-label="Zu Englisch wechseln" aria-pressed="false">EN</button>
+    <button data-lang="es" aria-label="A Español cambiar" aria-pressed="false">ES</button>
+    <button data-lang="de" class="active" aria-label="Auf Deutsch wechseln" aria-pressed="true">DE</button>
+  </div>
+</nav>
+<main id="main-content">
+
+  <section class="hero hero--compact" aria-labelledby="hero-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="particles" aria-hidden="true"></div>
+
+    <div class="hero__content stagger">
+      <span class="hero__subtitle anim-fade-up">In Mathematik verankert. Von Geschichte angetrieben.</span>
+      <h1 id="hero-heading" class="display-title glitch anim-fade-up" data-text="KI-VORHERSAGE" style="font-size: clamp(3rem, 10vw, 7rem);">
+        KI-VORHERSAGE
+      </h1>
+      <p class="mt-md anim-fade-up" style="max-width: 55ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.9rem;">
+        Keine Kristallkugeln hier. Unser Motor aktualisiert die Gewinnwahrscheinlichkeiten dynamisch, indem er aktuelle Buchmacher-Quoten mit 70 Jahren geopolitischer Abstimmungsgeschichte kombiniert.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <section class="section--tight" aria-labelledby="dashboard-heading">
+    <div class="container">
+      
+      <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-2xl);">
+        
+        <div class="anim-slide-r">
+          <div class="flex-between" style="margin-bottom: var(--space-md);">
+            <h2 id="dashboard-heading" style="font-size: 2rem;">Aktuelle <span class="neon-cyan">Rangliste</span></h2>
+            <span class="badge badge--cyan pulse">LIVE-AKTUALISIERUNG</span>
+          </div>
+          
+          <div id="forecast-results" class="forecast-list" aria-live="polite">
+            <div class="forecast-item skeleton" style="height: 60px;"></div>
+            <div class="forecast-item skeleton" style="height: 60px;"></div>
+            <div class="forecast-item skeleton" style="height: 60px;"></div>
+            <div class="forecast-item skeleton" style="height: 60px;"></div>
+            <div class="forecast-item skeleton" style="height: 60px;"></div>
+          </div>
+        </div>
+
+        <div class="anim-fade-up" style="animation-delay: 0.2s;">
+          <h2 style="font-size: 2rem; margin-bottom: var(--space-md);">So <span class="neon-pink">funktioniert es</span></h2>
+          
+          <div class="card card--brutal" style="margin-bottom: var(--space-md); border-color: var(--clr-yellow); box-shadow: var(--brutal-offset-y);">
+            <h3 class="neon-yellow" style="font-size: 1.1rem; margin-bottom: var(--space-xs);">Transparenzhinweis (14. April 2026)</h3>
+            <p style="font-size: 0.85rem; color: #ccc;">
+              Unsere Basisdaten spiegeln die <strong>tatsächlichen Buchmacher-Quoten von heute</strong> wider. Anschließend wendet unser Algorithmus bewährte historische Abstimmungsblöcke und simulierte Jury-Verteilungskurven an, um Marktverzerrungen zu korrigieren.
+            </p>
+          </div>
+
+          <div class="card card--brutal">
+            <h3 class="neon-cyan" style="font-size: 1.1rem; margin-bottom: var(--space-xs);">1. Jury-Modellierung (Gaußsche Normalverteilung)</h3>
+            <p style="font-size: 0.85rem; color: #ccc;">
+              Wir modellieren die erwarteten Jury-Punkte als Normalverteilung basierend auf Probenleistungsmetriken.
+            </p>
+            <div class="math-block">
+              ƒ(x) = <span class="math-formula">1 / (σ√(2π)) · e<sup>-(x-μ)² / 2σ²</sup></span>
+            </div>
+
+            <h3 class="neon-purple" style="font-size: 1.1rem; margin-top: var(--space-lg); margin-bottom: var(--space-xs);">2. Korrigierende Aktualisierung (Bayesianisch)</h3>
+            <p style="font-size: 0.85rem; color: #ccc;">
+              Wir behandeln Wettquoten als <em>Prior</em>. Sobald neue Daten eintreffen, filtert das Bayes-Theorem Hype heraus und verstärkt den echten Schwung.
+            </p>
+            <div class="math-block">
+              Posterior-Wahrscheinlichkeit:
+              <span class="math-formula">P(Sieg | Daten) ∝ P(Daten | Sieg) · P(Sieg)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <section class="section--tight" aria-labelledby="blocs-heading">
+    <div class="container anim-fade-up">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <span class="section-label" style="justify-content: center;" aria-hidden="true">— Geopolitik —</span>
+        <h2 id="blocs-heading">Die <span class="neon-yellow">Abstimmungsblöcke</span>-Matrix</h2>
+        <p class="mt-sm" style="margin-inline: auto; color: #888; font-family: var(--font-mono); font-size: 0.85rem; max-width: 60ch;">
+          Das geheime Rezept. Unser Algorithmus gewichtet die Televote-Vorhersagen basierend auf 70 Jahren etablierter kultureller und geografischer Punkt-Austausch-Affinitäten.
+        </p>
+      </div>
+
+      <div class="vote-table-wrapper">
+        <table class="vote-table bloc-matrix" aria-label="Historische Abstimmungsblöcke-Matrix">
+          <thead>
+            <tr>
+              <th>Empfänger \ Geber</th>
+              <th>Nordisch</th>
+              <th>Balkan</th>
+              <th>Baltisch</th>
+              <th>Iberisch</th>
+              <th>Östlich</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="country-name">Nordischer Block</span></td>
+              <td class="high">Sehr hoch (10-12)</td>
+              <td class="low">Niedrig (0-2)</td>
+              <td class="mid">Mittel (4-6)</td>
+              <td class="low">Niedrig (0-3)</td>
+              <td class="low">Niedrig (0-2)</td>
+            </tr>
+            <tr>
+              <td><span class="country-name">Balkan-Block</span></td>
+              <td class="low">Niedrig (0-2)</td>
+              <td class="high">Sehr hoch (10-12)</td>
+              <td class="low">Niedrig (0-1)</td>
+              <td class="mid">Mittel (3-5)</td>
+              <td class="mid">Mittel (4-7)</td>
+            </tr>
+            <tr>
+              <td><span class="country-name">Baltischer Block</span></td>
+              <td class="mid">Mittel (5-7)</td>
+              <td class="low">Niedrig (0-2)</td>
+              <td class="high">Sehr hoch (10-12)</td>
+              <td class="low">Niedrig (0-2)</td>
+              <td class="high">Hoch (7-10)</td>
+            </tr>
+            <tr>
+              <td><span class="country-name">Iberischer Block</span></td>
+              <td class="low">Niedrig (0-3)</td>
+              <td class="mid">Mittel (3-5)</td>
+              <td class="low">Niedrig (0-2)</td>
+              <td class="high">Sehr hoch (12)</td>
+              <td class="low">Niedrig (0-2)</td>
+            </tr>
+            <tr>
+              <td><span class="country-name">Östlicher Block</span></td>
+              <td class="low">Niedrig (0-3)</td>
+              <td class="mid">Mittel (4-6)</td>
+              <td class="high">Hoch (8-10)</td>
+              <td class="low">Niedrig (0-3)</td>
+              <td class="high">Sehr hoch (10-12)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <section class="section--tight" aria-labelledby="history-heading">
+    <div class="container anim-fade-up">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <span class="section-label" style="justify-content: center;" aria-hidden="true">— Die Daten lügen nicht —</span>
+        <h2 id="history-heading">Eurovision <span class="neon-pink">Geschichte &amp; Statistiken</span></h2>
+        <p class="mt-sm" style="margin-inline: auto; color: #888; font-family: var(--font-mono); font-size: 0.9rem; max-width: 70ch;">
+          Um den Eurovision-2026-Gewinner in Wien genau vorherzusagen, müssen wir die Vergangenheit analysieren. Während die Buchmacher die Bühne bereiten, liebt der europäische Televote dramatische Wendungen. Tauchen Sie ein in historische Eurovision-Statistiken und die ikonischsten Wettquoten-Überraschungen.
+        </p>
+      </div>
+
+      <div class="tools-grid" style="grid-template-columns: 1fr; gap: var(--space-xl);">
+        
+        <div class="card card--brutal" style="border-color: var(--clr-cyan); box-shadow: 4px 4px 0px var(--clr-cyan), var(--neo-shadow);">
+          <div class="flex-between" style="margin-bottom: var(--space-md);">
+            <h3 class="neon-cyan" style="font-size: 1.4rem;">Buchmacher-Illusionen: <br/><span style="color: #fff; text-shadow: none;">Erwartung vs. Realität</span></h3>
+            <span class="badge badge--cyan">ÜBERRASCHUNGEN</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #ccc; margin-bottom: var(--space-md); font-family: var(--font-mono);">
+            Algorithmus-Modelle sind toll, aber menschliche Emotionen sind chaotisch. Hier sind die denkwürdigsten Momente, in denen die großen Favoriten abstürzten und die Underdogs das Kristallmikrofon stahlen.
+          </p>
+
+          <div class="vote-table-wrapper">
+            <table class="vote-table" aria-label="Eurovision Erwartung vs. Realität Tabelle">
+              <thead>
+                <tr>
+                  <th>Jahr</th>
+                  <th>Buchmacher-Favorit (Erwartung)</th>
+                  <th>Tatsächlicher Gewinner (Realität)</th>
+                  <th>Wendungsfaktor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>2024</strong></td>
+                  <td>🇭🇷 Kroatien <span style="color: #888; font-size: 0.8em;">(Baby Lasagna)</span> - <em class="neon-pink">Überwältigender Favorit</em></td>
+                  <td>🇨🇭 Schweiz <span style="color: #888; font-size: 0.8em;">(Nemo)</span></td>
+                  <td>Jurys haben stimmliche Akrobatik massiv gegenüber dem viralen Televote-Hit bevorzugt.</td>
+                </tr>
+                <tr>
+                  <td><strong>2021</strong></td>
+                  <td>🇲🇹 Malta <span style="color: #888; font-size: 0.8em;">(Destiny)</span> - <em class="neon-pink">Früher Quoten-Führer</em></td>
+                  <td>🇮🇹 Italien <span style="color: #888; font-size: 0.8em;">(Måneskin)</span></td>
+                  <td>Malta stürzte nach schockierend niedriger Televote-Punktzahl auf Platz 7 ab.</td>
+                </tr>
+                <tr>
+                  <td><strong>2016</strong></td>
+                  <td>🇷🇺 Russland <span style="color: #888; font-size: 0.8em;">(Sergey Lazarev)</span> - <em class="neon-pink">90 % implizierte Gewinnwahrscheinlichkeit</em></td>
+                  <td>🇺🇦 Ukraine <span style="color: #888; font-size: 0.8em;">(Jamala)</span></td>
+                  <td>Der ultimative Split: Russland gewann den Televote, Australien die Jurys. Ukraine holte die Krone.</td>
+                </tr>
+                <tr>
+                  <td><strong>2006</strong></td>
+                  <td>🇸🇪 Schweden <span style="color: #888; font-size: 0.8em;">(Carola)</span> - <em class="neon-pink">Sicherer Pop-Wett</em></td>
+                  <td>🇫🇮 Finnland <span style="color: #888; font-size: 0.8em;">(Lordi)</span></td>
+                  <td>Hard-Rock-Monster brachen jede Eurovision-Konvention – und den Punkterekord.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1.4rem; margin-bottom: var(--space-md);">Allzeit <span class="neon-yellow">Rekorde</span></h3>
+          <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            
+            <div class="stat-card">
+              <div class="stat-card__value neon-yellow">7</div>
+              <div class="stat-card__label">Die meisten Siege <br>(Schweden &amp; Irland)</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-card__value neon-pink">387</div>
+              <div class="stat-card__label">Höchste Jury-Punktzahl <br>(Salvador Sobral, 2017)</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__value neon-cyan">439</div>
+              <div class="stat-card__label">Höchste Televote-Punktzahl <br>(Kalush Orchestra, 2022)</div>
+            </div>
+
+            <div class="stat-card" style="border-color: var(--clr-purple);">
+              <div class="stat-card__value neon-purple">0</div>
+              <div class="stat-card__label">Null Punkte <br>(Passiert öfter, als du denkst!)</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="viral-heading">
+    <div class="container">
+      <div class="card card--glow text-center anim-scale-in" style="padding: var(--space-2xl) var(--space-xl);">
+        <h2 id="viral-heading" class="neon-pink" style="font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: var(--space-md);">
+          Schlage den Algorithmus
+        </h2>
+        <p style="margin-inline: auto; color: #ddd; font-family: var(--font-mono); font-size: 0.9rem; max-width: 50ch; margin-bottom: var(--space-xl);">
+          Denkst du, die Mathe hat es falsch? Hast du einen Underdog im Sinn? Teile die aktuelle Vorhersage und fordere deine Freunde heraus, den echten Gewinner in Wien vorherzusagen!
+        </p>
+        
+        <div class="flex gap-md" style="justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn--primary btn--lg" data-share aria-label="Vorhersage teilen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Vorhersage teilen
+          </button>
+          <a href="./vote.html" class="btn btn--secondary btn--lg">
+            Eigene Scorecard erstellen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer__inner">
+
+    <!-- Brand & primary links -->
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools Marke">
+        ★ ESCTOOLS
+      </div>
+      <div class="footer__tagline">
+        Dein ultimatives Eurovision-2026-Fan-Toolkit ·
+        Fan-Projekt, nicht verbunden mit der EBU oder dem Eurovision Song Contest.
+      </div>
+
+      <nav aria-label="Footer-Navigation" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Startseite</a></li>
+          <li><a href="./vote.html">Bewerten</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Vorhersage</a></li>
+          <li><a href="./history.html">Geschichte</a></li>
+          <li><a href="./guide.html">Shop</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Social / Share -->
+    <div>
+      <p class="section-label" aria-hidden="true">Verbinden &amp; Teilen</p>
+      <div
+        class="flex flex-wrap gap-sm"
+        style="margin-top: var(--space-md);"
+        role="list"
+        aria-label="Social-Media-Links"
+      >
+        <a
+          class="social-link"
+          href="https://twitter.com/intent/tweet?text=Schau%20dir%20dieses%20kostenlose%20%23Eurovision2026%20Toolkit%20an!&url=https%3A%2F%2Feurovisiontoolkit.com%2Fde%2Fforecast.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf X / Twitter teilen"
+        >
+          <!-- X icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a
+          class="social-link"
+          href="https://www.reddit.com/r/eurovision"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="r/Eurovision auf Reddit besuchen"
+        >
+          <!-- Reddit icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a
+          class="social-link"
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf Instagram folgen"
+        >
+          <!-- Instagram icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a
+          class="social-link"
+          href="https://tiktok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Auf TikTok folgen"
+        >
+          <!-- TikTok icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /footer__inner -->
+
+  <!-- Copyright bar -->
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Mit <span aria-label="Liebe">♥</span> gemacht von Eurovision-Fans, für Eurovision-Fans
+    &nbsp;·&nbsp;
+    Nicht verbunden mit der EBU oder dem Eurovision Song Contest
+    &nbsp;·&nbsp;
+    <a
+      href="mailto:aiinformatorbot@gmail.com"
+      style="color: inherit; text-decoration: underline;"
+      aria-label="E-Mail an Eurovision Tools senden"
+    >hello@esctools.dev</a>
+  </p>
+</footer>
+<!-- end footer -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script src="../assets/js/script.js" defer></script>
+
+<!-- Inline: only tiny things that need to run before DOMContentLoaded -->
+<script>
+  // Stamp current year in footer
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Exact market snapshot as of April 14, 2026.
+    // Odds decimal approximation from Oddschecker & bookmakers
+    const currentMarketData = [
+      { id: 'fi', name: 'Finland',   juryScore: 140, televoteScore: 280, bookmakerOdds: 2.6, historicalWins: 1, rehearsalRating: 8 },
+      { id: 'fr', name: 'France',    juryScore: 240, televoteScore: 160, bookmakerOdds: 6.0, historicalWins: 5, rehearsalRating: 9 },
+      { id: 'dk', name: 'Denmark',   juryScore: 180, televoteScore: 200, bookmakerOdds: 7.0, historicalWins: 3, rehearsalRating: 8 },
+      { id: 'au', name: 'Australia', juryScore: 230, televoteScore: 130, bookmakerOdds: 9.0, historicalWins: 0, rehearsalRating: 9 },
+      { id: 'gr', name: 'Greece',    juryScore: 150, televoteScore: 210, bookmakerOdds: 10.0, historicalWins: 1, rehearsalRating: 8 },
+      { id: 'il', name: 'Israel',    juryScore: 130, televoteScore: 240, bookmakerOdds: 15.0, historicalWins: 4, rehearsalRating: 7 },
+      { id: 'it', name: 'Italy',     juryScore: 210, televoteScore: 150, bookmakerOdds: 20.0, historicalWins: 3, rehearsalRating: 9 }
+    ];
+
+    setTimeout(() => {
+      if (window.calculateProbability && window.renderForecast) {
+        // Run algorithm heavily weighted on current bookmaker odds and televote power
+        const results = window.calculateProbability(currentMarketData, {
+          juryWeight: 0.3,
+          televoteWeight: 0.5,
+          bookmakerWeight: 0.5,
+          historicalWeight: 0.2
+        });
+        window.renderForecast(document.getElementById('forecast-results'), results);
+      }
+    }, 500);
+  });
+</script>
+
+</body>
+</html>
