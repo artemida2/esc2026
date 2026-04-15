@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>History — Eurovision Tools 2026</title>
+
+  <meta name="description" content="Explore Eurovision history, iconic winners, memorable moments, and contest milestones." />
+  <meta name="keywords" content="Eurovision history, ESC winners, Eurovision milestones, Eurovision timeline" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourname.github.io/history.html" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📜</text></svg>" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* History specific layout tweaks */
+    .hero--history {
+      min-height: 40vh;
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-xl);
+    }
+
+    .history-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-md) 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .history-list li {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #aaa;
+      position: relative;
+      padding-left: 1.2rem;
+      line-height: 1.4;
+    }
+
+    .history-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.7rem;
+    }
+
+    .year-tag {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: #fff;
+      display: block;
+      margin-top: auto;
+      padding-top: var(--space-md);
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<header role="banner">
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a href="./index.html" class="header__logo" aria-label="Eurovision Tools — Go to home">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Main navigation">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./vote.html">Rate</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Forecast</a></li>
+        <li><a href="./history.html"aria-current="page" >History</a></li>
+        <li><a href="./guide.html" >Shop</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right side: lang switcher + hamburger -->
+    <div class="header__actions">
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher" role="group" aria-label="Select language">
+        <button data-lang="en" class="active" aria-label="Switch to English" aria-pressed="true">EN</button>
+        <button data-lang="es" aria-label="Cambiar a Español" aria-pressed="false">ES</button>
+        <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
+      </div>
+
+      <!-- Hamburger Button (mobile only) -->
+      <button
+        class="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./vote.html">Rate</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Forecast</a></li>
+    <li><a href="./history.html"aria-current="page">History</a></li>
+    <li><a href="./guide.html" >Shop</a></li>
+  </ul>
+  <!-- Language also accessible in mobile menu -->
+  <div class="lang-switcher" role="group" aria-label="Select language" style="margin-top:var(--space-xl);">
+    <button data-lang="en" class="active" aria-label="Switch to English" aria-pressed="true">EN</button>
+    <button data-lang="es" aria-label="Cambiar a Español" aria-pressed="false">ES</button>
+    <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
+  </div>
+</nav>
+
+
+<main id="main-content">
+
+  <section class="hero hero--history" aria-labelledby="history-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="particles" aria-hidden="true"></div>
+
+    <div class="hero__content text-center">
+      <span class="hero__subtitle">★ EUROVISION TIMELINE ★</span>
+      <h1 id="history-heading" class="display-title neon-purple">
+        HISTORY OF EUROVISION
+      </h1>
+      <p class="mt-md" style="max-width: 50ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.95rem;">
+        From the first contest to modern spectacular finals — key winners, milestones, and unforgettable moments from Eurovision history.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider container" role="separator" aria-hidden="true"></div>
+
+  <section class="section pt-0" aria-labelledby="timeline-heading">
+    <div class="container">
+      
+      <div class="tools-grid stagger" role="list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+        <div class="tool-card tool-card--pink anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🎤 The Beginning:<br><span class="neon-pink">1956</span></h3>
+          <ul class="history-list">
+            <li>The first Eurovision Song Contest was held in Lugano, Switzerland.</li>
+            <li>Only seven countries participated in the debut edition.</li>
+            <li>Switzerland won with Lys Assia performing “Refrain”.</li>
+            <li>The contest became a symbol of post-war European unity.</li>
+          </ul>
+          <span class="year-tag">1956</span>
+          <button class="btn btn--primary btn--full mt-md">Explore the First Contest</button>
+        </div>
+
+        <div class="tool-card tool-card--yellow anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🏆 Iconic Winners:<br><span class="neon-yellow">Golden Moments</span></h3>
+          <ul class="history-list">
+            <li>ABBA’s “Waterloo” made Sweden a global pop powerhouse in 1974.</li>
+            <li>Johnny Logan became one of the contest’s most famous champions.</li>
+            <li>Alexander Rybak set a record with “Fairytale” in 2009.</li>
+            <li>Loreen’s “Euphoria” became one of Eurovision’s defining songs.</li>
+          </ul>
+          <span class="year-tag">Legends</span>
+          <button class="btn btn--yellow btn--full mt-md">See Legendary Wins</button>
+        </div>
+
+        <div class="tool-card tool-card--cyan anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">🌍 Eurovision Grows:<br><span class="neon-cyan">Expansion Era</span></h3>
+          <ul class="history-list">
+            <li>More countries joined as the contest expanded across Europe.</li>
+            <li>Broadcast technology brought bigger stages and bigger audiences.</li>
+            <li>Voting systems evolved from juries to televoting and hybrid formats.</li>
+            <li>The contest became one of the world’s largest live music events.</li>
+          </ul>
+          <span class="year-tag">Growth</span>
+          <button class="btn btn--secondary btn--full mt-md" style="color: var(--clr-cyan); border-color: var(--clr-cyan); box-shadow: 4px 4px 0px var(--clr-cyan);">View the Timeline</button>
+        </div>
+
+        <div class="tool-card tool-card--purple anim-fade-up" role="listitem">
+          <h3 class="tool-card__title">✨ Modern Era:<br><span class="neon-purple">Spectacle & Sound</span></h3>
+          <ul class="history-list">
+            <li>Eurovision became a platform for bold staging and genre diversity.</li>
+            <li>Entries began combining performance art, pop culture, and politics.</li>
+            <li>Memorable hosts, interval acts, and production design raised the bar.</li>
+            <li>Each year adds new viral moments and historic performances.</li>
+          </ul>
+          <span class="year-tag">Today</span>
+          <button class="btn btn--primary btn--full mt-md" style="background: var(--clr-purple); box-shadow: 4px 4px 0px #5c007a, var(--glow-purple);">Relive the Moments</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER — Shared across ALL pages
+     Copy this exact block into every HTML file unchanged.
+══════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer__inner">
+
+    <!-- Brand & primary links -->
+    <div>
+      <div class="footer__brand" aria-label="Eurovision Tools brand">
+        ★ ESCTOOLS
+      </div>
+      <div class="footer__tagline">
+        Your ultimate Eurovision 2026 fan toolkit ·
+        Fan project, not affiliated with EBU or the Eurovision Song Contest.
+      </div>
+
+      <nav aria-label="Footer navigation" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./vote.html">Rate</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Forecast</a></li>
+          <li><a href="./history.html">History</a></li>
+          <li><a href="./guide.html">Shop Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Social / Share -->
+    <div>
+      <p class="section-label" aria-hidden="true">Connect &amp; Share</p>
+      <div
+        class="flex flex-wrap gap-sm"
+        style="margin-top: var(--space-md);"
+        role="list"
+        aria-label="Social media links"
+      >
+        <a
+          class="social-link"
+          href="https://twitter.com/intent/tweet?text=Check%20out%20this%20free%20%23Eurovision2026%20toolkit!&url=https%3A%2F%2Fyourname.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Share on X / Twitter"
+        >
+          <!-- X icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.254 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          Twitter
+        </a>
+        <a
+          class="social-link"
+          href="https://www.reddit.com/r/eurovision"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Visit r/Eurovision on Reddit"
+        >
+          <!-- Reddit icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          Reddit
+        </a>
+        <a
+          class="social-link"
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Follow on Instagram"
+        >
+          <!-- Instagram icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a
+          class="social-link"
+          href="https://tiktok.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+          aria-label="Follow on TikTok"
+        >
+          <!-- TikTok icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /footer__inner -->
+
+  <!-- Copyright bar -->
+  <p class="footer__copy">
+    &copy; <span id="footer-year"></span> Eurovision Tools &nbsp;·&nbsp;
+    Made with <span aria-label="love">♥</span> by Eurovision fans, for Eurovision fans
+    &nbsp;·&nbsp;
+    Not affiliated with EBU or the Eurovision Song Contest
+    &nbsp;·&nbsp;
+    <a
+      href="mailto:aiinformatorbot@gmail.com"
+      style="color: inherit; text-decoration: underline;"
+      aria-label="Send an email to Eurovision Tools"
+    >hello@esctools.dev</a>
+  </p>
+</footer>
+<!-- end footer -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script src="./assets/js/script.js" defer></script>
+
+<!-- Inline: only tiny things that need to run before DOMContentLoaded -->
+<script>
+  // Stamp current year in footer
+  (function () {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>

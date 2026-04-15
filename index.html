@@ -28,7 +28,7 @@
 
   <!-- Emoji Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
   <!-- ── STYLES ───────────────────────────────────── -->
   <link rel="stylesheet" href="./assets/css/styles.css" />
 
@@ -150,10 +150,11 @@
     <!-- Desktop Navigation -->
     <nav aria-label="Main navigation">
       <ul class="header__nav" role="list">
-        <li><a href="./index.html" aria-current="page">Home</a></li>
+        <li><a href="./index.html">Home</a></li>
         <li><a href="./vote.html">Rate</a></li>
         <li><a href="./bingo.html">Bingo</a></li>
         <li><a href="./forecast.html">Forecast</a></li>
+        <li><a href="./history.html"aria-current="page" >History</a></li>
         <li><a href="./guide.html">Shop</a></li>
       </ul>
     </nav>
@@ -191,13 +192,14 @@
     <li><a href="./vote.html">Rate</a></li>
     <li><a href="./bingo.html">Bingo</a></li>
     <li><a href="./forecast.html">Forecast</a></li>
+    <li><a href="./history.html"aria-current="page" >History</a></li>
     <li><a href="./guide.html">Shop</a></li>
   </ul>
   <!-- Language also accessible in mobile menu -->
   <div class="lang-switcher" role="group" aria-label="Select language" style="margin-top:var(--space-xl);">
-    <button data-lang="en" class="active" aria-pressed="true">EN</button>
-    <button data-lang="es" aria-pressed="false">ES</button>
-    <button data-lang="de" aria-pressed="false">DE</button>
+    <button data-lang="en" class="active" aria-label="Switch to English" aria-pressed="true">EN</button>
+    <button data-lang="es" aria-label="Cambiar a Español" aria-pressed="false">ES</button>
+    <button data-lang="de" aria-label="Auf Deutsch wechseln" aria-pressed="false">DE</button>
   </div>
 </nav>
 
@@ -340,7 +342,185 @@
 
   <div class="divider container" role="separator" aria-hidden="true"></div>
 
-
+<!-- ② Add inside <main id="main-content"> — Ticket generator section -->
+<section class="section" id="ticket-gen" aria-labelledby="tg-heading">
+  <div class="container">
+ 
+    <!-- Section header -->
+    <div class="text-center tg-header">
+      <span class="section-label" style="justify-content:center;" aria-hidden="true">
+        — Fan Experience —
+      </span>
+      <h2 id="tg-heading">
+        Your Virtual<br>
+        <span class="neon-pink">Eurovision Ticket</span>
+      </h2>
+      <p class="tg-header__sub">
+        Customize · Preview · Download in HD — all in your browser, no login needed.
+      </p>
+    </div>
+ 
+    <!-- Form + Canvas layout -->
+    <div class="tg-layout">
+ 
+      <!-- LEFT: Controls panel -->
+      <aside class="tg-controls" aria-label="Ticket customization controls">
+ 
+        <!-- Photo upload -->
+        <div class="tg-field-group">
+          <label class="tg-label" for="tg-photo">
+            <span class="tg-label__icon" aria-hidden="true">📸</span>
+            Your Photo
+          </label>
+          <div
+            class="tg-upload-zone"
+            id="tg-upload-zone"
+            role="button"
+            tabindex="0"
+            aria-label="Upload your photo — click or drag and drop"
+          >
+            <div class="tg-upload-zone__icon" aria-hidden="true">👤</div>
+            <div class="tg-upload-zone__text">
+              <strong>Click to upload</strong> or drag & drop
+            </div>
+            <div class="tg-upload-zone__hint">JPG, PNG, WEBP · max 10 MB</div>
+            <input
+              type="file"
+              id="tg-photo"
+              name="tg-photo"
+              accept="image/*"
+              style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;"
+              aria-label="Upload photo file"
+            />
+          </div>
+        </div>
+ 
+        <!-- Show Type -->
+        <div class="tg-field-group">
+          <label class="tg-label" for="tg-show">
+            <span class="tg-label__icon" aria-hidden="true">🎭</span>
+            Show Type
+          </label>
+          <div class="tg-select-wrap">
+            <select id="tg-show" class="tg-select" aria-label="Select show type">
+              <option value="GF"     selected>Grand Final — 16 May 2026</option>
+              <option value="SF1">Semi-Final 1 — 12 May 2026</option>
+              <option value="SF2">Semi-Final 2 — 14 May 2026</option>
+              <option value="GF_P">Grand Final (Preview) — 16 May</option>
+              <option value="SF1_AF">SF1 Afternoon Show — 12 May</option>
+              <option value="SF2_AF">SF2 Afternoon Show — 14 May</option>
+            </select>
+            <span class="tg-select-arrow" aria-hidden="true">▾</span>
+          </div>
+        </div>
+ 
+        <!-- Name -->
+        <div class="tg-field-group">
+          <label class="tg-label" for="tg-name">
+            <span class="tg-label__icon" aria-hidden="true">✍️</span>
+            Your Name
+          </label>
+          <input
+            type="text"
+            id="tg-name"
+            class="tg-input"
+            placeholder="e.g. SUPERFAN 2026"
+            maxlength="28"
+            autocomplete="off"
+            aria-label="Enter your name for the ticket"
+          />
+        </div>
+ 
+        <!-- Seat info (read-only, randomised) -->
+        <div class="tg-field-group">
+          <div class="tg-label">
+            <span class="tg-label__icon" aria-hidden="true">💺</span>
+            Seat Assignment
+            <button
+              id="tg-randomize"
+              class="tg-randomize-btn"
+              type="button"
+              aria-label="Randomize seat"
+              title="Randomize seat"
+            >↻ Shuffle</button>
+          </div>
+          <div class="tg-seat-row">
+            <div class="tg-seat-box">
+              <span class="tg-seat-box__label">Block</span>
+              <span class="tg-seat-box__val" id="tg-disp-block">—</span>
+            </div>
+            <div class="tg-seat-box">
+              <span class="tg-seat-box__label">Row</span>
+              <span class="tg-seat-box__val" id="tg-disp-row">—</span>
+            </div>
+            <div class="tg-seat-box">
+              <span class="tg-seat-box__label">Seat</span>
+              <span class="tg-seat-box__val" id="tg-disp-seat">—</span>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Action buttons -->
+        <div class="tg-actions">
+          <button
+            id="tg-download"
+            class="btn btn--primary btn--xl tg-download-btn"
+            type="button"
+            aria-label="Download your ticket as a PNG image"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download HD Ticket
+          </button>
+          <button
+            id="tg-share"
+            class="btn btn--secondary tg-share-btn"
+            type="button"
+            data-share
+            aria-label="Share the ticket generator"
+          >
+            📤 Share Tool
+          </button>
+        </div>
+ 
+        <!-- Disclaimer -->
+        <p class="tg-disclaimer">
+          🎫 Fan-made tool. Not affiliated with EBU or the Eurovision Song Contest.
+          Ticket is virtual only — not valid for entry.
+        </p>
+ 
+      </aside>
+ 
+      <!-- RIGHT: Canvas preview -->
+      <div class="tg-preview" aria-label="Ticket preview">
+ 
+        <div class="tg-preview__label" aria-hidden="true">
+          <span class="tg-preview__dot"></span>
+          Live Preview
+        </div>
+ 
+        <div class="tg-canvas-wrap" id="tg-canvas-wrap">
+          <canvas id="ticket-canvas" aria-label="Ticket preview canvas"></canvas>
+          <!-- Loading overlay -->
+          <div class="tg-canvas-loader" id="tg-canvas-loader" aria-hidden="true">
+            <div class="tg-canvas-loader__spinner"></div>
+          </div>
+        </div>
+ 
+        <div class="tg-preview__hint">
+          2× HD resolution on download · Saved locally in your browser
+        </div>
+ 
+      </div>
+    </div><!-- /tg-layout -->
+ 
+  </div>
+</section>
+<!-- ► End of ticket generator section -->
   <!-- ╔════════════════════════════════╗ -->
   <!-- ║   TOOLS GRID SECTION           ║ -->
   <!-- ╚════════════════════════════════╝ -->
@@ -691,7 +871,7 @@
     Not affiliated with EBU or the Eurovision Song Contest
     &nbsp;·&nbsp;
     <a
-      href="mailto:hello@esctools.dev"
+      href="mailto:aiinformatorbot@gmail.com"
       style="color: inherit; text-decoration: underline;"
       aria-label="Send an email to Eurovision Tools"
     >hello@esctools.dev</a>
@@ -713,6 +893,13 @@
     if (el) el.textContent = new Date().getFullYear();
   })();
 </script>
-
+<!-- ③ Add before </body> — initialise TicketGen after DOM is ready -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof TicketGen !== 'undefined') {
+      TicketGen.init();
+    }
+  });
+</script>
 </body>
 </html>
