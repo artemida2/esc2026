@@ -1283,3 +1283,732 @@ if (document.readyState === 'loading') {
 
 /* ── Global convenience exports ─────────────────────────── */
 window.EurovisionApp = EurovisionApp;
+
+
+ 
+
+ 
+/* ══════════════════════════════════════════════════════════
+   TICKET GENERATOR MODULE
+   Namespace: TicketGen
+   Dependencies: Fabric.js v5
+═══════════════════════════════════════════════════════════ */
+ 
+const TicketGen = (() => {
+ 
+  /* ── Canvas dimensions ─────────────────────────────────
+     Display size.
+     Download uses multiplier 2.5 → ~2250 × 937 px           */
+  const W = 900;
+  const H = 375;
+  const STUB_X = 718; // main body / stub split
+ 
+  /* ── Photo circle geometry ────────────────────────────── */
+  const PHOTO = { cx: 165, cy: 198, r: 115 };
+ 
+  /* ── Show type data ───────────────────────────────────── */
+  const SHOWS = {
+    GF:     { label: 'GRAND FINAL',        date: '16 MAY 2026 · SAT' },
+    SF1:    { label: 'SEMI-FINAL 1',        date: '12 MAY 2026 · TUE' },
+    SF2:    { label: 'SEMI-FINAL 2',        date: '14 MAY 2026 · THU' },
+    GF_P:   { label: 'GF PREVIEW',          date: '16 MAY 2026 · SAT' },
+    SF1_AF: { label: 'SF1 AFTERNOON',       date: '12 MAY 2026 · TUE' },
+    SF2_AF: { label: 'SF2 AFTERNOON',       date: '14 MAY 2026 · THU' },
+  };
+ 
+  /* ── State ────────────────────────────────────────────── */
+  let fc = null;              // Fabric.Canvas instance
+  let photoFabricImg = null;  // loaded FabricImage
+  let rendering = false;
+ 
+  const state = {
+    showKey:   'GF',
+    name:      '',
+    block:     'A',
+    row:       'F',
+    seat:      '14',
+    ticketNum: '001234',
+  };
+ 
+  /* ── Seat randomiser ───────────────────────────────────── */
+  function randSeat() {
+    const blks = 'ABCDEF';
+    const rows = 'ABCDEFGHIJKLMNOPQRST';
+    state.block    = blks[Math.floor(Math.random() * blks.length)];
+    state.row      = rows[Math.floor(Math.random() * rows.length)];
+    state.seat     = String(Math.floor(Math.random() * 40) + 1).padStart(2, '0');
+    state.ticketNum = String(Math.floor(Math.random() * 999999) + 1).padStart(6, '0');
+    // sync display spans
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    set('tg-disp-block', state.block);
+    set('tg-disp-row',   state.row);
+    set('tg-disp-seat',  state.seat);
+  }
+ 
+  /* ── Fabric.js drawing helpers ─────────────────────────── */
+ 
+  const addRect = (opts) => {
+    const o = new fabric.Rect({ selectable:false, evented:false, strokeWidth:0, ...opts });
+    fc.add(o); return o;
+  };
+  const addEllipse = (opts) => {
+    const o = new fabric.Ellipse({ selectable:false, evented:false, strokeWidth:0, stroke:null, ...opts });
+    fc.add(o); return o;
+  };
+  const addCircle = (opts) => {
+    const o = new fabric.Circle({ selectable:false, evented:false, ...opts });
+    fc.add(o); return o;
+  };
+  const addLine = (pts, opts) => {
+    const o = new fabric.Line(pts, { selectable:false, evented:false, ...opts });
+    fc.add(o); return o;
+  };
+  const addText = (str, opts) => {
+    const o = new fabric.Text(String(str), { selectable:false, evented:false, ...opts });
+    fc.add(o); return o;
+  };
+ 
+  /* ── DRAW: Background ─────────────────────────────────── */
+  function drawBackground() {
+    // Main body — deep navy
+    addRect({ left:0, top:0, width: STUB_X, height: H, fill: '#070b30' });
+    // Stub — slightly lighter
+    addRect({ left: STUB_X, top:0, width: W - STUB_X, height: H, fill: '#0c1040' });
+  }
+ 
+  /* ── DRAW: Decorative colour orbs ────────────────────── */
+  function drawOrbs() {
+    // Hot pink / magenta (dominant, lower-left)
+    addEllipse({ left:-90, top:130, rx:220, ry:185, fill:'rgba(225,35,115,0.55)', angle: -15 });
+    // Magenta lighter (upper sweep)
+    addEllipse({ left:-30, top:20,  rx:150, ry:110, fill:'rgba(255,70,175,0.28)', angle: 20 });
+    // Cyan / teal (upper-left)
+    addEllipse({ left:50,  top:-50, rx:170, ry:120, fill:'rgba(0,205,240,0.28)', angle: -10 });
+    // Deep purple (centre)
+    addEllipse({ left:200, top:180, rx:140, ry:105, fill:'rgba(105,25,205,0.32)', angle: 5 });
+    // Orange accent
+    addEllipse({ left:310, top:130, rx:110, ry:85,  fill:'rgba(255,110,15,0.22)', angle: -5 });
+    // Teal wash (bottom centre)
+    addEllipse({ left:120, top:290, rx:200, ry:70,  fill:'rgba(0,230,165,0.14)', angle: 0 });
+    // Small pink highlight (top right of photo zone)
+    addEllipse({ left:240, top:55,  rx:70,  ry:55,  fill:'rgba(255,80,200,0.22)', angle: 15 });
+  }
+ 
+  /* ── DRAW: Music notes ────────────────────────────────── */
+  function drawNotes() {
+    const notes = [
+      { s:'♪', x:52,  y:12,  sz:18, op:0.28 },
+      { s:'♫', x:615, y:22,  sz:22, op:0.24 },
+      { s:'♪', x:665, y:265, sz:16, op:0.20 },
+      { s:'♫', x:490, y:295, sz:14, op:0.20 },
+      { s:'♪', x:18,  y:288, sz:14, op:0.18 },
+      { s:'♩', x:110, y:38,  sz:16, op:0.18 },
+      { s:'♫', x:380, y:10,  sz:12, op:0.16 },
+    ];
+    notes.forEach(n => {
+      addText(n.s, { left:n.x, top:n.y, fontSize:n.sz,
+                     fill:`rgba(255,255,255,${n.op})`, fontFamily:'serif' });
+    });
+  }
+ 
+  /* ── DRAW: Header strip ───────────────────────────────── */
+  function drawHeader() {
+    // Subtle top strip
+    addRect({ left:0, top:0, width: STUB_X, height:50, fill:'rgba(0,0,0,0.22)' });
+ 
+    // Main title
+    addText('EUROVISION 2026 — VIENNA', {
+      left:18, top:9,
+      fontSize: 27,
+      fill: '#ffffff',
+      fontFamily: 'Bebas Neue, Impact, sans-serif',
+      charSpacing: 35,
+      fontWeight: '400',
+    });
+ 
+    // Heart icon
+    addText('💙', { left:572, top:6, fontSize:24 });
+ 
+    // Sub-label
+    addText('OFFICIAL FAN TICKET · NOT FOR SALE', {
+      left: 19, top: 36,
+      fontSize: 8,
+      fill: 'rgba(255,255,255,0.28)',
+      fontFamily: 'Space Mono, Courier, monospace',
+      charSpacing: 55,
+    });
+  }
+ 
+  /* ── DRAW: Photo circle ───────────────────────────────── */
+  function drawPhotoArea() {
+    const { cx, cy, r } = PHOTO;
+ 
+    // Outer soft glow ring
+    addCircle({
+      left:cx, top:cy, radius: r + 15,
+      originX:'center', originY:'center',
+      fill:'transparent',
+      stroke:'rgba(255,255,255,0.10)',
+      strokeWidth: 22,
+    });
+ 
+    // Dotted border ring
+    addCircle({
+      left:cx, top:cy, radius: r + 5,
+      originX:'center', originY:'center',
+      fill:'transparent',
+      stroke:'rgba(255,255,255,0.65)',
+      strokeWidth: 2,
+      strokeDashArray: [7, 5],
+    });
+ 
+    if (photoFabricImg) {
+      // Scale photo to fill the circle
+      const minDim = Math.min(photoFabricImg.width, photoFabricImg.height);
+      const scale  = (r * 2) / minDim;
+ 
+      const clip = new fabric.Circle({
+        radius: r - 2 / scale,
+        left: cx,                 // <--- ДОБАВИТЬ
+        top: cy,                  // <--- ДОБАВИТЬ
+        originX: 'center',
+        originY: 'center',
+        absolutePositioned: true,
+      });
+
+ 
+      photoFabricImg.set({
+        left: cx, top: cy,
+        originX: 'center', originY: 'center',
+        scaleX: scale, scaleY: scale,
+        clipPath: clip,
+        selectable: false, evented: false,
+      });
+      fc.add(photoFabricImg);
+ 
+    } else {
+      // Placeholder fill
+      addCircle({
+        left:cx, top:cy, radius: r - 2,
+        originX:'center', originY:'center',
+        fill:'rgba(255,255,255,0.04)',
+        strokeWidth:0,
+      });
+      // Placeholder person icon
+      addText('👤', {
+        left:cx, top:cy - 18,
+        fontSize:54,
+        originX:'center', originY:'center',
+        opacity: 0.45,
+      });
+      addText('YOUR PHOTO', {
+        left:cx, top:cy + 30,
+        fontSize:10.5,
+        fill:'rgba(255,255,255,0.50)',
+        fontFamily:'Space Mono, Courier, monospace',
+        fontWeight:'700', originX:'center',
+        charSpacing:50,
+      });
+      addText('HERE', {
+        left:cx, top:cy + 47,
+        fontSize:10.5,
+        fill:'rgba(255,255,255,0.50)',
+        fontFamily:'Space Mono, Courier, monospace',
+        fontWeight:'700', originX:'center',
+        charSpacing:50,
+      });
+    }
+  }
+ 
+  /* ── DRAW: Field box helper ───────────────────────────── */
+  function drawField(x, y, w, h, label, value, valSize = 15) {
+    addRect({
+      left:x, top:y, width:w, height:h, rx:8, ry:8,
+      fill:'rgba(255,255,255,0.055)',
+      stroke:'rgba(255,255,255,0.42)',
+      strokeWidth:1.5,
+    });
+    addText(label, {
+      left:x+10, top:y+8,
+      fontSize:9.5,
+      fill:'rgba(255,255,255,0.55)',
+      fontFamily:'Space Mono, Courier, monospace',
+      fontWeight:'700',
+      charSpacing:65,
+    });
+    if (value) {
+      // Clamp text so it doesn't overflow the box
+      const maxW = w - 18;
+      addText(value, {
+        left:x+10, top:y+25,
+        fontSize:valSize,
+        fill:'#ffffff',
+        fontFamily:'Bebas Neue, Impact, sans-serif',
+        charSpacing:20,
+        // Fabric.js v5: limit width
+        width: maxW,
+        splitByGrapheme: false,
+      });
+    }
+  }
+ 
+  /* ── DRAW: Main data fields ───────────────────────────── */
+  function drawFields() {
+    const show = SHOWS[state.showKey];
+    const FX   = 308; // fields left edge
+ 
+    // Row 1 — SHOW TYPE | DATE
+    drawField(FX,       62, 190, 64, 'SHOW TYPE:', show.label, 13);
+    drawField(FX + 200, 62, 192, 64, 'DATE:',      show.date,  12.5);
+ 
+    // Row 2 — NAME (full width)
+    drawField(FX, 136, 396, 64, 'NAME:',
+      state.name ? state.name.toUpperCase().slice(0, 24) : '', 19);
+ 
+    // Row 3 — BLOCK | ROW | SEAT
+    drawField(FX,       210, 112, 64, 'BLOCK:', state.block, 24);
+    drawField(FX + 122, 210, 112, 64, 'ROW:',   state.row,   24);
+    drawField(FX + 244, 210, 148, 64, 'SEAT:',  state.seat,  24);
+  }
+ 
+  /* ── DRAW: Bottom bar ─────────────────────────────────── */
+  function drawBottomBar() {
+    addLine([0, 320, STUB_X, 320], {
+      stroke:'rgba(255,255,255,0.12)', strokeWidth:1,
+    });
+ 
+    addText('WIENER STADTHALLE, HALLE D  ·  AUSTRIA 2026', {
+      left:18, top:330,
+      fontSize:10.5,
+      fill:'rgba(255,255,255,0.48)',
+      fontFamily:'Space Mono, Courier, monospace',
+      charSpacing:22,
+    });
+ 
+    addText('EBU', {
+      left:535, top:325,
+      fontSize:13,
+      fill:'rgba(255,255,255,0.65)',
+      fontFamily:'Bebas Neue, Impact, sans-serif',
+      charSpacing:90,
+    });
+ 
+    addText('VIENNA CITY', {
+      left:575, top:325,
+      fontSize:13,
+      fill:'rgba(255,255,255,0.55)',
+      fontFamily:'Bebas Neue, Impact, sans-serif',
+      charSpacing:50,
+    });
+ 
+    addText('Fan-made · Not affiliated with EBU or the Eurovision Song Contest', {
+      left:18, top:354,
+      fontSize:8,
+      fill:'rgba(255,255,255,0.20)',
+      fontFamily:'Space Mono, Courier, monospace',
+      charSpacing:15,
+    });
+  }
+ 
+  /* ── DRAW: QR code (simulated) ────────────────────────── */
+  function drawQR(x, y, size) {
+    const cs = size / 25; // cell size
+ 
+    // White background
+    addRect({ left:x, top:y, width:size, height:size, rx:4, ry:4, fill:'#ffffff' });
+ 
+    // Finder pattern helper
+    function finder(fx, fy) {
+      addRect({ left:fx,      top:fy,      width:cs*7, height:cs*7, fill:'#111' });
+      addRect({ left:fx+cs,   top:fy+cs,   width:cs*5, height:cs*5, fill:'#fff' });
+      addRect({ left:fx+cs*2, top:fy+cs*2, width:cs*3, height:cs*3, fill:'#111' });
+    }
+    finder(x + cs,              y + cs);
+    finder(x + size - cs*8,     y + cs);
+    finder(x + cs,              y + size - cs*8);
+ 
+    // Small alignment pattern (centre-right)
+    const ap = { fx: x + size - cs*9, fy: y + size - cs*9 };
+    addRect({ left:ap.fx,      top:ap.fy,      width:cs*5, height:cs*5, fill:'#111' });
+    addRect({ left:ap.fx+cs,   top:ap.fy+cs,   width:cs*3, height:cs*3, fill:'#fff' });
+    addRect({ left:ap.fx+cs*2, top:ap.fy+cs*2, width:cs,   height:cs,   fill:'#111' });
+ 
+    // Timing strips (row 6 + col 6)
+    for (let i = 8; i < 17; i++) {
+      if (i % 2 === 0) {
+        addRect({ left:x + i*cs,    top:y + cs*6,  width:cs-0.2, height:cs-0.2, fill:'#111' });
+        addRect({ left:x + cs*6,    top:y + i*cs,  width:cs-0.2, height:cs-0.2, fill:'#111' });
+      }
+    }
+ 
+    // Seeded pseudo-random data dots
+    let seed = parseInt(state.ticketNum, 10) || 12345;
+    const rng = () => {
+      seed = (seed * 1664525 + 1013904223) >>> 0;
+      return seed / 0xFFFFFFFF;
+    };
+ 
+    for (let row = 0; row < 25; row++) {
+      for (let col = 0; col < 25; col++) {
+        // Skip finder pattern zones
+        if (row < 10 && col < 10) continue;
+        if (row < 10 && col > 14) continue;
+        if (row > 14 && col < 10) continue;
+        if (row > 14 && col > 14) continue;
+        // Skip timing strip zone
+        if (row === 6 || col === 6) continue;
+        if (rng() > 0.52) {
+          addRect({
+            left: x + col * cs + 0.2,
+            top:  y + row * cs + 0.2,
+            width: cs - 0.4, height: cs - 0.4,
+            fill: '#111',
+          });
+        }
+      }
+    }
+  }
+ 
+  /* ── DRAW: Stub (right side) ─────────────────────────── */
+  function drawStub() {
+    const SX   = STUB_X + 1;
+    const SW   = W - SX;
+    const SCX  = SX + SW / 2; // stub centre X
+ 
+    // Vertical dashed separator
+    addLine([STUB_X, 12, STUB_X, H - 12], {
+      stroke:'rgba(255,255,255,0.30)',
+      strokeWidth:1.5,
+      strokeDashArray:[6,5],
+    });
+ 
+    // Perforated half-circles on separator
+    [80, 160, 240, 300].forEach(y => {
+      addCircle({
+        left: STUB_X, top: y, radius:8,
+        originX:'center', originY:'center',
+        fill:'#070b30', strokeWidth:0,
+      });
+    });
+ 
+    // ── ESC Logo area ────────────────────────────────────
+    addText('ESC', {
+      left:SCX - 4, top:14,
+      fontSize:22,
+      fill:'#ffffff',
+      fontFamily:'Bebas Neue, Impact, sans-serif',
+      originX:'center',
+      charSpacing:80,
+    });
+    // Heart overlaid
+    addText('💙', { left:SCX + 14, top:12, fontSize:13 });
+ 
+    addText('2026', {
+      left:SCX, top:35,
+      fontSize:17,
+      fill:'#ffffff',
+      fontFamily:'Bebas Neue, Impact, sans-serif',
+      originX:'center',
+      charSpacing:50,
+    });
+ 
+    addText('Vienna', {
+      left:SCX, top:53,
+      fontSize:9.5,
+      fill:'rgba(255,255,255,0.55)',
+      fontFamily:'Space Mono, Courier, monospace',
+      originX:'center',
+      fontStyle:'italic',
+    });
+ 
+    // ── QR code ──────────────────────────────────────────
+    const qrSize = SW - 30;
+    const qrX    = SX + 15;
+    const qrY    = 72;
+    drawQR(qrX, qrY, qrSize);
+ 
+    // ── Ticket code ──────────────────────────────────────
+    const codeStr = 'ESC2026_' + state.showKey + '_' + state.ticketNum;
+    addText(codeStr, {
+      left:SCX, top:qrY + qrSize + 8,
+      fontSize:6.5,
+      fill:'rgba(255,255,255,0.42)',
+      fontFamily:'Space Mono, Courier, monospace',
+      originX:'center',
+    });
+ 
+    addText('SCAN FOR ENTRY', {
+      left:SCX, top:qrY + qrSize + 20,
+      fontSize:7.5,
+      fill:'rgba(255,255,255,0.50)',
+      fontFamily:'Space Mono, Courier, monospace',
+      originX:'center',
+      charSpacing:35,
+    });
+ 
+    // Separator line
+    const l1Y = qrY + qrSize + 36;
+    addLine([SX + 10, l1Y, W - 10, l1Y], {
+      stroke:'rgba(255,255,255,0.18)', strokeWidth:1,
+    });
+ 
+    // Ticket number (big)
+    addText(state.ticketNum, {
+      left:SCX, top: l1Y + 6,
+      fontSize:24,
+      fill:'#ffffff',
+      fontFamily:'Bebas Neue, Impact, sans-serif',
+      originX:'center',
+      charSpacing:50,
+    });
+ 
+    // Separator line
+    const l2Y = l1Y + 40;
+    addLine([SX + 10, l2Y, W - 10, l2Y], {
+      stroke:'rgba(255,255,255,0.18)', strokeWidth:1,
+    });
+ 
+    // Price
+    addText('€195.00', {
+      left:SCX, top: l2Y + 6,
+      fontSize:19,
+      fill:'#ffffff',
+      fontFamily:'Bebas Neue, Impact, sans-serif',
+      originX:'center',
+      charSpacing:25,
+    });
+ 
+    // Separator line
+    const l3Y = l2Y + 36;
+    addLine([SX + 10, l3Y, W - 10, l3Y], {
+      stroke:'rgba(255,255,255,0.18)', strokeWidth:1,
+    });
+ 
+    // ADMIT ONE
+    addText('ADMIT ONE', {
+      left:SCX, top: l3Y + 7,
+      fontSize:16,
+      fill:'#ffffff',
+      fontFamily:'Bebas Neue, Impact, sans-serif',
+      originX:'center',
+      charSpacing:80,
+    });
+  }
+ 
+  /* ── DRAW: Rounded corners clip ───────────────────────── */
+  function drawRoundedCornersMask() {
+    // Fabric.js canvas doesn't support border-radius natively,
+    // so we overdraw dark corners to fake it.
+    const R = 14;
+    const DARK = '#000000';
+    // We skip this since the CSS on the wrapper handles it visually.
+  }
+ 
+  /* ── MAIN RENDER ──────────────────────────────────────── */
+  function render() {
+    if (!fc) return;
+    if (rendering) return;
+    rendering = true;
+ 
+    // Show loader
+    const loader = document.getElementById('tg-canvas-loader');
+    if (loader) loader.classList.remove('hidden');
+ 
+    fc.clear();
+ 
+    // Draw all layers in order (back → front)
+    drawBackground();
+    drawOrbs();
+    drawNotes();
+    drawHeader();
+    drawPhotoArea();
+    drawFields();
+    drawStub();
+    drawBottomBar();
+ 
+    fc.renderAll();
+    rendering = false;
+ 
+    // Hide loader
+    requestAnimationFrame(() => {
+      if (loader) loader.classList.add('hidden');
+    });
+  }
+ 
+  /* ── DOWNLOAD ─────────────────────────────────────────── */
+  function download() {
+    const loader = document.getElementById('tg-canvas-loader');
+    if (loader) loader.classList.remove('hidden');
+ 
+    setTimeout(() => {
+      const dataURL = fc.toDataURL({
+        format:     'png',
+        multiplier: 2.5,   // → ~2250×937 px
+        quality:    1,
+      });
+ 
+      const a = document.createElement('a');
+      a.href     = dataURL;
+      a.download = `ESC2026-Ticket-${state.showKey}-${state.ticketNum}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+ 
+      if (loader) loader.classList.add('hidden');
+ 
+      // Toast notification (integrates with existing EurovisionApp)
+      if (window.EurovisionApp?.Toast) {
+        EurovisionApp.Toast.show(
+          'Ticket saved as PNG · Share it with your friends! 🎫',
+          { type: 'success', title: '🏆 Ticket Downloaded!' }
+        );
+        EurovisionApp.Confetti?.burst();
+      }
+    }, 80);
+  }
+ 
+  /* ── PHOTO UPLOAD HANDLER ─────────────────────────────── */
+  function handlePhotoUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (file.size > 10 * 1024 * 1024) {
+      if (window.EurovisionApp?.Toast) {
+        EurovisionApp.Toast.show('File too large. Max 10 MB.', { type: 'error' });
+      }
+      return;
+    }
+ 
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      fabric.Image.fromURL(evt.target.result, (img) => {
+        photoFabricImg = img;
+        render();
+ 
+        // Visual feedback on upload zone
+        const zone = document.getElementById('tg-upload-zone');
+        if (zone) {
+          zone.classList.add('has-photo');
+          const text = zone.querySelector('.tg-upload-zone__text');
+          if (text) text.innerHTML = '<strong>Photo loaded ✓</strong> — click to change';
+        }
+ 
+        if (window.EurovisionApp?.Toast) {
+          EurovisionApp.Toast.show('Photo added to your ticket!', { type: 'success' });
+        }
+      });
+    };
+    reader.readAsDataURL(file);
+  }
+ 
+  /* ── DRAG & DROP support ──────────────────────────────── */
+  function setupDragDrop() {
+    const zone = document.getElementById('tg-upload-zone');
+    if (!zone) return;
+ 
+    zone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      zone.classList.add('dragover');
+    });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) {
+        // Reuse the same handler via synthetic event
+        const input = document.getElementById('tg-photo');
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        input.files = dt.files;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    });
+  }
+ 
+  /* ── DEBOUNCE (reuse site utility or define locally) ──── */
+  const _debounceTG = (fn, delay = 250) => {
+    let t;
+    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), delay); };
+  };
+ 
+  /* ── INIT ─────────────────────────────────────────────── */
+  function init() {
+    if (!document.getElementById('ticket-canvas')) return;
+    if (typeof fabric === 'undefined') {
+      console.error('TicketGen: Fabric.js not loaded. Add the CDN script to <head>.');
+      return;
+    }
+ 
+    // Create Fabric canvas
+    fc = new fabric.Canvas('ticket-canvas', {
+      width:  W,
+      height: H,
+      selection:         false,
+      renderOnAddRemove: false,
+      enableRetinaScaling: false,
+    });
+ 
+    // Kick off initial random seat & render
+    randSeat();
+ 
+    // Wait for fonts then draw
+    const doRender = () => render();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(doRender);
+    } else {
+      setTimeout(doRender, 400);
+    }
+ 
+    // ── Event listeners ──────────────────────────────────
+ 
+    // Show type
+    document.getElementById('tg-show')
+      ?.addEventListener('change', (e) => {
+        state.showKey = e.target.value;
+        render();
+      });
+ 
+    // Name (debounced)
+    document.getElementById('tg-name')
+      ?.addEventListener('input', _debounceTG((e) => {
+        state.name = e.target.value;
+        render();
+      }, 180));
+ 
+    // Photo upload
+    document.getElementById('tg-photo')
+      ?.addEventListener('change', handlePhotoUpload);
+ 
+    // Drag & drop
+    setupDragDrop();
+ 
+    // Randomize seat
+    document.getElementById('tg-randomize')
+      ?.addEventListener('click', () => {
+        randSeat();
+        render();
+        if (window.EurovisionApp?.Toast) {
+          EurovisionApp.Toast.show(
+            `New seat: Block ${state.block} · Row ${state.row} · Seat ${state.seat}`,
+            { type: 'info' }
+          );
+        }
+      });
+ 
+    // Download
+    document.getElementById('tg-download')
+      ?.addEventListener('click', download);
+  }
+ 
+  /* ── PUBLIC API ───────────────────────────────────────── */
+  return { init, render };
+ 
+})();
+ 
+/* Auto-init if DOM already ready */
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', TicketGen.init);
+} else {
+  // Small delay to ensure Fabric.js is parsed
+  setTimeout(TicketGen.init, 0);
+}
