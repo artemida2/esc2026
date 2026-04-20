@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="https://www.w3.org/1999/xhtml"
+>
+
+  <!-- ══════════════════════════════════════════
+       HOME
+  ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://eurovisiontoolkit.com/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/index.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/index.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/index.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════
+       VOTE / RATE
+  ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://eurovisiontoolkit.com/vote.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/vote.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/vote.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/vote.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/vote.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/vote.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/vote.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════
+       BINGO
+  ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://eurovisiontoolkit.com/bingo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/bingo.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/bingo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/bingo.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/bingo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/bingo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/bingo.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════
+       FORECAST
+  ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://eurovisiontoolkit.com/forecast.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/forecast.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/forecast.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/forecast.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/forecast.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/forecast.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/forecast.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════
+       HISTORY
+  ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://eurovisiontoolkit.com/history.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/history.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/history.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/history.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/history.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/history.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/history.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/history.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/history.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/history.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/history.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/history.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/history.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════
+       GUIDE / SHOP
+  ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://eurovisiontoolkit.com/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/guide.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/guide.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"      href="https://eurovisiontoolkit.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://eurovisiontoolkit.com/es/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="de"      href="https://eurovisiontoolkit.com/de/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/guide.html"/>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

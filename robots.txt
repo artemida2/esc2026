@@ -1,0 +1,12 @@
+# robots.txt — eurovisiontoolkit.com
+# Updated: 2025-04-20
+
+# ── Allow all well-behaved crawlers ───────────────────────
+User-agent: *
+Allow: /
+
+# ── Don't waste crawl budget on assets ────────────────────
+Disallow: /assets/
+
+# ── Sitemap location ──────────────────────────────────────
+Sitemap: https://eurovisiontoolkit.com/sitemap.xml
