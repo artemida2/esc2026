@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <title>El sistema de puntos de Eurovisión — explicado fácil</title>
+
+  <meta name="description" content="El desglose completo del sistema de puntos de Eurovisión: 12 puntos, 10 puntos, escala 1-8, peso jurado vs televoto, roll-call del portavoz, desempates y por qué «nul points» cuenta." />
+  <meta name="keywords" content="sistema puntos Eurovisión, 12 puntos Eurovisión, votación Eurovisión explicada, jurado televoto 50/50, desempate Eurovisión, nul points" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html" />
+  <link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html" />
+  <link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/eurovision-points-system-explained.html" />
+  <link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html" />
+  <link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html" />
+
+  <link rel="alternate" type="application/atom+xml" title="Eurovision Toolkit — Blog Feed" href="https://eurovisiontoolkit.com/blog/feed.xml" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:locale"      content="es_ES" />
+  <meta property="og:url"         content="https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html" />
+  <meta property="og:title"       content="El sistema de puntos de Eurovisión — explicado fácil" />
+  <meta property="og:description" content="Todo sobre douze points, pesos 50/50 y desempates en una sola guía." />
+  <meta property="og:image"       content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
+  <meta property="article:published_time" content="2026-04-22T10:15:00+02:00" />
+  <meta property="article:modified_time"  content="2026-04-22T10:15:00+02:00" />
+  <meta property="article:section"        content="Análisis" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Sistema de puntos de Eurovisión — guía completa" />
+  <meta name="twitter:description" content="Douze points, peso 50/50, desempates y la historia de las reglas." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>" />
+
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "El sistema de puntos de Eurovisión — explicado fácil",
+      "description": "Cómo funciona realmente el sistema de puntos: división jurado/televoto, escalera 1-8/10/12, desempates e historia de cambios.",
+      "image": "https://eurovisiontoolkit.com/assets/img/og-cover.png",
+      "datePublished": "2026-04-22",
+      "dateModified": "2026-04-22",
+      "author": {
+        "@type": "Organization",
+        "name": "Eurovision Toolkit"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Eurovision Toolkit",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://eurovisiontoolkit.com/assets/img/og-cover.png"
+        }
+      },
+      "mainEntityOfPage": "https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html",
+      "inLanguage": "es"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://eurovisiontoolkit.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://eurovisiontoolkit.com/es/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sistema de puntos de Eurovisión explicado",
+          "item": "https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Por qué Eurovisión usa 1, 2, 3, 4, 5, 6, 7, 8, 10 y 12 puntos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La escalera 1-8, 10, 12 se usa desde 1975 para premiar las 10 mejores por cada bloque de votación sin diluir la distancia entre 1º y 2º. Los saltos de 8 a 10 y de 10 a 12 hacen que los primeros puestos pesen más en pantalla y sean más difíciles de remontar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Vale más el jurado que el televoto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Desde 2016 ambos pesan exactamente 50/50. Cada país da un paquete de 1-8, 10, 12 del jurado y otro idéntico del público. Se suman y se muestran por separado en el marcador."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si dos países acaban empatados a puntos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se aplica una regla de desempate: gana el del televoto más alto. Si sigue el empate, quien haya recibido puntos de más países. Luego, quien más 12 puntos haya recibido, luego 10, y así bajando la escalera."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué son los «nul points» y qué frecuencia tienen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "«Nul points» es el término informal para terminar un Grand Final con cero puntos combinados. Era relativamente habitual en la era pre-televoto — Noruega se llevó cero en 1963, 1978, 1981 y 2004 — pero desde el split 50/50 de 2016 un cero combinado es prácticamente imposible: necesitarías que todos los jurados y todos los televotos te dejaran fuera del top 10."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calculan los puntos del jurado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada uno de los cinco jurados clasifica todas las canciones del final de 1 a 25, siendo 1 su favorita. Se suman sus posiciones por canción y el menor total es el número 1 del jurado. El top 10 recibe 12, 10, 8, 7, 6, 5, 4, 3, 2, 1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué los presentadores anuncian el televoto al revés?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque genera máximo suspense. El país al final del marcador del jurado se anuncia primero, así las canciones con mal jurado suelen pegar un subidón en televoto — las famosas remontadas. La ganadora real queda confirmada solo en los últimos segundos."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <style>
+    .article-hero { padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-xl); text-align: center; }
+    .article-hero__eyebrow { display: inline-flex; gap: 8px; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--clr-cyan); text-shadow: var(--glow-cyan); margin-bottom: var(--space-md); }
+    .article-hero__title { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 4.5rem); line-height: 1; margin-bottom: var(--space-md); }
+    .article-hero__meta { color: #666; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; }
+    .prose { max-width: 70ch; margin: 0 auto; padding-inline: var(--space-lg); color: #d8d8e5; }
+    .prose h2 { font-family: var(--font-display); color: var(--clr-cyan); text-shadow: var(--glow-cyan); margin-top: var(--space-2xl); margin-bottom: var(--space-md); letter-spacing: 0.02em; }
+    .prose h3 { font-family: var(--font-ui); color: #fff; margin-top: var(--space-xl); margin-bottom: var(--space-sm); }
+    .prose p, .prose li { font-size: 1.02rem; line-height: 1.75; margin-bottom: var(--space-md); }
+    .prose ul, .prose ol { margin-left: 1.2em; }
+    .prose a { color: var(--clr-pink); text-decoration: underline; }
+    .prose a:hover { color: var(--clr-yellow); }
+    .callout { background: var(--clr-surface-2); border-left: 4px solid var(--clr-cyan); padding: var(--space-md) var(--space-lg); margin-block: var(--space-lg); border-radius: 6px; }
+    .callout--pink { border-left-color: var(--clr-pink); }
+    .callout--yellow { border-left-color: var(--clr-yellow); }
+    table.points { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.9rem; margin-block: var(--space-lg); }
+    table.points th, table.points td { border: 1px solid var(--clr-border); padding: 8px 12px; text-align: left; }
+    table.points th { background: var(--clr-surface-2); color: var(--clr-cyan); text-shadow: var(--glow-cyan); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center; margin-block: var(--space-2xl); }
+  </style>
+</head>
+
+<body>
+
+<header role="banner">
+  <div class="header__inner">
+    <a href="../index.html" class="header__logo">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul class="header__nav" role="list">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../vote.html">Puntuar</a></li>
+        <li><a href="../bingo.html">Bingo</a></li>
+        <li><a href="../forecast.html">Pronóstico</a></li>
+        <li><a href="../history.html">Historia</a></li>
+        <li><a href="../guide.html">Tienda</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li>
+        <li><a href="../countries.html">Países</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <div class="lang-switcher" role="group" aria-label="Selecciona idioma">
+        <button data-lang="en" aria-pressed="false">EN</button>
+        <button data-lang="es" class="active" aria-pressed="true">ES</button>
+        <button data-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <button class="hamburger" aria-label="Abrir el menú de navegación" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+  <ul role="list">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="../vote.html">Puntuar</a></li>
+    <li><a href="../bingo.html">Bingo</a></li>
+    <li><a href="../forecast.html">Pronóstico</a></li>
+    <li><a href="../history.html">Historia</a></li>
+    <li><a href="../guide.html">Tienda</a></li>
+    <li><a href="../blog.html" aria-current="page">Blog</a></li>
+    <li><a href="../countries.html">Países</a></li>
+  </ul>
+</nav>
+
+<main>
+<article>
+  <section class="article-hero">
+    <div class="container">
+      <span class="article-hero__eyebrow">— Análisis · 10 min de lectura —</span>
+      <h1 class="article-hero__title">El sistema<br><span class="neon-cyan">de puntos</span></h1>
+      <p class="article-hero__meta">Actualizado 22 abril 2026 · por Eurovision Tools</p>
+    </div>
+  </section>
+
+  <div class="prose">
+
+    <p>Si alguna vez te has preguntado <strong>por qué Eurovisión da 12 puntos, luego 10, luego 8</strong> — y no un simple 10, 9, 8 como cualquier concurso sensato — este artículo es para ti. Repasamos cada regla que controla cómo se adjudican los puntos, cómo se deshacen los empates y por qué esta escalera aparentemente absurda sobrevive desde que Richard Nixon seguía siendo presidente.</p>
+
+    <div class="callout callout--pink"><strong>La regla del 50/50.</strong> Desde 2016, cada país entrega dos paquetes idénticos de puntos — uno del <em>jurado</em>, otro del <em>televoto</em>. Ambos pesan exactamente el 50% de la influencia del país en el resultado. Nada de lo que leas abajo contradice eso.</div>
+
+    <h2 id="ladder">1 · La famosa escalera 1-8, 10, 12</h2>
+    <p>El jurado de cada país vota una vez, el televoto vota otra vez. Cada uno clasifica sus 10 canciones favoritas. Esas 10 canciones reciben puntos en este orden exacto:</p>
+    <table class="points">
+      <thead><tr><th>Puesto en el ranking del país</th><th>Puntos otorgados</th></tr></thead>
+      <tbody>
+        <tr><td>1º</td><td><strong>12</strong></td></tr>
+        <tr><td>2º</td><td><strong>10</strong></td></tr>
+        <tr><td>3º</td><td>8</td></tr>
+        <tr><td>4º</td><td>7</td></tr>
+        <tr><td>5º</td><td>6</td></tr>
+        <tr><td>6º</td><td>5</td></tr>
+        <tr><td>7º</td><td>4</td></tr>
+        <tr><td>8º</td><td>3</td></tr>
+        <tr><td>9º</td><td>2</td></tr>
+        <tr><td>10º</td><td>1</td></tr>
+      </tbody>
+    </table>
+    <p>En el Grand Final con 26 canciones, 37 jurados (36 países menos el propio + Resto del Mundo) reparten su top 10, y otros 37 bloques de televoto hacen lo mismo. Son hasta <strong>858 puntos</strong> teóricamente disponibles para una sola canción, aunque el récord histórico son los 631 de Kalush Orchestra en 2022.</p>
+
+    <h2 id="history">2 · ¿De dónde viene 1-8, 10, 12?</h2>
+    <p>Eurovisión ha usado varios sistemas:</p>
+    <ul>
+      <li><strong>1956–1961</strong> — sistema de 10 jurados que daban 10 votos repartidos entre las canciones. Caótico.</li>
+      <li><strong>1962–1964</strong> — experimentos breves con escalas 3-2-1 y 5-4-3-2-1.</li>
+      <li><strong>1975 → hoy</strong> — la escalera 1-8, 10, 12 que seguimos usando. Introducida por el estadístico de la UER Michel Stocker para mantener los finales interesantes hasta el final.</li>
+      <li><strong>1997</strong> — se introduce el televoto público, al principio solo en 5 países.</li>
+      <li><strong>2009</strong> — split 50/50 entre jurado y televoto (tras muchos ganadores novelty de los 2000 solo con voto público).</li>
+      <li><strong>2016</strong> — jurado y televoto se muestran <em>por separado</em> por primera vez en pantalla, creando el drama moderno de la revelación tardía.</li>
+      <li><strong>2023</strong> — las semifinales pasan a 100% televoto. El Grand Final mantiene 50/50.</li>
+      <li><strong>2023 → hoy</strong> — se añade el voto online Resto del Mundo.</li>
+    </ul>
+
+    <h2 id="jury">3 · ¿Qué es un jurado de Eurovisión?</h2>
+    <p>Cada país participante nombra un jurado de 5 personas siguiendo normas estrictas de la UER:</p>
+    <ul>
+      <li>5 personas — todas profesionales activos de la música.</li>
+      <li>Roles mezclados: un cantante, un compositor, un DJ, un productor y un periodista es la mezcla clásica.</li>
+      <li>Paridad de género (al menos 2 de cada).</li>
+      <li>Edades mezcladas (al menos uno menor de 30 y uno mayor de 30).</li>
+      <li>Ningún jurado repite dos años seguidos en el jurado del mismo país.</li>
+    </ul>
+    <p>Los jurados ven un ensayo privado del Grand Final — el <em>jury show</em> — la noche anterior al directo. Puntúan <em>todas</em> las canciones (no solo las 10 favoritas) del 1 al 25. Sus clasificaciones individuales se agregan por país con un <a href="https://en.wikipedia.org/wiki/Exponential_weighting" rel="noopener">promedio ponderado especial</a> que premia el acuerdo entre los cinco jurados. El top 10 de ese ranking agregado se lleva 12, 10, 8 … 1.</p>
+
+    <h2 id="televote">4 · ¿Qué es el televoto y cómo se audita?</h2>
+    <p>Desde el punto de vista del espectador es simple: SMS, llamada o la app oficial de Eurovisión. Hasta 20 votos por número. Pagar una pequeña tarifa (normalmente el equivalente a 0,50 € por voto) disuade del fraude masivo.</p>
+    <p>Entre bastidores, Eurovisión contrata a <strong>digame mobile</strong> (una telco alemana) para contar los votos. Identifican y descartan patrones sospechosos — números duplicados, bots, compras coordinadas — antes de enviar las cifras finales a la UER. Si se invalida el televoto de un país, se aplica un <em>agregado de respaldo</em> (la media de votos de países afines cultural y demográficamente).</p>
+    <div class="callout callout--yellow"><strong>Curiosidad 2021.</strong> Se invalidaron seis televotos por intentos coordinados de fraude. El agregado de respaldo mantuvo el final justo sin retrasar el programa.</div>
+
+    <h2 id="rows">5 · Por qué los portavoces solo anuncian 12 puntos</h2>
+    <p>Durante el Grand Final, el portavoz de cada país aparece por videoconexión y solo anuncia los 12 puntos <em>del jurado</em>. Los 1-8 y 10 ya están en el marcador. ¿Por qué? Porque 37 portavoces leyendo cada uno 10 nombres tardarían unos 45 minutos y destrozarían el ritmo del programa.</p>
+    <p>El roll-call completo del jurado dura ~25 minutos. Después los presentadores toman el relevo y revelan los totales del <em>televoto</em> país por país, empezando por el último del marcador del jurado. Es justo cuando el drama llega al máximo.</p>
+
+    <h2 id="tiebreak">6 · Reglas de desempate (ha pasado)</h2>
+    <p>¿Y si dos países acaban con exactamente el mismo total? Se aplica esta cascada <strong>en este orden</strong>:</p>
+    <ol>
+      <li><strong>Gana el televoto más alto.</strong> La mitad del jurado se ignora en el desempate.</li>
+      <li>Si sigue el empate: <strong>puntos de más países.</strong> (Amplitud antes que profundidad.)</li>
+      <li>Si sigue el empate: <strong>más 12 puntos.</strong></li>
+      <li>Luego <strong>más 10 puntos.</strong></li>
+      <li>Luego <strong>más 8 puntos.</strong> Y así bajando.</li>
+    </ol>
+    <p>En 70 años, el desempate ha decidido a la ganadora exactamente dos veces (en 1969 se declaró un empate a cuatro porque todavía no había regla; desde 1970 existe la cascada). Es mucho más habitual que el desempate decida entre los puestos 3-5 o inferiores.</p>
+
+    <h2 id="nulpoints">7 · La mitología de los «nul points»</h2>
+    <p>Un país con cero puntos en un Grand Final — los míticos <em>nul points</em> — solía pasar cada 5–10 años. Noruega tiene el récord con cuatro (1963, 1978, 1981, 2004). Desde el split 50/50 de 2016 y el voto online Resto del Mundo desde 2023, un cero <em>combinado</em> es prácticamente imposible: haría falta que todos los jurados y todos los televotos te dejaran fuera del top 10.</p>
+    <p>Un cero solo de televoto o solo de jurado sí sigue pasando y suele convertirse en meme. Portugal recibió 0 puntos de televoto en 2016 y ganó el concurso en 2017. Los arcos de redención están en el ADN de Eurovisión.</p>
+
+    <div class="callout">Sigue el marcador en directo el 16 de mayo con nuestro <a href="../forecast.html">pronóstico IA</a> — actualiza las probabilidades a medida que se revelan jurado y televoto. O crea tu propio top 12 con la <a href="../vote.html">Scorecard</a>.</div>
+
+    <h2 id="faq">Preguntas frecuentes</h2>
+    <h3>¿El Big Five recibe más puntos por ser países más grandes?</h3><p>No. Francia, Alemania, Italia, España y Reino Unido (el «Big Five») pagan una cuota mayor a la UER y reciben a cambio el pase directo al Grand Final. Pero una vez allí, sus votos y puntos funcionan exactamente igual que los del resto. El tamaño de población no influye en los puntos que un país puede dar.</p>
+    <h3>¿Puede una canción recibir 12 puntos de los 37 países en el mismo show?</h3><p>Teóricamente sí — 37 jurados × 12 + 37 televotos × 12 = 888. En la práctica ninguna canción ha recibido 12 puntos ni de la mitad de los países. Lo más cerca estuvo Ucrania 2022 (631 totales, con 28 × 12 de televoto).</p>
+    <h3>¿Qué cambia en las semifinales?</h3><p>Desde 2023, las semifinales son 100% televoto — sin jurado. Solo el público decide quién pasa al Grand Final. La escalera 1-8/10/12 es la misma, solo que sin la mitad del jurado.</p>
+    <h3>¿Publica el concurso el desglose completo jurado/televoto?</h3><p>Sí, completo. La UER publica el split completo en las 24h tras el programa en <a href="https://eurovision.com" target="_blank" rel="noopener">eurovision.com</a>. Las clasificaciones individuales de cada jurado también se publican al final de la temporada.</p>
+    <h3>¿El sistema de puntos ha cambiado para 2026?</h3><p>No. El Grand Final 50/50 y la escalera 1-8/10/12 se mantienen idénticos. Los únicos ajustes para 2026 son cosméticos — gráficos del marcador y fondos de los videos de los portavoces.</p>
+  </div>
+
+  <div class="container">
+    <div class="cta-row">
+      <a href="../vote.html" class="btn btn--primary btn--xl">🗳️ Crea tu scorecard</a>
+      <a href="../forecast.html" class="btn btn--secondary btn--xl">🌟 Ver pronóstico en directo</a>
+    </div>
+  </div>
+
+</article>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">★ ESCTOOLS</div>
+      <div class="footer__tagline">Tu kit definitivo para Eurovisión 2026 · Proyecto de fans, sin afiliación con la UER ni con el Festival de Eurovisión.</div>
+      <nav aria-label="Navegación del pie de página" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../vote.html">Puntuar</a></li>
+          <li><a href="../bingo.html">Bingo</a></li>
+          <li><a href="../forecast.html">Pronóstico</a></li>
+          <li><a href="../history.html">Historia</a></li>
+          <li><a href="../guide.html">Tienda</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../countries.html">Países</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <p class="footer__copy">© 2026 Eurovision Tools · Hecho por fans, sin ánimo de lucro.</p>
+</footer>
+
+<script src="../../assets/js/script.js" defer></script>
+</body>
+</html>
