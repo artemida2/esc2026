@@ -35,7 +35,7 @@
   <!-- Emoji Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js" defer></script>
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,11 +44,55 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Eurovision Tools 2026",
-    "url": "https://eurovisiontoolkit.com/es/",
-    "description": "Kit definitivo gratis para fans de Eurovisión 2026 en Viena",
-    "inLanguage": ["es", "en", "de"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://eurovisiontoolkit.com/es/#website",
+        "name": "Eurovision Tools 2026",
+        "url": "https://eurovisiontoolkit.com/es/",
+        "description": "Kit definitivo gratis para fans de Eurovisión 2026 en Viena — votar, bingo, pronóstico IA y 70 años de historia.",
+        "inLanguage": ["es", "en", "de"],
+        "publisher": { "@id": "https://eurovisiontoolkit.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://eurovisiontoolkit.com/#org",
+        "name": "Eurovision Toolkit",
+        "url": "https://eurovisiontoolkit.com/",
+        "logo": "https://eurovisiontoolkit.com/assets/img/og-cover.png"
+      },
+      {
+        "@type": "Event",
+        "name": "Festival de la Canción de Eurovisión 2026",
+        "startDate": "2026-05-12",
+        "endDate": "2026-05-16",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Wiener Stadthalle",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Viena",
+            "addressCountry": "AT"
+          }
+        },
+        "description": "La 70ª edición del Festival de la Canción de Eurovisión, organizado por ORF en Viena, Austria. Dos semifinales (12 y 14 de mayo) y la Gran Final el 16 de mayo de 2026.",
+        "url": "https://eurovisiontoolkit.com/es/",
+        "image": "https://eurovisiontoolkit.com/assets/img/og-cover.png",
+        "organizer": {
+          "@type": "Organization",
+          "name": "European Broadcasting Union",
+          "url": "https://www.ebu.ch/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://eurovisiontoolkit.com/es/" }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -225,7 +269,7 @@
       <!-- Live badge -->
       <div class="live-badge" role="status" aria-live="polite">
         <span class="live-badge__dot" aria-hidden="true"></span>
-        Eurovisión 2026 · Basilea · 13–17 de mayo
+        Eurovisión 2026 · Viena · 12–16 de mayo
       </div>
 
       <!-- Overline -->

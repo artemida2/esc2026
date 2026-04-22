@@ -1129,14 +1129,21 @@ const EurovisionApp = (() => {
 
   /* ─────────────────────────────────────────────────────── */
   /*  MODULE: Particles (hero background)                     */
+  /*  - Respects prefers-reduced-motion                       */
+  /*  - Pauses via IntersectionObserver when out of viewport  */
+  /*  - Lower count on mobile to reduce paint cost            */
   /* ─────────────────────────────────────────────────────── */
   const Particles = (() => {
     function init() {
       const hero = $('.particles');
       if (!hero) return;
 
-      const count  = window.innerWidth < 768 ? 12 : 24;
-      const colors = ['var(--clr-pink)', 'var(--clr-yellow)', 'var(--clr-cyan)', 'var(--clr-purple)'];
+      // Respect OS-level reduced-motion setting — skip entirely.
+      const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+
+      const count  = window.innerWidth < 768 ? 8 : 18;
+      const colors = ['var(--clr-pink)', 'var(--clr-cyan)', 'var(--clr-yellow)'];
 
       for (let i = 0; i < count; i++) {
         const p = document.createElement('div');
@@ -1159,6 +1166,22 @@ const EurovisionApp = (() => {
         `;
 
         hero.appendChild(p);
+      }
+
+      // Pause the whole particles layer when the hero is off-screen
+      // so we don't burn GPU cycles animating invisible elements.
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            hero.style.animationPlayState =
+              e.isIntersecting ? 'running' : 'paused';
+            $$('.particle', hero).forEach(p => {
+              p.style.animationPlayState =
+                e.isIntersecting ? 'running' : 'paused';
+            });
+          });
+        }, { threshold: 0 });
+        io.observe(hero);
       }
     }
     return { init };
