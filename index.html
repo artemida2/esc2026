@@ -36,7 +36,7 @@
   <!-- Emoji Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js" defer></script>
   <link rel="stylesheet" href="./assets/css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -192,11 +192,55 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Eurovision Tools 2026",
-  "url": "https://eurovisiontoolkit.com",
-  "description": "Ultimate free Eurovision 2026 fan toolkit",
-  "inLanguage": ["en", "es", "de"]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://eurovisiontoolkit.com/#website",
+      "name": "Eurovision Tools 2026",
+      "url": "https://eurovisiontoolkit.com/",
+      "description": "Ultimate free Eurovision 2026 fan toolkit — rate, bingo, AI forecast and 70 years of history.",
+      "inLanguage": ["en", "es", "de"],
+      "publisher": { "@id": "https://eurovisiontoolkit.com/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://eurovisiontoolkit.com/#org",
+      "name": "Eurovision Toolkit",
+      "url": "https://eurovisiontoolkit.com/",
+      "logo": "https://eurovisiontoolkit.com/assets/img/og-cover.png"
+    },
+    {
+      "@type": "Event",
+      "name": "Eurovision Song Contest 2026",
+      "startDate": "2026-05-12",
+      "endDate": "2026-05-16",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Wiener Stadthalle",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vienna",
+          "addressCountry": "AT"
+        }
+      },
+      "description": "The 70th Eurovision Song Contest, hosted by ORF in Vienna, Austria. Two semi-finals (12 and 14 May) and the Grand Final on 16 May 2026.",
+      "url": "https://eurovisiontoolkit.com/",
+      "image": "https://eurovisiontoolkit.com/assets/img/og-cover.png",
+      "organizer": {
+        "@type": "Organization",
+        "name": "European Broadcasting Union",
+        "url": "https://www.ebu.ch/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eurovisiontoolkit.com/" }
+      ]
+    }
+  ]
 }
 </script>
 </header>
