@@ -241,6 +241,17 @@
   const jsonld = document.getElementById('countries-jsonld');
   if (!gridEl) return;
 
+  /* Track the active filter so it survives async renders and repeated clicks. */
+  let activeFilter = 'all';
+
+  /* Apply the current filter to whatever cards are currently in the DOM. */
+  function applyFilter() {
+    document.querySelectorAll('.country-card').forEach(card => {
+      const show = activeFilter === 'all' || card.dataset.stage === activeFilter;
+      card.dataset.hidden = (!show).toString();
+    });
+  }
+
   fetch('./assets/data/esc2026-participants.json')
     .then(r => r.json())
     .then(data => {
@@ -282,6 +293,9 @@
           </a>
         `;
       }).join('');
+
+      /* If the user clicked a filter tab before fetch resolved, honour it now. */
+      applyFilter();
     })
     .catch(() => {
       gridEl.innerHTML = '<p style="color:#f88; text-align:center;">Could not load country data. Try again later.</p>';
@@ -291,11 +305,8 @@
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.setAttribute('aria-pressed', 'false'));
       tab.setAttribute('aria-pressed', 'true');
-      const filter = tab.dataset.filter;
-      document.querySelectorAll('.country-card').forEach(card => {
-        const show = filter === 'all' || card.dataset.stage === filter;
-        card.dataset.hidden = (!show).toString();
-      });
+      activeFilter = tab.dataset.filter;
+      applyFilter();
     });
   });
 })();
