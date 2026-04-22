@@ -41,9 +41,54 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Eurovision 2026 Bingo",
-    "url": "https://eurovisiontoolkit.com/bingo.html"
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Eurovision 2026 Bingo",
+        "url": "https://eurovisiontoolkit.com/bingo.html",
+        "description": "Free printable 5×5 Eurovision bingo card generator with 30 classic contest tropes. No signup, no ads.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web browser",
+        "inLanguage": ["en", "es", "de"],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to play Eurovision Bingo at a watch party",
+        "description": "Set up and play Eurovision Bingo for the 2026 Grand Final. Each player gets a unique 5×5 card; mark tropes as they happen live.",
+        "totalTime": "PT3H",
+        "supply": [
+          { "@type": "HowToSupply", "name": "Printable 5×5 bingo cards (one per player)" },
+          { "@type": "HowToSupply", "name": "Markers, pens, or phones for digital play" }
+        ],
+        "tool": [
+          { "@type": "HowToTool", "name": "Eurovision Toolkit bingo card generator" }
+        ],
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Generate cards",
+            "text": "Click 'Generate Card' — a unique 5×5 grid appears with 24 Eurovision tropes and one free central EUROVISION square. Each player gets their own random card."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Print or share digitally",
+            "text": "Print to A4 paper for a physical card, or share a link to each player's phone so they can mark boxes with a tap."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Start watching the Grand Final",
+            "text": "The show starts at 21:00 CEST on 16 May 2026. Watch the performances and mark a box every time you see the listed trope live on stage."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Shout BINGO",
+            "text": "First player to complete a full row, column or diagonal shouts BINGO. Full-card blackout usually lands during the jury vote reveals."
+          }
+        ]
+      }
+    ]
   }
   </script>
   <style>
@@ -524,6 +569,8 @@
         <li><a href="./forecast.html">Forecast</a></li>
         <li><a href="./history.html"aria-current="page" >History</a></li>
         <li><a href="./guide.html">Shop</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./countries.html">Countries</a></li>
       </ul>
     </nav>
 
@@ -562,6 +609,8 @@
     <li><a href="./forecast.html">Forecast</a></li>
     <li><a href="./history.html">History</a></li>
     <li><a href="./guide.html">Shop</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./countries.html">Countries</a></li>
   </ul>
   <!-- Language also accessible in mobile menu -->
   <div class="lang-switcher" role="group" aria-label="Select language" style="margin-top:var(--space-xl);">
@@ -1013,6 +1062,8 @@
           <li><a href="./forecast.html">Forecast</a></li>
           <li><a href="./history.html">History</a></li>
           <li><a href="./guide.html">Shop Guide</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./countries.html">Countries</a></li>
         </ul>
       </nav>
     </div>

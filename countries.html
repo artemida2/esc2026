@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <title>All 35 Countries at Eurovision 2026 — Artists, Songs & Running Order</title>
+
+  <meta name="description" content="The complete list of all 35 countries competing at Eurovision 2026 in Vienna. Artists, songs, flags, semi-final running order and every country's Eurovision history." />
+  <meta name="keywords" content="Eurovision 2026 countries, Eurovision 2026 participants, Eurovision 2026 artists, Eurovision 2026 songs, Eurovision 2026 running order" />
+  <meta name="author" content="Eurovision Tools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://eurovisiontoolkit.com/countries.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://eurovisiontoolkit.com/countries.html" />
+  <meta property="og:title"       content="All 35 Countries at Eurovision 2026" />
+  <meta property="og:description" content="Artists, songs, flags and running order for every Eurovision 2026 country." />
+  <meta property="og:image"       content="https://eurovisiontoolkit.com/assets/img/og-cover.png" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="All 35 Countries at Eurovision 2026" />
+  <meta name="twitter:description" content="Artists, songs, flags and running order." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <script type="application/ld+json" id="countries-jsonld">
+  </script>
+
+  <style>
+    .page-hero {
+      padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-xl);
+      text-align: center;
+    }
+    .page-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: var(--space-md);
+    }
+    .page-hero__sub {
+      max-width: 56ch; margin: 0 auto; color: #999;
+      font-family: var(--font-mono); font-size: 0.82rem;
+      line-height: 1.9;
+    }
+
+    .stage-tabs {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; margin: var(--space-xl) 0;
+    }
+    .stage-tab {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      background: transparent;
+      color: #aaa;
+      border: 1px solid var(--clr-border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .stage-tab[aria-pressed="true"] {
+      color: var(--clr-cyan);
+      border-color: var(--clr-cyan);
+      text-shadow: var(--glow-cyan);
+      box-shadow: 0 0 15px rgba(0,245,255,0.2);
+    }
+    .stage-tab:hover { color: #fff; }
+
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+    .country-card {
+      display: flex; flex-direction: column; gap: 6px;
+      padding: var(--space-md);
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .country-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--clr-pink);
+      box-shadow: 0 0 20px rgba(255,45,120,0.15);
+    }
+    .country-card__flag {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .country-card__name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin: 0;
+    }
+    .country-card__meta {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: #888;
+    }
+    .country-card__song {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: #d8d8e5;
+      font-style: italic;
+    }
+    .country-card__artist {
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      color: #aaa;
+    }
+    .country-card--sf1 { border-left: 3px solid var(--clr-pink); }
+    .country-card--sf2 { border-left: 3px solid var(--clr-cyan); }
+    .country-card--final { border-left: 3px solid var(--clr-yellow); }
+
+    .country-card[data-hidden="true"] { display: none; }
+  </style>
+</head>
+
+<body>
+
+<header role="banner">
+  <div class="header__inner">
+    <a href="./index.html" class="header__logo">
+      <span aria-hidden="true">★</span>ESC<span>TOOLS</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="header__nav" role="list">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./vote.html">Rate</a></li>
+        <li><a href="./bingo.html">Bingo</a></li>
+        <li><a href="./forecast.html">Forecast</a></li>
+        <li><a href="./history.html">History</a></li>
+        <li><a href="./guide.html">Shop</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./countries.html" aria-current="page">Countries</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <div class="lang-switcher" role="group" aria-label="Select language">
+        <button data-lang="en" class="active" aria-pressed="true">EN</button>
+        <button data-lang="es" aria-pressed="false">ES</button>
+        <button data-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+  <ul role="list">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./vote.html">Rate</a></li>
+    <li><a href="./bingo.html">Bingo</a></li>
+    <li><a href="./forecast.html">Forecast</a></li>
+    <li><a href="./history.html">History</a></li>
+    <li><a href="./guide.html">Shop</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./countries.html" aria-current="page">Countries</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" style="justify-content:center;">— 35 participants —</span>
+      <h1 class="page-hero__title">Every Country<br><span class="neon-pink">In Vienna</span></h1>
+      <p class="page-hero__sub">
+        Meet all 35 acts heading to Wiener Stadthalle between 12 and 16 May 2026.
+        Filter by semi-final, click any card to dive into that country's full Eurovision history.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="stage-tabs" role="tablist" aria-label="Filter by stage">
+        <button class="stage-tab" data-filter="all"   aria-pressed="true">All 35</button>
+        <button class="stage-tab" data-filter="SF1"   aria-pressed="false">Semi-final 1 · 12 May</button>
+        <button class="stage-tab" data-filter="SF2"   aria-pressed="false">Semi-final 2 · 14 May</button>
+        <button class="stage-tab" data-filter="FINAL" aria-pressed="false">Big Five + Host</button>
+      </div>
+
+      <div id="countries-grid" class="countries-grid" role="list" aria-live="polite"></div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">★ ESCTOOLS</div>
+      <div class="footer__tagline">
+        Your ultimate Eurovision 2026 fan toolkit ·
+        Fan project, not affiliated with EBU or the Eurovision Song Contest.
+      </div>
+      <nav aria-label="Footer navigation" style="margin-top: var(--space-lg);">
+        <ul class="footer__links" role="list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./vote.html">Rate</a></li>
+          <li><a href="./bingo.html">Bingo</a></li>
+          <li><a href="./forecast.html">Forecast</a></li>
+          <li><a href="./history.html">History</a></li>
+          <li><a href="./guide.html">Shop</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./countries.html">Countries</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <p class="footer__copy">&copy; 2026 Eurovision Tools &nbsp;·&nbsp; Fan-made, non-commercial.</p>
+</footer>
+
+<script>
+/* Countries index page — loads data + renders grid + handles filter */
+(function () {
+  const gridEl = document.getElementById('countries-grid');
+  const tabs   = document.querySelectorAll('.stage-tab');
+  const jsonld = document.getElementById('countries-jsonld');
+  if (!gridEl) return;
+
+  fetch('./assets/data/esc2026-participants.json')
+    .then(r => r.json())
+    .then(data => {
+      const list = data.countries.slice().sort((a, b) => a.country.localeCompare(b.country));
+
+      /* Inject ItemList JSON-LD */
+      jsonld.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Eurovision Song Contest 2026 participants",
+        "numberOfItems": list.length,
+        "itemListElement": list.map((c, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": `${c.country} — ${c.artist} · "${c.song}"`,
+          "url": `https://eurovisiontoolkit.com/countries/${c.slug}.html`
+        }))
+      });
+
+      /* Render cards */
+      gridEl.innerHTML = list.map(c => {
+        const stageClass = c.stage.toLowerCase();
+        const stageLabel = c.stage === 'SF1' ? 'Semi-final 1'
+                        : c.stage === 'SF2' ? 'Semi-final 2'
+                        : c.host          ? 'Host · direct to Final'
+                        : 'Big Five · direct to Final';
+        const roStr = c.ro ? ` · R/O ${c.ro}` : '';
+        return `
+          <a class="country-card country-card--${stageClass}"
+             role="listitem"
+             data-stage="${c.stage}"
+             href="./countries/${c.slug}.html"
+             aria-label="${c.country} at Eurovision 2026">
+            <span class="country-card__flag" aria-hidden="true">${c.flag}</span>
+            <h2 class="country-card__name">${c.country}</h2>
+            <span class="country-card__song">"${c.song}"</span>
+            <span class="country-card__artist">${c.artist}</span>
+            <span class="country-card__meta">${stageLabel}${roStr}</span>
+          </a>
+        `;
+      }).join('');
+    })
+    .catch(() => {
+      gridEl.innerHTML = '<p style="color:#f88; text-align:center;">Could not load country data. Try again later.</p>';
+    });
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-pressed', 'false'));
+      tab.setAttribute('aria-pressed', 'true');
+      const filter = tab.dataset.filter;
+      document.querySelectorAll('.country-card').forEach(card => {
+        const show = filter === 'all' || card.dataset.stage === filter;
+        card.dataset.hidden = (!show).toString();
+      });
+    });
+  });
+})();
+</script>
+<script src="./assets/js/script.js" defer></script>
+</body>
+</html>

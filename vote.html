@@ -596,10 +596,56 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Eurovision 2026 Scorecard",
-    "url": "https://eurovisiontoolkit.com/vote.html",
-    "description": "Official ESC points voting tool"
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Eurovision 2026 Scorecard",
+        "url": "https://eurovisiontoolkit.com/vote.html",
+        "description": "Official ESC points voting tool — rate every Eurovision 2026 song and share your personal Top 12 using the authentic 1-8, 10, 12 points ladder.",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Web browser",
+        "inLanguage": ["en", "es", "de"],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I rate songs on the Eurovision Scorecard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open the scorecard, listen to a song (or remember it), and drag points from the 1-8, 10, 12 ladder onto it. Your top 10 songs get points in the classic Eurovision order; everything else is unranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the scorecard free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 100% free, no signup, no ads, no cookies. Your votes are stored locally in your own browser — they never leave your device unless you explicitly share a screenshot or link."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I share my Top 12 on social media?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use the Share button at the bottom of the page to generate a ready-made image of your Top 12 plus one-click buttons for Twitter/X, Reddit, Telegram and WhatsApp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 1-8, 10, 12 points system?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eurovision's voting ladder awards 12 points to first favourite, 10 to second, then 8, 7, 6, 5, 4, 3, 2 and 1 down to the tenth favourite. Our tool uses this exact scale so your scorecard feels authentic. Read the full explainer on our blog."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -626,6 +672,8 @@
         <li><a href="./forecast.html"aria-current="page">Forecast</a></li>
         <li><a href="./history.html"aria-current="page" >History</a></li>
         <li><a href="./guide.html"aria-current="page" >Shop</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./countries.html">Countries</a></li>
       </ul>
     </nav>
 
@@ -664,6 +712,8 @@
     <li><a href="./forecast.html">Forecast</a></li>
     <li><a href="./history.html">History</a></li>
     <li><a href="./guide.html">Shop</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./countries.html">Countries</a></li>
   </ul>
   <!-- Language also accessible in mobile menu -->
   <div class="lang-switcher" role="group" aria-label="Select language" style="margin-top:var(--space-xl);">
@@ -1521,6 +1571,8 @@
           <li><a href="./forecast.html">Forecast</a></li>
           <li><a href="./history.html">History</a></li>
           <li><a href="./guide.html">Shop Guide</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./countries.html">Countries</a></li>
         </ul>
       </nav>
     </div>
