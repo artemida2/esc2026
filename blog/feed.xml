@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Eurovision Toolkit — Blog</title>
+  <subtitle>Guides, explainers and party tips for Eurovision 2026.</subtitle>
+  <link href="https://eurovisiontoolkit.com/blog/feed.xml" rel="self" />
+  <link href="https://eurovisiontoolkit.com/blog.html" />
+  <id>https://eurovisiontoolkit.com/blog.html</id>
+  <updated>2026-04-22T10:30:00+02:00</updated>
+  <author>
+    <name>Eurovision Toolkit</name>
+  </author>
+  <rights>© 2026 Eurovision Toolkit · Fan-made, non-commercial.</rights>
+
+  <entry>
+    <title>How Does Eurovision Voting Actually Work? (2026 Guide)</title>
+    <link href="https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html" />
+    <id>https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html</id>
+    <published>2026-04-22T10:00:00+02:00</published>
+    <updated>2026-04-22T10:00:00+02:00</updated>
+    <summary>A plain-English guide to Eurovision voting in 2026: jury vs televote, the 1–8/10/12 points ladder, the Big Five skip, and the new Rest of the World online vote.</summary>
+    <category term="Explainer" />
+  </entry>
+
+  <entry>
+    <title>The Complete Eurovision Points System — Explained Simply</title>
+    <link href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html" />
+    <id>https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html</id>
+    <published>2026-04-22T10:15:00+02:00</published>
+    <updated>2026-04-22T10:15:00+02:00</updated>
+    <summary>Where the 12 points come from, why juries and televotes are weighted 50/50, how the spokesperson roll-call works, tie-break rules and the math behind the "nul points" curse.</summary>
+    <category term="Deep Dive" />
+  </entry>
+
+  <entry>
+    <title>The Official Eurovision Drinking Game &amp; Bingo Party Guide (2026)</title>
+    <link href="https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html" />
+    <id>https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html</id>
+    <published>2026-04-22T10:30:00+02:00</published>
+    <updated>2026-04-22T10:30:00+02:00</updated>
+    <summary>Rules, printable 5×5 bingo card, 30 classic Eurovision tropes, pan-European snack board, full evening timeline and no-alcohol alternatives.</summary>
+    <category term="Party Guide" />
+  </entry>
+
+</feed>

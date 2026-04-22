@@ -1,0 +1,61 @@
+{
+  "contest": {
+    "year": 2026,
+    "host_city": "Vienna",
+    "host_country": "Austria",
+    "host_country_code": "AT",
+    "venue": "Wiener Stadthalle",
+    "broadcaster": "ORF",
+    "slogan": "United by Music",
+    "dates": {
+      "semi_final_1": "2026-05-12",
+      "semi_final_2": "2026-05-14",
+      "grand_final": "2026-05-16"
+    },
+    "total_participants": 35,
+    "data_sources": [
+      "https://en.wikipedia.org/wiki/Eurovision_Song_Contest_2026",
+      "https://eurovision.com/"
+    ],
+    "last_updated": "2026-04-22"
+  },
+  "countries": [
+    {"slug": "moldova",        "country": "Moldova",        "code": "MD", "flag": "🇲🇩", "artist": "Satoshi",                               "song": "Viva, Moldova!",      "stage": "SF1", "ro": 1},
+    {"slug": "sweden",         "country": "Sweden",         "code": "SE", "flag": "🇸🇪", "artist": "Felicia",                               "song": "My System",           "stage": "SF1", "ro": 2},
+    {"slug": "croatia",        "country": "Croatia",        "code": "HR", "flag": "🇭🇷", "artist": "Lelek",                                 "song": "Andromeda",           "stage": "SF1", "ro": 3},
+    {"slug": "greece",         "country": "Greece",         "code": "GR", "flag": "🇬🇷", "artist": "Akylas",                                "song": "Ferto",               "stage": "SF1", "ro": 4},
+    {"slug": "portugal",       "country": "Portugal",       "code": "PT", "flag": "🇵🇹", "artist": "Bandidos do Cante",                     "song": "Rosa",                "stage": "SF1", "ro": 5},
+    {"slug": "georgia",        "country": "Georgia",        "code": "GE", "flag": "🇬🇪", "artist": "Bzikebi",                               "song": "On Replay",           "stage": "SF1", "ro": 6},
+    {"slug": "finland",        "country": "Finland",        "code": "FI", "flag": "🇫🇮", "artist": "Linda Lampenius & Pete Parkkonen",      "song": "Liekinheitin",        "stage": "SF1", "ro": 7},
+    {"slug": "montenegro",     "country": "Montenegro",     "code": "ME", "flag": "🇲🇪", "artist": "Tamara Živković",                       "song": "Nova zora",           "stage": "SF1", "ro": 8},
+    {"slug": "estonia",        "country": "Estonia",        "code": "EE", "flag": "🇪🇪", "artist": "Vanilla Ninja",                         "song": "Too Epic to Be True", "stage": "SF1", "ro": 9},
+    {"slug": "israel",         "country": "Israel",         "code": "IL", "flag": "🇮🇱", "artist": "Noam Bettan",                           "song": "Michelle",            "stage": "SF1", "ro": 10},
+    {"slug": "belgium",        "country": "Belgium",        "code": "BE", "flag": "🇧🇪", "artist": "Essyla",                                "song": "Dancing on the Ice",  "stage": "SF1", "ro": 11},
+    {"slug": "lithuania",      "country": "Lithuania",      "code": "LT", "flag": "🇱🇹", "artist": "Lion Ceccah",                           "song": "Sólo quiero más",     "stage": "SF1", "ro": 12},
+    {"slug": "san-marino",     "country": "San Marino",     "code": "SM", "flag": "🇸🇲", "artist": "Senhit",                                "song": "Superstar",           "stage": "SF1", "ro": 13},
+    {"slug": "poland",         "country": "Poland",         "code": "PL", "flag": "🇵🇱", "artist": "Alicja",                                "song": "Pray",                "stage": "SF1", "ro": 14},
+    {"slug": "serbia",         "country": "Serbia",         "code": "RS", "flag": "🇷🇸", "artist": "Lavina",                                "song": "Kraj mene",           "stage": "SF1", "ro": 15},
+
+    {"slug": "bulgaria",       "country": "Bulgaria",       "code": "BG", "flag": "🇧🇬", "artist": "Dara",                                  "song": "Bangaranga",          "stage": "SF2", "ro": 1},
+    {"slug": "azerbaijan",     "country": "Azerbaijan",     "code": "AZ", "flag": "🇦🇿", "artist": "Jiva",                                  "song": "Just Go",             "stage": "SF2", "ro": 2},
+    {"slug": "romania",        "country": "Romania",        "code": "RO", "flag": "🇷🇴", "artist": "Alexandra Căpitănescu",                 "song": "Choke Me",            "stage": "SF2", "ro": 3},
+    {"slug": "luxembourg",     "country": "Luxembourg",     "code": "LU", "flag": "🇱🇺", "artist": "Eva Marija",                            "song": "Mother Nature",       "stage": "SF2", "ro": 4},
+    {"slug": "czechia",        "country": "Czechia",        "code": "CZ", "flag": "🇨🇿", "artist": "Daniel Zizka",                          "song": "Crossroads",          "stage": "SF2", "ro": 5},
+    {"slug": "armenia",        "country": "Armenia",        "code": "AM", "flag": "🇦🇲", "artist": "Simón",                                 "song": "Paloma Rumba",        "stage": "SF2", "ro": 6},
+    {"slug": "switzerland",    "country": "Switzerland",    "code": "CH", "flag": "🇨🇭", "artist": "Veronica Fusaro",                       "song": "Alice",               "stage": "SF2", "ro": 7},
+    {"slug": "cyprus",         "country": "Cyprus",         "code": "CY", "flag": "🇨🇾", "artist": "Antigoni",                              "song": "Jalla",               "stage": "SF2", "ro": 8},
+    {"slug": "latvia",         "country": "Latvia",         "code": "LV", "flag": "🇱🇻", "artist": "Atvara",                                "song": "Ēnā",                 "stage": "SF2", "ro": 9},
+    {"slug": "denmark",        "country": "Denmark",        "code": "DK", "flag": "🇩🇰", "artist": "Søren Torpegaard Lund",                 "song": "Før vi går hjem",     "stage": "SF2", "ro": 10},
+    {"slug": "australia",      "country": "Australia",      "code": "AU", "flag": "🇦🇺", "artist": "Delta Goodrem",                         "song": "Eclipse",             "stage": "SF2", "ro": 11},
+    {"slug": "ukraine",        "country": "Ukraine",        "code": "UA", "flag": "🇺🇦", "artist": "Leléka",                                "song": "Ridnym",              "stage": "SF2", "ro": 12},
+    {"slug": "albania",        "country": "Albania",        "code": "AL", "flag": "🇦🇱", "artist": "Alis",                                  "song": "Nân",                 "stage": "SF2", "ro": 13},
+    {"slug": "malta",          "country": "Malta",          "code": "MT", "flag": "🇲🇹", "artist": "Aidan",                                 "song": "Bella",               "stage": "SF2", "ro": 14},
+    {"slug": "norway",         "country": "Norway",         "code": "NO", "flag": "🇳🇴", "artist": "Jonas Lovv",                            "song": "Ya Ya Ya",            "stage": "SF2", "ro": 15},
+
+    {"slug": "france",         "country": "France",         "code": "FR", "flag": "🇫🇷", "artist": "Monroe",                                "song": "Regarde !",           "stage": "FINAL", "ro": null, "big_five": true},
+    {"slug": "germany",        "country": "Germany",        "code": "DE", "flag": "🇩🇪", "artist": "Sarah Engels",                          "song": "Fire",                "stage": "FINAL", "ro": null, "big_five": true},
+    {"slug": "italy",          "country": "Italy",          "code": "IT", "flag": "🇮🇹", "artist": "Sal Da Vinci",                          "song": "Per sempre sì",       "stage": "FINAL", "ro": null, "big_five": true},
+    {"slug": "united-kingdom", "country": "United Kingdom", "code": "GB", "flag": "🇬🇧", "artist": "Look Mum No Computer",                  "song": "Eins, Zwei, Drei",    "stage": "FINAL", "ro": null, "big_five": true},
+    {"slug": "austria",        "country": "Austria",        "code": "AT", "flag": "🇦🇹", "artist": "Cosmó",                                 "song": "Tanzschein",          "stage": "FINAL", "ro": 25, "host": true}
+  ]
+}
