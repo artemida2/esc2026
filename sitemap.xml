@@ -214,27 +214,123 @@
   ══════════════════════════════════════════ -->
   <url>
     <loc>https://eurovisiontoolkit.com/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://eurovisiontoolkit.com/de/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/blog/how-eurovision-voting-works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/blog/how-eurovision-voting-works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/how-eurovision-voting-works.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/how-eurovision-voting-works.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://eurovisiontoolkit.com/de/blog/eurovision-points-system-explained.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/eurovision-points-system-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/eurovision-points-system-explained.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/blog/eurovision-drinking-game-bingo-party.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/blog/eurovision-drinking-game-bingo-party.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/blog/eurovision-drinking-game-bingo-party.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/blog/eurovision-drinking-game-bingo-party.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- ══════════════════════════════════════════
@@ -242,219 +338,1083 @@
   ══════════════════════════════════════════ -->
   <url>
     <loc>https://eurovisiontoolkit.com/countries.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://eurovisiontoolkit.com/de/countries.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://eurovisiontoolkit.com/countries/moldova.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/moldova.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/moldova.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/moldova.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/moldova.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/moldova.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/moldova.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/sweden.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/sweden.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/sweden.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/sweden.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/sweden.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/sweden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/sweden.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/croatia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/croatia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/croatia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/croatia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/croatia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/croatia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/croatia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/greece.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/greece.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/greece.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/greece.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/greece.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/greece.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/greece.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/portugal.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/portugal.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/portugal.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/portugal.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/portugal.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/portugal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/portugal.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/georgia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/georgia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/georgia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/georgia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/georgia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/georgia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/georgia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/finland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/finland.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/finland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/finland.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/finland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/finland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/finland.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/montenegro.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/montenegro.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/montenegro.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/montenegro.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/montenegro.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/montenegro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/montenegro.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/estonia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/estonia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/estonia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/estonia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/estonia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/estonia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/estonia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/israel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/israel.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/israel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/israel.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/israel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/israel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/israel.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/belgium.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/belgium.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/belgium.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/belgium.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/belgium.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/belgium.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/belgium.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/lithuania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/lithuania.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/lithuania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/lithuania.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/lithuania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/lithuania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/lithuania.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/san-marino.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/san-marino.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/san-marino.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/san-marino.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/san-marino.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/san-marino.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/san-marino.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/poland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/poland.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/poland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/poland.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/poland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/poland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/poland.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/serbia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/serbia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/serbia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/serbia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/serbia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/serbia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/serbia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/bulgaria.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/bulgaria.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/bulgaria.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/bulgaria.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/bulgaria.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/bulgaria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/bulgaria.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/azerbaijan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/azerbaijan.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/azerbaijan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/azerbaijan.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/azerbaijan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/azerbaijan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/azerbaijan.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/romania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/romania.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/romania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/romania.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/romania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/romania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/romania.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/luxembourg.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/luxembourg.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/luxembourg.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/luxembourg.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/luxembourg.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/luxembourg.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/luxembourg.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/czechia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/czechia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/czechia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/czechia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/czechia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/czechia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/czechia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/armenia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/armenia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/armenia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/armenia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/armenia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/armenia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/armenia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/switzerland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/switzerland.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/switzerland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/switzerland.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/switzerland.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/switzerland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/switzerland.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/cyprus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/cyprus.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/cyprus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/cyprus.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/cyprus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/cyprus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/cyprus.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/latvia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/latvia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/latvia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/latvia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/latvia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/latvia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/latvia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/denmark.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/denmark.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/denmark.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/denmark.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/denmark.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/denmark.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/denmark.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/australia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/australia.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/australia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/australia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/australia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/australia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/australia.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/ukraine.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/ukraine.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/ukraine.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/ukraine.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/ukraine.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/ukraine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/ukraine.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/albania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/albania.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/albania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/albania.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/albania.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/albania.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/albania.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/malta.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/malta.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/malta.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/malta.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/malta.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/malta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/malta.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/norway.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/norway.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/norway.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/norway.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/norway.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/norway.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/norway.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/france.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/france.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/france.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/france.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/france.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/france.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/france.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/germany.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/germany.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/germany.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/germany.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/germany.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/germany.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/germany.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/italy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/italy.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/italy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/italy.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/italy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/italy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/italy.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://eurovisiontoolkit.com/countries/united-kingdom.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/united-kingdom.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/united-kingdom.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/united-kingdom.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/united-kingdom.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/united-kingdom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/united-kingdom.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://eurovisiontoolkit.com/countries/austria.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/austria.html"/>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/de/countries/austria.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/austria.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://eurovisiontoolkit.com/es/countries/austria.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eurovisiontoolkit.com/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://eurovisiontoolkit.com/de/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eurovisiontoolkit.com/es/countries/austria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eurovisiontoolkit.com/countries/austria.html"/>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
