@@ -143,7 +143,7 @@
           <li><a href="./history.html">Historia</a></li>
           <li><a href="./guide.html">Tienda</a></li>
           <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./countries.html">Países</a></li>
+          <li><a href="./countries.html" aria-current="page">Países</a></li>
         </ul>
       </nav>
     </div>
@@ -193,10 +193,10 @@
         const roStr = c.ro ? ` · Orden ${c.ro}` : '';
         return `
           <a class="country-card country-card--${stageClass}"
-             role="listitem"
-             data-stage="${c.stage}"
-             href="./countries/${c.slug}.html"
-             aria-label="${c.country} en Eurovisión 2026">
+ role="listitem"
+ data-stage="${c.stage}"
+ href="./countries/${c.slug}.html"
+ aria-label="${c.country} en Eurovisión 2026">
             <span class="country-card__flag" aria-hidden="true">${c.flag}</span>
             <h2 class="country-card__name">${c.country}</h2>
             <span class="country-card__song">"${c.song}"</span>
