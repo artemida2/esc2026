@@ -229,7 +229,7 @@
           <li><a href="./history.html">History</a></li>
           <li><a href="./guide.html">Shop</a></li>
           <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./countries.html">Countries</a></li>
+          <li><a href="./countries.html" aria-current="page">Countries</a></li>
         </ul>
       </nav>
     </div>
@@ -285,10 +285,10 @@
         const roStr = c.ro ? ` · R/O ${c.ro}` : '';
         return `
           <a class="country-card country-card--${stageClass}"
-             role="listitem"
-             data-stage="${c.stage}"
-             href="./countries/${c.slug}.html"
-             aria-label="${c.country} at Eurovision 2026">
+ role="listitem"
+ data-stage="${c.stage}"
+ href="./countries/${c.slug}.html"
+ aria-label="${c.country} at Eurovision 2026">
             <span class="country-card__flag" aria-hidden="true">${c.flag}</span>
             <h2 class="country-card__name">${c.country}</h2>
             <span class="country-card__song">"${c.song}"</span>
