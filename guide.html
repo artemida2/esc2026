@@ -243,6 +243,61 @@
       filter: drop-shadow(0 0 6px rgba(255,230,0,0.5));
     }
 
+    /* ── Product cover image ───────────────────────────────── */
+    .product-cover {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin: 0 0 var(--space-md);
+      border: 1px solid rgba(255, 45, 120, 0.3);
+      box-shadow: 0 8px 28px rgba(255, 45, 120, 0.15);
+      background: #1a1029;
+    }
+
+    /* ── Stat grid (3-up: SHOWS / PAGES / GAMES) ───────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin: var(--space-md) 0;
+    }
+    .stat-grid__cell {
+      padding: var(--space-sm) 0.4rem;
+      background: rgba(255, 45, 120, 0.07);
+      border: 1px solid rgba(255, 45, 120, 0.22);
+      border-radius: var(--radius-sm);
+      text-align: center;
+    }
+    .stat-grid__num {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--clr-pink);
+      text-shadow: 0 0 12px rgba(255,45,120,0.4);
+      margin-bottom: 4px;
+    }
+    .stat-grid__label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #ffd166;
+      margin-bottom: 4px;
+    }
+    .stat-grid__desc {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      line-height: 1.35;
+      color: #ccc;
+    }
+
     /* ── Responsive tweaks ────────────────────────────────── */
     @media (max-width: 480px) {
       .boosty-banner {
@@ -251,6 +306,8 @@
       .games-grid {
         grid-template-columns: 1fr;
       }
+      .stat-grid__num { font-size: 1.35rem; }
+      .stat-grid__desc { font-size: 0.6rem; }
     }
   </style>
 </head>
@@ -433,31 +490,42 @@
             <span class="badge badge--pink">PDF · Instant Download</span>
           </div>
 
+          <img
+            src="./assets/img/watch-party-kit-cover.png"
+            alt="Eurovision Watch Party — 20-page fan kit cover for Vienna 2026"
+            class="product-cover"
+            width="864"
+            height="648"
+            loading="lazy"
+            decoding="async"
+          />
+
           <h3 id="product-party-kit" class="tool-card__title">
-            🖨️ Watch Party Kit<br>
-            <span class="neon-pink">10-in-1 Game Bundle</span>
+            🖨️ Eurovision Watch Party<br>
+            <span class="neon-pink">A 20-page Fan Kit for Vienna 2026</span>
           </h3>
 
           <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
-            Everything you need for the perfect watch party — print, play, repeat.
-            Works for 2 to 20+ fans.
+            The official fan watch party kit — print, play, repeat. Works for 2 to 20+ fans.
           </p>
 
-          <!-- What's inside the PDF -->
-          <p style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-pink); margin-bottom: var(--space-xs);">
-            What's inside:
-          </p>
-          <div class="games-grid" aria-label="Games included in the party kit">
-            <span>Song Bingo</span>
-            <span>Artist Bingo</span>
-            <span>Country Match-Up</span>
-            <span>Trivia Quiz</span>
-            <span>Sweepstake Draws</span>
-            <span>Score Card</span>
-            <span>Jury Predictions</span>
-            <span>Flag Quiz</span>
-            <span>Intro Guess</span>
-            <span>+ Bonus Game</span>
+          <!-- 3-up stat grid: SHOWS / PAGES / GAMES -->
+          <div class="stat-grid" aria-label="Watch Party Kit overview">
+            <div class="stat-grid__cell">
+              <span class="stat-grid__num">3</span>
+              <span class="stat-grid__label">Shows</span>
+              <span class="stat-grid__desc">Semi 1, Semi 2 and Grand Final — scorecards for every night.</span>
+            </div>
+            <div class="stat-grid__cell">
+              <span class="stat-grid__num">20</span>
+              <span class="stat-grid__label">Pages</span>
+              <span class="stat-grid__desc">Fan-made print-ready spread, designed to be photocopied and shared.</span>
+            </div>
+            <div class="stat-grid__cell">
+              <span class="stat-grid__num">10+</span>
+              <span class="stat-grid__label">Games</span>
+              <span class="stat-grid__desc">Bingo, trivia, match-up, flag frenzy, drinking rules, sweepstake…</span>
+            </div>
           </div>
 
           <ul class="product-list">
