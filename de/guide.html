@@ -22,6 +22,10 @@
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+
   <meta property="og:url" content="https://eurovisiontoolkit.com/de/guide.html" />
   <meta property="og:title" content="Sticker Packs & Digitale Fan-Produkte für Eurovision 2026 Wien" />
   <meta property="og:description" content="Coole Sticker-Packs, Wallpapers und digitale Fan-Artikel für den ESC in Wien. Fan-made." />
@@ -402,10 +406,14 @@
       <h1 id="shop-heading" class="display-title neon-pink">
         FAN-SHOP
       </h1>
-      <p class="mt-md" style="max-width: 52ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.9rem;">
-        Drei digitale Produkte, damit Eurovision 2026 die beste Nacht des Jahres wird.<br>
+      <p class="mt-md" style="max-width: 56ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.9rem;">
+        Fünf digitale Produkte, damit Eurovision 2026 die beste Nacht des Jahres wird.<br>
         Sofortige Lieferung · Kein Warten · 100% von Fans für Fans.
       </p>
+      <div class="hero__cta" style="margin-top: var(--space-xl);">
+        <a href="#products-heading" class="btn btn--primary btn--xl">🛒 Alle 5 Drops ansehen</a>
+        <a href="#mega-bundle" class="btn btn--yellow btn--xl">🎁 Mega-Bundle holen</a>
+      </div>
     </div>
   </section>
 
@@ -470,6 +478,61 @@
       <h2 id="products-heading" class="section-label" style="margin-bottom: var(--space-xl);">
         Wähle deinen Drop
       </h2>
+
+
+      <!-- ════════════════════════════════════════════════════
+           MEGA BUNDLE — Flagship Upsell
+           🔧 BOOSTY URL placeholder
+      ═══════════════════════════════════════════════════════ -->
+      <article
+        id="mega-bundle"
+        class="card card--brutal anim-fade-up"
+        role="listitem"
+        aria-labelledby="bundle-title"
+        style="position: relative; padding: var(--space-2xl) var(--space-xl); margin-bottom: var(--space-2xl); background: linear-gradient(135deg, rgba(255,45,120,0.18), rgba(0,229,255,0.12) 60%, rgba(255,230,0,0.18)); border: 2px solid var(--clr-yellow); box-shadow: 8px 8px 0 var(--clr-pink), var(--glow-yellow);"
+      >
+        <span class="badge badge--yellow" style="position: absolute; top: -14px; left: var(--space-xl); font-size: 0.7rem;">🎁 BESTER WERT · 40% SPAREN</span>
+
+        <div style="display: grid; gap: var(--space-xl); align-items: center; grid-template-columns: minmax(0, 1fr);">
+          <div>
+            <span class="hero__subtitle" style="margin-bottom: var(--space-sm);">★ EUROVISION 2026 MEGA-BUNDLE ★</span>
+            <h3 id="bundle-title" class="display-title neon-yellow" style="font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1; margin-bottom: var(--space-md);">
+              Alle 5 Drops.<br>Ein riesiger Rabatt.
+            </h3>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: #ddd; line-height: 1.6; margin-bottom: var(--space-md);">
+              Watch-Party-Kit · Lyrics &amp; Übersetzungs-Pack · Trinkspiel-Karten · Telegram-Sticker · WhatsApp-Sticker — alles für die Eurovision-Nacht in einem Kauf.
+            </p>
+
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem 1rem; margin: var(--space-md) 0;">
+              <li style="font-family: var(--font-mono); font-size: 0.8rem; color: #ddd;">✅ Alle 5 Produkte für immer</li>
+              <li style="font-family: var(--font-mono); font-size: 0.8rem; color: #ddd;">✅ Zukünftige Updates inklusive</li>
+              <li style="font-family: var(--font-mono); font-size: 0.8rem; color: #ddd;">✅ Sofortige Boosty-Lieferung</li>
+              <li style="font-family: var(--font-mono); font-size: 0.8rem; color: #ddd;">✅ Eine einzige Zahlung</li>
+            </ul>
+
+            <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0;">
+              <span class="price-tag" style="color: var(--clr-yellow); font-size: 2.4rem;">
+                <span class="price-currency">€</span>5.99
+              </span>
+              <span style="font-family: var(--font-mono); font-size: 0.9rem; color: #888; text-decoration: line-through;">€10.97</span>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--clr-pink); padding: 4px 10px; border: 1px solid var(--clr-pink); border-radius: 999px;">DU SPARST €4.98</span>
+            </div>
+
+            <a
+              class="btn btn--yellow btn--xl"
+              href="https://boosty.to/esc2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Eurovision 2026 Mega-Bundle auf Boosty kaufen"
+            ><!-- 🔧 BOOSTY URL -->
+              🎁 Mega-Bundle holen →
+            </a>
+            <p style="font-family: var(--font-mono); font-size: 0.7rem; color: #888; margin-top: 0.6rem;">
+              Oder weiter unten ein einzelnes Produkt kaufen ↓
+            </p>
+          </div>
+        </div>
+      </article>
 
       <div class="tools-grid stagger" role="list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: start;">
 
@@ -661,6 +724,97 @@
           </a>
         </article>
 
+
+
+        <!-- ══════════════════════════════════════════════════
+             PRODUCT 4 — Lyrics & Übersetzungs-Pack
+             🔧 BOOSTY URL placeholder
+        ══════════════════════════════════════════════════════ -->
+        <article
+          class="tool-card tool-card--cyan anim-fade-up"
+          role="listitem"
+          aria-labelledby="product-lyrics"
+        >
+          <div style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--cyan">PDF-Booklet · Karaoke-tauglich</span>
+          </div>
+
+          <h3 id="product-lyrics" class="tool-card__title">
+            🎤 Lyrics &amp; Übersetzungs-Pack<br>
+            <span class="neon-cyan">Alle 37 Songs · EN-Übersetzung</span>
+          </h3>
+
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
+            Jeder Eurovision-2026-Song — Originaltext + saubere englische Übersetzung. Schön gesetzt, bereit für die Karaoke-Nacht.
+          </p>
+
+          <ul class="product-list">
+            <li>Alle 37 Beiträge: Originalsprache + englische Übersetzung Seite an Seite.</li>
+            <li>Booklet-PDF — drucken in A4 / Letter oder am Tablet lesen.</li>
+            <li>Große, lesbare Typo, optimiert für Live-Sing-alongs.</li>
+            <li>Aussprache-Hinweise für knifflige nicht-englische Zeilen.</li>
+          </ul>
+
+          <span class="price-tag" style="color: var(--clr-cyan);">
+            <span class="price-currency">€</span>2.49
+          </span>
+
+          <a
+            class="btn btn--full mt-md"
+            href="https://boosty.to/esc2026"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Lyrics & Übersetzungs-Pack auf Boosty kaufen"
+            style="background: var(--clr-cyan); color: #07111a; box-shadow: 4px 4px 0px #00788a, var(--glow-cyan);"
+          ><!-- 🔧 BOOSTY URL -->
+            🛒 Auf Boosty kaufen →
+          </a>
+        </article>
+
+
+        <!-- ══════════════════════════════════════════════════
+             PRODUCT 5 — Trinkspiel-Karten (PDF)
+             🔧 BOOSTY URL placeholder
+        ══════════════════════════════════════════════════════ -->
+        <article
+          class="tool-card tool-card--pink anim-fade-up"
+          role="listitem"
+          aria-labelledby="product-drinking-deck"
+        >
+          <div style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--pink">PDF-Deck · 30 Karten</span>
+          </div>
+
+          <h3 id="product-drinking-deck" class="tool-card__title">
+            🍻 Trinkspiel-Karten<br>
+            <span class="neon-pink">30 Karten · Regeln · Tropes · Dares</span>
+          </h3>
+
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
+            Das Premium-Upgrade für deine Watch-Party — drucken, ausschneiden, spielen. Pures Chaos in 30 Karten.
+          </p>
+
+          <ul class="product-list">
+            <li>30 druckfertige Karten — Regeln, Tropes, Dares, Bonuskarten.</li>
+            <li>Karten triggern auf ESC-Klischees: Nebelmaschinen, Tonart-Wechsel, weiße Outfits etc.</li>
+            <li>3 Schwierigkeitsstufen: chillig · klassisch · für Stans.</li>
+            <li>Passt perfekt zum Watch-Party-Kit — gleiche Bildsprache.</li>
+          </ul>
+
+          <span class="price-tag">
+            <span class="price-currency">€</span>1.99
+          </span>
+
+          <a
+            class="btn btn--primary btn--full mt-md"
+            href="https://boosty.to/esc2026"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Trinkspiel-Karten auf Boosty kaufen"
+          ><!-- 🔧 BOOSTY URL -->
+            🛒 Auf Boosty kaufen →
+          </a>
+        </article>
 
       </div><!-- /tools-grid -->
     </div>
