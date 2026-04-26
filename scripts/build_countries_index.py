@@ -103,9 +103,12 @@ def render_card(c: dict[str, Any], loc: dict[str, Any]) -> str:
 
 
 def render_grid(countries: list[dict[str, Any]], loc: dict[str, Any]) -> str:
+    """Return the grid <div>…</div>. Leading indentation is intentionally
+    omitted so substituting in place is idempotent (the existing leading
+    whitespace in the source file is preserved by the regex)."""
     cards = "\n".join(render_card(c, loc) for c in countries)
     return (
-        '      <div id="countries-grid" class="countries-grid" role="list" aria-live="polite">\n'
+        '<div id="countries-grid" class="countries-grid" role="list" aria-live="polite">\n'
         f'{cards}\n'
         '      </div>'
     )
@@ -129,8 +132,9 @@ def render_jsonld(countries: list[dict[str, Any]], loc: dict[str, Any]) -> str:
         ],
     }
     body = json.dumps(payload, indent=2, ensure_ascii=False)
+    # No leading whitespace — preserved by the source file's existing indent.
     return (
-        '  <script id="countries-jsonld" type="application/ld+json">\n'
+        '<script id="countries-jsonld" type="application/ld+json">\n'
         f"{body}\n"
         '  </script>'
     )
@@ -182,17 +186,18 @@ JSONLD_RE = re.compile(
     re.DOTALL,
 )
 
-# Match the inline IIFE that does the fetch+render. We anchor on `fetch(`
-# appearing somewhere inside an IIFE wrapped in a single <script>...</script>
-# block. The non-greedy `.*?` keeps the match scoped to one IIFE; we use
-# DOTALL so it can span newlines, and `(?!.*?fetch\()` guards against
-# matching a different inline script that happens to come first.
+# Match the inline IIFE that handles the stage filter. Must match BOTH the
+# original fetch+render IIFE (first run) AND the post-build filter-only IIFE
+# (subsequent runs) so the script stays idempotent. We anchor on
+# `.stage-tab` because both versions reference that selector and it is
+# unique to this page; the external <script src="..."> tag doesn't match
+# because it has no body.
 INLINE_JS_RE = re.compile(
     r'<script>\s*'
     r'(?:/\*.*?\*/\s*)?'                      # optional opening block comment
     r'\(function\s*\(\)\s*\{'
     r'(?:(?!</script>).)*?'                   # body, stopping before </script>
-    r'fetch\('
+    r"\.stage-tab"                            # anchor present in old + new IIFE
     r'(?:(?!</script>).)*?'
     r'\}\)\(\);\s*'
     r'</script>',
