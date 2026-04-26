@@ -1,12 +1,20 @@
 # robots.txt — eurovisiontoolkit.com
-# Updated: 2025-04-20
+# Updated: 2026-04-22
 
 # ── Allow all well-behaved crawlers ───────────────────────
 User-agent: *
 Allow: /
 
-# ── Don't waste crawl budget on assets ────────────────────
-Disallow: /assets/
+# ── Don't waste crawl budget on raw js/css ────────────────
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/data/
 
-# ── Sitemap location ──────────────────────────────────────
+# ── BUT explicitly allow images/icons so Google can show
+#    favicons in SERP and OG cards in social previews ─────
+Allow: /assets/icons/
+Allow: /assets/img/
+Allow: /favicon.ico
+
+# ── Sitemap ───────────────────────────────────────────────
 Sitemap: https://eurovisiontoolkit.com/sitemap.xml
