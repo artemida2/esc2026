@@ -230,7 +230,9 @@ def patch(loc_key: str, countries: list[dict[str, Any]]) -> None:
 
     # 3. Replace the fetch+render inline IIFE with the filter-only version.
     if not INLINE_JS_RE.search(text):
-        raise RuntimeError(f"{path}: inline IIFE with fetch() not found")
+        raise RuntimeError(
+            f"{path}: inline IIFE referencing '.stage-tab' not found"
+        )
     text = INLINE_JS_RE.sub(NEW_INLINE_JS, text, count=1)
 
     if text == original:
