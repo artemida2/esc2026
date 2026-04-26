@@ -61,6 +61,9 @@ def submit(urls: list[str], dry_run: bool = False) -> None:
         "keyLocation": KEY_LOCATION,
         "urlList": urls,
     }
+    if not urls:
+        print("No URLs found in sitemap; nothing to submit.")
+        return
     body = json.dumps(payload).encode("utf-8")
     print(f"Submitting {len(urls)} URLs to {ENDPOINT}")
     print(f"Sample: {urls[0]} … {urls[-1]}")
