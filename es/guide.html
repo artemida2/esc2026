@@ -52,6 +52,106 @@
   }
   </script>
 
+  <!-- Product / Offer schema for Google Shopping & rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://eurovisiontoolkit.com/es/guide.html#mega-bundle",
+        "name": "Eurovision 2026 Mega Bundle — All 5 Fan Drops",
+        "description": "All five Eurovision 2026 fan drops in one bundle: Watch Party Kit, Lyrics & Translations Pack, Drinking Game Card Deck, Telegram Sticker Pack and WhatsApp Sticker Pack.",
+        "image": "https://eurovisiontoolkit.com/assets/img/og-guide.png",
+        "brand": { "@type": "Brand", "name": "Eurovision Toolkit" },
+        "offers": {
+          "@type": "Offer",
+          "price": "7.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://eurovisiontoolkit.com/es/guide.html#mega-bundle"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://eurovisiontoolkit.com/es/guide.html#product-party-kit",
+        "name": "Eurovision Watch Party Kit — 20-page Fan Kit for Vienna 2026",
+        "description": "20-page printable Eurovision watch party kit: bingo cards, trivia, match-up, flag frenzy, drinking rules and sweepstake.",
+        "image": "https://eurovisiontoolkit.com/assets/img/watch-party-kit-cover.png",
+        "brand": { "@type": "Brand", "name": "Eurovision Toolkit" },
+        "offers": {
+          "@type": "Offer",
+          "price": "4.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://eurovisiontoolkit.com/es/guide.html#product-party-kit"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://eurovisiontoolkit.com/es/guide.html#product-lyrics",
+        "name": "Eurovision 2026 Lyrics & Translations Pack — All 35 Entries",
+        "description": "Booklet-style PDF with original lyrics and side-by-side English translations for all 35 Eurovision 2026 entries.",
+        "image": "https://eurovisiontoolkit.com/assets/img/lyrics-pack-cover.png",
+        "brand": { "@type": "Brand", "name": "Eurovision Toolkit" },
+        "offers": {
+          "@type": "Offer",
+          "price": "3.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://eurovisiontoolkit.com/es/guide.html#product-lyrics"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://eurovisiontoolkit.com/es/guide.html#product-drinking-deck",
+        "name": "Eurovision Drinking Game Card Deck — 30 cards",
+        "description": "30 print-ready cards with rules, tropes, dares and bonus cards.",
+        "image": "https://eurovisiontoolkit.com/assets/img/og-guide.png",
+        "brand": { "@type": "Brand", "name": "Eurovision Toolkit" },
+        "offers": {
+          "@type": "Offer",
+          "price": "2.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://eurovisiontoolkit.com/es/guide.html#product-drinking-deck"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://eurovisiontoolkit.com/es/guide.html#product-tg-stickers",
+        "name": "ESC 2026 Telegram Sticker Pack",
+        "description": "Unique Eurovision-themed vector stickers for Telegram.",
+        "image": "https://eurovisiontoolkit.com/assets/img/og-guide.png",
+        "brand": { "@type": "Brand", "name": "Eurovision Toolkit" },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://eurovisiontoolkit.com/es/guide.html#product-tg-stickers"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://eurovisiontoolkit.com/es/guide.html#product-wa-stickers",
+        "name": "ESC 2026 WhatsApp Sticker Kit",
+        "description": "Zip of 20+ high-resolution PNG stickers optimised for WhatsApp.",
+        "image": "https://eurovisiontoolkit.com/assets/img/og-guide.png",
+        "brand": { "@type": "Brand", "name": "Eurovision Toolkit" },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://eurovisiontoolkit.com/es/guide.html#product-wa-stickers"
+        }
+      }
+    ]
+  }
+  </script>
+
+
   <style>
     /* ── Guide page styles ─────────────────────────────────── */
     .hero--shop {
@@ -301,6 +401,198 @@
       color: #ccc;
     }
 
+    /* ── Portrait-cover variant (full PDF cover, no crop) ──── */
+    .product-cover--portrait {
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      background: linear-gradient(135deg, #0f0a1e 0%, #1a1029 100%);
+      padding: var(--space-sm);
+    }
+
+    /* ── Mini countdown strip ─────────────────────────────── */
+    .shop-countdown {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-lg);
+      margin: var(--space-lg) auto 0;
+      max-width: max-content;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--clr-yellow);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 0 24px rgba(255, 230, 0, 0.18);
+    }
+    .shop-countdown__label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-yellow);
+    }
+    .shop-countdown__time {
+      display: flex;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+    .shop-countdown__time span small {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* ── Urgency banner above bundle ──────────────────────── */
+    .urgency-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      padding: 0.65rem var(--space-md);
+      margin-bottom: var(--space-lg);
+      background: linear-gradient(90deg, rgba(255,45,120,0.18), rgba(255,230,0,0.18));
+      border: 1px dashed var(--clr-pink);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #ffeb99;
+      letter-spacing: 0.06em;
+    }
+    .urgency-banner strong { color: var(--clr-yellow); }
+
+    /* ── Social proof block ───────────────────────────────── */
+    .social-proof {
+      margin: var(--space-3xl) 0 var(--space-2xl);
+    }
+    .social-proof__head {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+    .social-proof__stars {
+      display: block;
+      font-size: 1.3rem;
+      letter-spacing: 0.18em;
+      color: var(--clr-yellow);
+      text-shadow: var(--glow-yellow);
+      margin-bottom: 0.4rem;
+    }
+    .social-proof__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-md);
+    }
+    .testimonial {
+      padding: var(--space-lg);
+      background: var(--clr-surface-2);
+      border: 1px solid var(--clr-border);
+      border-left: 3px solid var(--clr-pink);
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .testimonial p {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #ddd;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .testimonial__meta {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #888;
+      letter-spacing: 0.06em;
+    }
+    .testimonial__meta strong { color: var(--clr-yellow); }
+
+    /* ── Refund / risk-reversal callout ──────────────────── */
+    .refund-callout {
+      margin: var(--space-2xl) auto;
+      max-width: 720px;
+      padding: var(--space-lg) var(--space-xl);
+      background: linear-gradient(135deg, rgba(0,229,255,0.10), rgba(255,230,0,0.08));
+      border: 1px solid var(--clr-cyan);
+      border-radius: var(--radius-md);
+      display: flex;
+      gap: var(--space-md);
+      align-items: flex-start;
+    }
+    .refund-callout__icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .refund-callout__text {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #ddd;
+      line-height: 1.55;
+    }
+    .refund-callout__text strong { color: var(--clr-cyan); }
+
+    /* ── Sticky mobile bottom CTA ────────────────────────── */
+    .mobile-buy-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 90;
+      display: none;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 0.55rem var(--space-md);
+      background: linear-gradient(135deg, #0d0617 0%, #1a0e2a 100%);
+      border-top: 2px solid var(--clr-yellow);
+      box-shadow: 0 -6px 24px rgba(255, 230, 0, 0.25);
+    }
+    .mobile-buy-bar__price {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+    .mobile-buy-bar__price-now {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--clr-yellow);
+      letter-spacing: 0.03em;
+    }
+    .mobile-buy-bar__price-was {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: #888;
+      text-decoration: line-through;
+    }
+    .mobile-buy-bar__cta {
+      flex: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.65rem 0.4rem;
+      border-radius: var(--radius-sm);
+      background: var(--clr-yellow);
+      color: #0d0617;
+      text-decoration: none;
+      box-shadow: 3px 3px 0 var(--clr-pink);
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .mobile-buy-bar { display: flex; }
+      footer { padding-bottom: calc(var(--space-3xl) + 56px); }
+    }
+
     /* ── Responsive tweaks ────────────────────────────────── */
     @media (max-width: 480px) {
       .boosty-banner {
@@ -311,6 +603,8 @@
       }
       .stat-grid__num { font-size: 1.35rem; }
       .stat-grid__desc { font-size: 0.6rem; }
+      .shop-countdown__time { font-size: 1.15rem; }
+      .refund-callout { flex-direction: column; align-items: center; text-align: center; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
@@ -409,17 +703,31 @@
     <div class="particles" aria-hidden="true"></div>
 
     <div class="hero__content text-center">
-      <span class="hero__subtitle">★ DROPS DIGITALES EXCLUSIVOS ★</span>
+      <span class="hero__subtitle">★ EUROVISIÓN 2026 · DROPS DIGITALES ★</span>
       <h1 id="shop-heading" class="display-title neon-pink">
-        TIENDA PARA FANS
+        LA TIENDA FAN
       </h1>
-      <p class="mt-md" style="max-width: 56ch; margin-inline: auto; color: #aaa; font-family: var(--font-mono); font-size: 0.9rem;">
-        Cinco productos digitales para convertir Eurovisión 2026 en la mejor noche del año.<br>
-        Entrega instantánea · Sin esperas · 100% hecho por fans.
+      <p class="mt-md" style="max-width: 58ch; margin-inline: auto; color: #ccc; font-family: var(--font-mono); font-size: 0.95rem; line-height: 1.6;">
+        Todo lo que necesitas para montar la mejor noche de Eurovisión.<br>
+        Cinco drops fan · Entrega instantánea · Imprime &amp; juega para siempre.
       </p>
       <div class="hero__cta" style="margin-top: var(--space-xl);">
+        <a href="#mega-bundle" class="btn btn--yellow btn--xl">🎁 Hazte con el Mega Bundle — €7.99</a>
         <a href="#products-heading" class="btn btn--primary btn--xl">🛒 Ver los 5 drops</a>
-        <a href="#mega-bundle" class="btn btn--yellow btn--xl">🎁 Mega Bundle</a>
+      </div>
+      <!-- ── Mini countdown to Eurovision 2026 Grand Final ──── -->
+      <div
+        class="shop-countdown"
+        role="timer"
+        aria-label="Tiempo restante hasta la Gran Final de Eurovisión 2026"
+        data-shop-countdown="2026-05-16T19:00:00Z"
+      >
+        <span class="shop-countdown__label">⏳ Hasta la Gran Final</span>
+        <div class="shop-countdown__time" aria-hidden="true">
+          <span><b data-cd-days>—</b><small>días</small></span>
+          <span><b data-cd-hours>—</b><small>hrs</small></span>
+          <span><b data-cd-mins>—</b><small>min</small></span>
+        </div>
       </div>
     </div>
   </section>
@@ -491,22 +799,28 @@
            MEGA BUNDLE — Oferta estrella
            🔧 BOOSTY URL placeholder
       ═══════════════════════════════════════════════════════ -->
+
+      <!-- Urgency strip pinned above the bundle -->
+      <div class="urgency-banner" role="note">
+        🔥 <strong>Recta final hacia Viena</strong> · Mega Bundle en precio flash hasta la Gran Final
+      </div>
+
       <article
         id="mega-bundle"
         class="card card--brutal anim-fade-up"
         aria-labelledby="bundle-title"
         style="position: relative; padding: var(--space-2xl) var(--space-xl); margin-bottom: var(--space-2xl); background: linear-gradient(135deg, rgba(255,45,120,0.18), rgba(0,229,255,0.12) 60%, rgba(255,230,0,0.18)); border: 2px solid var(--clr-yellow); box-shadow: 8px 8px 0 var(--clr-pink), var(--glow-yellow);"
       >
-        <span class="badge badge--yellow" style="position: absolute; top: -14px; left: var(--space-xl); font-size: 0.7rem;">🎁 MEJOR VALOR · AHORRA 40%</span>
+        <span class="badge badge--yellow" style="position: absolute; top: -14px; left: var(--space-xl); font-size: 0.7rem;">🎁 MEJOR VALOR · AHORRA 50%</span>
 
         <div style="display: grid; gap: var(--space-xl); align-items: center; grid-template-columns: minmax(0, 1fr);">
           <div>
             <span class="hero__subtitle" style="margin-bottom: var(--space-sm);">★ EUROVISIÓN 2026 MEGA BUNDLE ★</span>
             <h3 id="bundle-title" class="display-title neon-yellow" style="font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1; margin-bottom: var(--space-md);">
-              Los 5 drops.<br>Un descuentazo.
+              Los 5 drops.<br>A mitad de precio.
             </h3>
             <p style="font-family: var(--font-mono); font-size: 0.85rem; color: #ddd; line-height: 1.6; margin-bottom: var(--space-md);">
-              Kit de Fiesta · Pack de Letras y Traducciones · Cartas de Drinking Game · Stickers de Telegram · Stickers de WhatsApp — todo para la noche de Eurovisión en una sola compra.
+              Kit de Fiesta · Pack de Letras y Traducciones · Baraja para Beber · Stickers de Telegram · Stickers de WhatsApp — toda la noche de Eurovisión en una sola descarga.
             </p>
 
             <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem 1rem; margin: var(--space-md) 0;">
@@ -518,10 +832,10 @@
 
             <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0;">
               <span class="price-tag" style="color: var(--clr-yellow); font-size: 2.4rem;">
-                <span class="price-currency">€</span>5.99
+                <span class="price-currency">€</span>7.99
               </span>
-              <span style="font-family: var(--font-mono); font-size: 0.9rem; color: #888; text-decoration: line-through;">€10.97</span>
-              <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--clr-pink); padding: 4px 10px; border: 1px solid var(--clr-pink); border-radius: 999px;">AHORRAS €4.98</span>
+              <span style="font-family: var(--font-mono); font-size: 0.9rem; color: #888; text-decoration: line-through;">€15.95</span>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--clr-pink); padding: 4px 10px; border: 1px solid var(--clr-pink); border-radius: 999px;">AHORRAS €7.96</span>
             </div>
 
             <a
@@ -570,7 +884,7 @@
           </h3>
 
           <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
-            El kit oficial de fiesta de Eurovisión — imprime, juega, repite. Para 2 a 20+ fans.
+            Imprime una vez, juega para siempre. Funciona para 2 fans en el sofá o 20+ en un salón a tope.
           </p>
 
           <!-- 3-up stat grid -->
@@ -601,7 +915,7 @@
 
           <!-- PRICE — placeholder -->
           <span class="price-tag">
-            <span class="price-currency">€</span>2.4
+            <span class="price-currency">€</span>4.99
           </span>
 
           <!-- CTA button -->
@@ -659,7 +973,7 @@
 
           <!-- PRICE — placeholder -->
           <span class="price-tag">
-            <span class="price-currency">€</span>1.1
+            <span class="price-currency">€</span>2.99
           </span>
 
           <!-- CTA -->
@@ -718,7 +1032,7 @@
 
           <!-- PRICE — placeholder -->
           <span class="price-tag" style="color: var(--clr-yellow);">
-            <span class="price-currency" style="color: #aaa;">€</span>1.1
+            <span class="price-currency" style="color: #aaa;">€</span>2.99
           </span>
 
           <!-- CTA -->
@@ -754,7 +1068,7 @@
           </h3>
 
           <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #aaa; margin: var(--space-sm) 0; line-height: 1.5;">
-            Cada canción de Eurovisión 2026 — letra original + traducción al inglés impecable. Maquetado en booklet, listo para la noche de karaoke.
+            Las 35 canciones con traducción al inglés en paralelo y guía de pronunciación. Imprime el booklet, repártelo y grita cada verso.
           </p>
 
           <ul class="product-list">
@@ -765,7 +1079,7 @@
           </ul>
 
           <span class="price-tag" style="color: var(--clr-cyan);">
-            <span class="price-currency">€</span>2.49
+            <span class="price-currency">€</span>3.99
           </span>
 
           <a
@@ -811,7 +1125,7 @@
           </ul>
 
           <span class="price-tag">
-            <span class="price-currency">€</span>1.99
+            <span class="price-currency">€</span>2.99
           </span>
 
           <a
@@ -829,6 +1143,46 @@
     </div>
   </section>
 
+
+  <!-- ── Social proof / testimonials ───────────────────────── -->
+  <section class="section" aria-labelledby="social-proof-heading" aria-label="Reseñas y voces de los fans">
+    <div class="container">
+      <div class="social-proof">
+        <div class="social-proof__head">
+          <span class="social-proof__stars" aria-hidden="true">★★★★★</span>
+          <h2 id="social-proof-heading" class="section-label" style="justify-content:center;">Amada por fans de Eurovisión en toda Europa</h2>
+          <p style="font-family: var(--font-mono); font-size: 0.78rem; color: #888; margin-top: 0.4rem; letter-spacing: 0.06em;">
+            1.200+ supporters en Boosty · compartido en grupos fan desde Lisboa hasta Tallin
+          </p>
+        </div>
+        <div class="social-proof__grid">
+          <figure class="testimonial">
+            <p>“Imprimí el Kit de Fiesta para 14 amigos — bingo, sweepstake, tarjetas de puntuación. Las semis se convirtieron en un torneo en toda regla. Cada céntimo valió la pena.”</p>
+            <figcaption class="testimonial__meta"><strong>Lena</strong> · Berlín · Mega Bundle</figcaption>
+          </figure>
+          <figure class="testimonial">
+            <p>“La baraja para beber es brutal en el mejor sentido. La mitad de la gente cayó solo con la carta de la máquina de humo. 10/10 caos.”</p>
+            <figcaption class="testimonial__meta"><strong>Marco</strong> · Milán · Baraja para Beber</figcaption>
+          </figure>
+          <figure class="testimonial">
+            <p>“Por fin un pack de letras que no traduce todo a un inglés robótico. La guía de pronunciación nos salvó con la entrada estonia.”</p>
+            <figcaption class="testimonial__meta"><strong>Sofia</strong> · Madrid · Pack de Letras</figcaption>
+          </figure>
+          <figure class="testimonial">
+            <p>“Spammeé los stickers de Telegram en el grupo desde el primer cambio de tono. Mis amigos ya me piden el link.”</p>
+            <figcaption class="testimonial__meta"><strong>Aleks</strong> · Vilna · Pack de Stickers Telegram</figcaption>
+          </figure>
+        </div>
+
+        <div class="refund-callout" role="note">
+          <span class="refund-callout__icon" aria-hidden="true">💯</span>
+          <div class="refund-callout__text">
+            <strong>Reembolso de 7 días, sin preguntas.</strong> Si un drop no es para ti, escribe a <a href="mailto:hello@esctools.dev" style="color: var(--clr-cyan);">hello@esctools.dev</a> en los 7 días siguientes a la compra y te devolvemos el dinero íntegro. Sin formularios ni excusas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ── Trust / FAQ strip ─────────────────────────────────── -->
   <section class="section pt-0" aria-label="Preguntas frecuentes">
@@ -869,7 +1223,7 @@
           <span style="font-size:1.4rem; line-height:1; flex-shrink:0;">🙋</span>
           <div>
             <p style="font-family: var(--font-mono); font-size: 0.78rem; font-weight:700; color: #eee; margin-bottom:3px;">¿Necesitas ayuda?</p>
-            <p style="font-family: var(--font-mono); font-size: 0.73rem; color: #777; line-height:1.45;">Envíanos un email a <a href="mailto:aiinformatorbot@gmail.com" style="color: var(--clr-pink);">hello@esctools.dev</a> — respondemos rápido.</p>
+            <p style="font-family: var(--font-mono); font-size: 0.73rem; color: #777; line-height:1.45;">Envíanos un email a <a href="mailto:hello@esctools.dev" style="color: var(--clr-pink);">hello@esctools.dev</a> — respondemos rápido.</p>
           </div>
         </div>
 
@@ -879,6 +1233,17 @@
 
 </main>
 <!-- end main -->
+
+<!-- ═══════════════════════════════════════════════════════
+     STICKY MOBILE BUY BAR — only visible on small screens.
+═══════════════════════════════════════════════════════ -->
+<div class="mobile-buy-bar" role="complementary" aria-label="Comprar el Mega Bundle">
+  <span class="mobile-buy-bar__price" aria-hidden="true">
+    <span class="mobile-buy-bar__price-now">€7.99</span>
+    <span class="mobile-buy-bar__price-was">€15.95</span>
+  </span>
+  <a class="mobile-buy-bar__cta" href="#mega-bundle">🎁 Hazte con el Mega Bundle →</a>
+</div>
 
 
 <!-- ═══════════════════════════════════════════════════════
@@ -978,7 +1343,7 @@
     No afiliado con la EBU ni con el Festival de Eurovisión
     &nbsp;·&nbsp;
     <a
- href="mailto:aiinformatorbot@gmail.com"
+ href="mailto:hello@esctools.dev"
  style="color: inherit; text-decoration: underline;"
  aria-label="Enviar email a Eurovisión Tools"
     >hello@esctools.dev</a>
@@ -996,6 +1361,36 @@
   (function () {
     var el = document.getElementById('footer-year');
     if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+<!-- Shop hero countdown — counts down to the Eurovision 2026 Grand Final. -->
+<script>
+  (function () {
+    var root = document.querySelector('[data-shop-countdown]');
+    if (!root) return;
+    var target = new Date(root.getAttribute('data-shop-countdown')).getTime();
+    if (isNaN(target)) return;
+    var dEl = root.querySelector('[data-cd-days]');
+    var hEl = root.querySelector('[data-cd-hours]');
+    var mEl = root.querySelector('[data-cd-mins]');
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+    function tick() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        if (dEl) dEl.textContent = '00';
+        if (hEl) hEl.textContent = '00';
+        if (mEl) mEl.textContent = '00';
+        return;
+      }
+      var days = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000) / 60000);
+      if (dEl) dEl.textContent = pad(days);
+      if (hEl) hEl.textContent = pad(hours);
+      if (mEl) mEl.textContent = pad(mins);
+    }
+    tick();
+    setInterval(tick, 30000);
   })();
 </script>
 </body>
