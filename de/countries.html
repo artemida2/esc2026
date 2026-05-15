@@ -271,6 +271,32 @@
     .country-card--sf1:hover { border-color: var(--clr-cyan); box-shadow: var(--glow-cyan); }
     .country-card--sf2:hover { border-color: var(--clr-yellow); box-shadow: var(--glow-yellow); }
     .country-card--final:hover { border-color: var(--clr-pink); box-shadow: var(--glow-pink); }
+
+    /* Post-Halbfinal Status-Badges */
+    .country-card__status {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      margin-bottom: 0.4rem;
+      white-space: nowrap;
+    }
+    .country-card__status--in    { color: var(--clr-green, #00ff9f); background: rgba(0,255,159,0.08); }
+    .country-card__status--out   { color: #ff5577;                   background: rgba(255,85,119,0.08); }
+    .country-card__status--host  { color: var(--clr-yellow);          background: rgba(255,230,0,0.08); }
+    .country-card__status--big5  { color: var(--clr-yellow);          background: rgba(255,230,0,0.08); }
+
+    .country-card[data-qualified="no"] {
+      opacity: 0.58;
+      filter: grayscale(0.35);
+    }
+    .country-card[data-qualified="no"]:hover {
+      opacity: 1;
+      filter: none;
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/favicon-48.png" />
@@ -332,15 +358,17 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Die 35 Länder beim Eurovision 2026</h1>
-      <p class="page-hero__sub">Alle Künstler:innen, Songs, Halbfinals und Direktplätze für das Grand Final in Wien.</p>
+      <p class="page-hero__sub">Beide Halbfinals sind gelaufen — 26 Acts ziehen ins Grand Final am 16. Mai in der Wiener Stadthalle ein. Tippe unten auf <strong style="color:var(--clr-green,#00ff9f);">🏁 26 Finalist:innen</strong>, um nur die Finalist:innen zu sehen, oder klicke auf eine Karte für die vollständige ESC-Historie.</p>
     </div>
   </section>
 
   <div class="stage-tabs" role="tablist">
-    <button class="stage-tab" data-filter="all"   aria-pressed="true">Alle 35</button>
-    <button class="stage-tab" data-filter="SF1"   aria-pressed="false">Halbfinale 1 · 12. Mai</button>
-    <button class="stage-tab" data-filter="SF2"   aria-pressed="false">Halbfinale 2 · 14. Mai</button>
-    <button class="stage-tab" data-filter="FINAL" aria-pressed="false">Big Five + Gastgeber</button>
+    <button class="stage-tab" data-filter="all"        aria-pressed="true">Alle 35</button>
+    <button class="stage-tab" data-filter="FINALISTS"  aria-pressed="false">🏁 26 Finalist:innen</button>
+    <button class="stage-tab" data-filter="SF1"        aria-pressed="false">Halbfinale 1 · 12. Mai</button>
+    <button class="stage-tab" data-filter="SF2"        aria-pressed="false">Halbfinale 2 · 14. Mai</button>
+    <button class="stage-tab" data-filter="FINAL"      aria-pressed="false">Big Five + Gastgeber</button>
+    <button class="stage-tab" data-filter="OUT"        aria-pressed="false">Ausgeschieden</button>
   </div>
 
   <!-- ════════════════════════════════════════════════════
@@ -361,386 +389,421 @@
   </div>
 
         <div id="countries-grid" class="countries-grid" role="list" aria-live="polite">
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/albania.html"
            aria-label="Albania beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇦🇱</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Albania</h2>
           <span class="country-card__song">"Nân"</span>
           <span class="country-card__artist">Alis</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 13</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="no"
            role="listitem"
            data-stage="SF2"
            href="./countries/armenia.html"
            aria-label="Armenia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇦🇲</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Armenia</h2>
           <span class="country-card__song">"Paloma Rumba"</span>
           <span class="country-card__artist">Simón</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 6</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/australia.html"
            aria-label="Australia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇦🇺</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Australia</h2>
           <span class="country-card__song">"Eclipse"</span>
           <span class="country-card__artist">Delta Goodrem</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 11</span>
         </a>
-        <a class="country-card country-card--final"
+        <a class="country-card country-card--final" data-qualified="yes"
            role="listitem"
            data-stage="FINAL"
            href="./countries/austria.html"
            aria-label="Austria beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇦🇹</span>
+          <span class="country-card__status country-card__status--host">🏁 GASTGEBER</span>
           <h2 class="country-card__name">Austria</h2>
           <span class="country-card__song">"Tanzschein"</span>
           <span class="country-card__artist">Cosmó</span>
           <span class="country-card__meta">Gastgeber · Direkt zum Finale · Startplatz 25</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="no"
            role="listitem"
            data-stage="SF2"
            href="./countries/azerbaijan.html"
            aria-label="Azerbaijan beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇦🇿</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Azerbaijan</h2>
           <span class="country-card__song">"Just Go"</span>
           <span class="country-card__artist">Jiva</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 2</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/belgium.html"
            aria-label="Belgium beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇧🇪</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Belgium</h2>
           <span class="country-card__song">"Dancing on the Ice"</span>
           <span class="country-card__artist">Essyla</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 11</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/bulgaria.html"
            aria-label="Bulgaria beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇧🇬</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Bulgaria</h2>
           <span class="country-card__song">"Bangaranga"</span>
           <span class="country-card__artist">Dara</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 1</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/croatia.html"
            aria-label="Croatia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇭🇷</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Croatia</h2>
           <span class="country-card__song">"Andromeda"</span>
           <span class="country-card__artist">Lelek</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 3</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/cyprus.html"
            aria-label="Cyprus beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇨🇾</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Cyprus</h2>
           <span class="country-card__song">"Jalla"</span>
           <span class="country-card__artist">Antigoni</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 8</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/czechia.html"
            aria-label="Czechia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇨🇿</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Czechia</h2>
           <span class="country-card__song">"Crossroads"</span>
           <span class="country-card__artist">Daniel Zizka</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 5</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/denmark.html"
            aria-label="Denmark beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇩🇰</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Denmark</h2>
           <span class="country-card__song">"Før vi går hjem"</span>
           <span class="country-card__artist">Søren Torpegaard Lund</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 10</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="no"
            role="listitem"
            data-stage="SF1"
            href="./countries/estonia.html"
            aria-label="Estonia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇪🇪</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Estonia</h2>
           <span class="country-card__song">"Too Epic to Be True"</span>
           <span class="country-card__artist">Vanilla Ninja</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 9</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/finland.html"
            aria-label="Finland beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇫🇮</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Finland</h2>
           <span class="country-card__song">"Liekinheitin"</span>
           <span class="country-card__artist">Linda Lampenius &amp; Pete Parkkonen</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 7</span>
         </a>
-        <a class="country-card country-card--final"
+        <a class="country-card country-card--final" data-qualified="yes"
            role="listitem"
            data-stage="FINAL"
            href="./countries/france.html"
            aria-label="France beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇫🇷</span>
+          <span class="country-card__status country-card__status--big5">🏁 BIG FIVE</span>
           <h2 class="country-card__name">France</h2>
           <span class="country-card__song">"Regarde !"</span>
           <span class="country-card__artist">Monroe</span>
           <span class="country-card__meta">Big Five · Direkt zum Finale</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="no"
            role="listitem"
            data-stage="SF1"
            href="./countries/georgia.html"
            aria-label="Georgia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇬🇪</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Georgia</h2>
           <span class="country-card__song">"On Replay"</span>
           <span class="country-card__artist">Bzikebi</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 6</span>
         </a>
-        <a class="country-card country-card--final"
+        <a class="country-card country-card--final" data-qualified="yes"
            role="listitem"
            data-stage="FINAL"
            href="./countries/germany.html"
            aria-label="Germany beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇩🇪</span>
+          <span class="country-card__status country-card__status--big5">🏁 BIG FIVE</span>
           <h2 class="country-card__name">Germany</h2>
           <span class="country-card__song">"Fire"</span>
           <span class="country-card__artist">Sarah Engels</span>
           <span class="country-card__meta">Big Five · Direkt zum Finale</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/greece.html"
            aria-label="Greece beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇬🇷</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Greece</h2>
           <span class="country-card__song">"Ferto"</span>
           <span class="country-card__artist">Akylas</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 4</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/israel.html"
            aria-label="Israel beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇮🇱</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Israel</h2>
           <span class="country-card__song">"Michelle"</span>
           <span class="country-card__artist">Noam Bettan</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 10</span>
         </a>
-        <a class="country-card country-card--final"
+        <a class="country-card country-card--final" data-qualified="yes"
            role="listitem"
            data-stage="FINAL"
            href="./countries/italy.html"
            aria-label="Italy beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇮🇹</span>
+          <span class="country-card__status country-card__status--big5">🏁 BIG FIVE</span>
           <h2 class="country-card__name">Italy</h2>
           <span class="country-card__song">"Per sempre sì"</span>
           <span class="country-card__artist">Sal Da Vinci</span>
           <span class="country-card__meta">Big Five · Direkt zum Finale</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="no"
            role="listitem"
            data-stage="SF2"
            href="./countries/latvia.html"
            aria-label="Latvia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇱🇻</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Latvia</h2>
           <span class="country-card__song">"Ēnā"</span>
           <span class="country-card__artist">Atvara</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 9</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/lithuania.html"
            aria-label="Lithuania beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇱🇹</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Lithuania</h2>
           <span class="country-card__song">"Sólo quiero más"</span>
           <span class="country-card__artist">Lion Ceccah</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 12</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="no"
            role="listitem"
            data-stage="SF2"
            href="./countries/luxembourg.html"
            aria-label="Luxembourg beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇱🇺</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Luxembourg</h2>
           <span class="country-card__song">"Mother Nature"</span>
           <span class="country-card__artist">Eva Marija</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 4</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/malta.html"
            aria-label="Malta beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇲🇹</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Malta</h2>
           <span class="country-card__song">"Bella"</span>
           <span class="country-card__artist">Aidan</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 14</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/moldova.html"
            aria-label="Moldova beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇲🇩</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Moldova</h2>
           <span class="country-card__song">"Viva, Moldova!"</span>
           <span class="country-card__artist">Satoshi</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 1</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="no"
            role="listitem"
            data-stage="SF1"
            href="./countries/montenegro.html"
            aria-label="Montenegro beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇲🇪</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Montenegro</h2>
           <span class="country-card__song">"Nova zora"</span>
           <span class="country-card__artist">Tamara Živković</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 8</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/norway.html"
            aria-label="Norway beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇳🇴</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Norway</h2>
           <span class="country-card__song">"Ya Ya Ya"</span>
           <span class="country-card__artist">Jonas Lovv</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 15</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/poland.html"
            aria-label="Poland beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇵🇱</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Poland</h2>
           <span class="country-card__song">"Pray"</span>
           <span class="country-card__artist">Alicja</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 14</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="no"
            role="listitem"
            data-stage="SF1"
            href="./countries/portugal.html"
            aria-label="Portugal beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇵🇹</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Portugal</h2>
           <span class="country-card__song">"Rosa"</span>
           <span class="country-card__artist">Bandidos do Cante</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 5</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/romania.html"
            aria-label="Romania beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇷🇴</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Romania</h2>
           <span class="country-card__song">"Choke Me"</span>
           <span class="country-card__artist">Alexandra Căpitănescu</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 3</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="no"
            role="listitem"
            data-stage="SF1"
            href="./countries/san-marino.html"
            aria-label="San Marino beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇸🇲</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">San Marino</h2>
           <span class="country-card__song">"Superstar"</span>
           <span class="country-card__artist">Senhit</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 13</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/serbia.html"
            aria-label="Serbia beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇷🇸</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Serbia</h2>
           <span class="country-card__song">"Kraj mene"</span>
           <span class="country-card__artist">Lavina</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 15</span>
         </a>
-        <a class="country-card country-card--sf1"
+        <a class="country-card country-card--sf1" data-qualified="yes"
            role="listitem"
            data-stage="SF1"
            href="./countries/sweden.html"
            aria-label="Sweden beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇸🇪</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Sweden</h2>
           <span class="country-card__song">"My System"</span>
           <span class="country-card__artist">Felicia</span>
           <span class="country-card__meta">Halbfinale 1 · Startplatz 2</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="no"
            role="listitem"
            data-stage="SF2"
            href="./countries/switzerland.html"
            aria-label="Switzerland beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇨🇭</span>
+          <span class="country-card__status country-card__status--out">❌ AUSGESCHIEDEN</span>
           <h2 class="country-card__name">Switzerland</h2>
           <span class="country-card__song">"Alice"</span>
           <span class="country-card__artist">Veronica Fusaro</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 7</span>
         </a>
-        <a class="country-card country-card--sf2"
+        <a class="country-card country-card--sf2" data-qualified="yes"
            role="listitem"
            data-stage="SF2"
            href="./countries/ukraine.html"
            aria-label="Ukraine beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇺🇦</span>
+          <span class="country-card__status country-card__status--in">✅ FINAL-EINZUG</span>
           <h2 class="country-card__name">Ukraine</h2>
           <span class="country-card__song">"Ridnym"</span>
           <span class="country-card__artist">Leléka</span>
           <span class="country-card__meta">Halbfinale 2 · Startplatz 12</span>
         </a>
-        <a class="country-card country-card--final"
+        <a class="country-card country-card--final" data-qualified="yes"
            role="listitem"
            data-stage="FINAL"
            href="./countries/united-kingdom.html"
            aria-label="United Kingdom beim Eurovision 2026">
           <span class="country-card__flag" aria-hidden="true">🇬🇧</span>
+          <span class="country-card__status country-card__status--big5">🏁 BIG FIVE</span>
           <h2 class="country-card__name">United Kingdom</h2>
           <span class="country-card__song">"Eins, Zwei, Drei"</span>
           <span class="country-card__artist">Look Mum No Computer</span>
@@ -815,7 +878,11 @@
 
   function applyFilter() {
     document.querySelectorAll('.country-card').forEach(card => {
-      const show = activeFilter === 'all' || card.dataset.stage === activeFilter;
+      let show;
+      if (activeFilter === 'all') show = true;
+      else if (activeFilter === 'FINALISTS') show = card.dataset.qualified === 'yes';
+      else if (activeFilter === 'OUT')       show = card.dataset.qualified === 'no';
+      else show = card.dataset.stage === activeFilter;
       card.dataset.hidden = (!show).toString();
     });
   }
